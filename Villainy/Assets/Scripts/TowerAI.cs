@@ -64,4 +64,16 @@ public class TowerAI : MonoBehaviour
             target = null;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        if (target != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(transform.position, target.position);
+        }
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, tower.Range);
+    }
 }
