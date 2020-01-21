@@ -14,7 +14,9 @@ public class EnemyAI : MonoBehaviour
     public Image HP;
     public Text name;
 
+    [SerializeField]
     private Transform target;
+    private float attackCooldown = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,11 @@ public class EnemyAI : MonoBehaviour
     {
         HP.fillAmount = currentHealth / enemy.Health;
 
+        if(nodePath.endNode == null)
+        {
+            return;
+        }
+
         if (currentHealth <= 0)
         {
             Destroy(this.gameObject);
@@ -46,7 +53,15 @@ public class EnemyAI : MonoBehaviour
         {
             if (target == nodePath.endNode)
             {
-                //endNode.GetComponent<Objective>
+                if (attackCooldown <= 0)
+                {
+                    nodePath.endNode.GetComponent<Objective>().health -= enemy.Damage;
+                    Debug.Log("Test");
+                }
+                else
+                {
+                    attackCooldown -= Time.deltaTime;
+                }
             }
             else
             {
