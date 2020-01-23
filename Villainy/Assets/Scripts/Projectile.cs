@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public Vector3 direction;
     public float speed;
+    public Transform bloodPrefab;
     public float hitSize;
     public Transform aoePrefab;
     private bool aoeMade = false;
@@ -31,9 +32,11 @@ public class Projectile : MonoBehaviour
                 return;
             }
 
+            
             enemy.health--;
             Transform enemyTransform = other.GetComponent<Transform>();
-            enemyTransform.localScale *= .6f;
+            Transform bloodSplat = Instantiate(bloodPrefab, enemyTransform);
+            enemyTransform.localScale *= .9f;
             if (enemy.health==0)
             {
                 Destroy(other.gameObject);

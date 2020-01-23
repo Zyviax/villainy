@@ -111,7 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
-  speed: 5
-  hitSize: 0
-  aoePrefab: {fileID: 5680039179244040228, guid: ae782750c0c6e4bc1863251a4fcbc10a,
+  speed: 0
+  bloodPrefab: {fileID: 6927718630428377463, guid: d9dcdf182af684c6b96b9a81ad72be76,
     type: 3}
+  hitSize: 0
+  aoePrefab: {fileID: 0}

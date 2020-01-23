@@ -18,7 +18,7 @@ public class AoeScript : MonoBehaviour
         {
             enemy.health--;
             Transform enemyTransform = other.GetComponent<Transform>();
-            enemyTransform.localScale *= .6f;
+            enemyTransform.localScale *= .9f;
             if (enemy.health == 0)
             {
                 Destroy(other.gameObject);
