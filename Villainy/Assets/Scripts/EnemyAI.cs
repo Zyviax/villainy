@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
 
     public float currentHealth;
     public float speed;
+    public float distanceTravelled = 0;
 
     public Image HP;
     public Text name;
@@ -18,12 +19,11 @@ public class EnemyAI : MonoBehaviour
     private Transform target;
     private float attackCooldown = 0;
 
+    public Transform Target { get { return target; } set { target = value; } }
+
     // Start is called before the first frame update
     void Start()
     {
-        nodePath = GameObject.Find("/NodeManager").GetComponent<BasicNodePath>();
-        target = nodePath.startNode.GetComponent<Node>().transform;
-
         currentHealth = enemy.Health;
         speed = enemy.Speed;
         name.text = enemy.enemyName;
@@ -47,6 +47,7 @@ public class EnemyAI : MonoBehaviour
         if (transform.position != target.transform.position)
         {
             float step = speed * Time.deltaTime;
+            distanceTravelled += step;
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
         }
         else
@@ -56,7 +57,6 @@ public class EnemyAI : MonoBehaviour
                 if (attackCooldown <= 0)
                 {
                     nodePath.endNode.GetComponent<Objective>().health -= enemy.Damage;
-                    Debug.Log("Test");
                 }
                 else
                 {
