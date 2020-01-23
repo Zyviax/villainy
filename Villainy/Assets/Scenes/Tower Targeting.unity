@@ -897,7 +897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977d09f1ed16f4dd0916f3ad51533985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPrefab: {fileID: 1266170280653027266, guid: 90bb9c1a177fd428f9d3d4ab30d448b0,
+  shotPrefab: {fileID: 4948329828530869989, guid: d37b6f92a09a348e1974a43d449c0403,
     type: 3}
   shotCooldown: 0.5
   useEstimate: 0
