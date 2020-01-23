@@ -16,9 +16,9 @@ MonoBehaviour:
   damage: 5
   range: 8
   health: 0
-  aoeRadius: 3
+  aoeRadius: 1.2
   targeting: 2
-  projectile: {fileID: 669095572798221476, guid: 45b8842a7932846c0993ea3c65245481,
+  projectile: {fileID: 7553033153270548294, guid: 0242533f0e95745108c5c9a82a4715f6,
     type: 3}
   destructable: 0
   aoe: 1
