@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 18
-  productGUID: 94a08cd73d53b415db51b407504b009d
+  productGUID: 514f6695d38bb441c951d2d1e454c003
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -605,7 +605,7 @@ PlayerSettings:
   luminVersion:
     m_VersionCode: 1
     m_VersionName: 
-  facebookSdkVersion: 7.10.1
+  facebookSdkVersion: 
   facebookAppId: 
   facebookCookies: 1
   facebookLogging: 1
