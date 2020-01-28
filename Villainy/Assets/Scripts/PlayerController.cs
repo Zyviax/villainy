@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This is probably not going to be used
 public class PlayerController : MonoBehaviour
 {
     /*
