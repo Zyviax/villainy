@@ -17,9 +17,5 @@ public class LevelManager : MonoBehaviour
     private void Update()
     {
         resources.text = GameyManager.levelResources.ToString();
-        EnemyAI enemyScript = enemy.GetComponent<EnemyAI>();
-
-        enemyScript.Target = nodePath.startNode.GetComponent<Node>().nextNode;
-        enemyScript.nodePath = this.nodePath;
     }
 }
