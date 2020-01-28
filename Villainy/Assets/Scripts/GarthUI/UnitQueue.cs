@@ -8,18 +8,18 @@ public class UnitQueue : MonoBehaviour
     public Transform unit1;
     public Transform unit2;
 
-    public Vector3 coords = new Vector3(0,0,0);
+    private Vector3 coords;
 
     //public GameObject textObject;
-    private Text text;
+    //private Text text;
 
     
 
     //public Queue<Transform> queue;
 
 
-    public int maxUnits = 10;
-    public int noUnits = 0; //etc etc
+    public int maxResource = 10;
+    public int usedResource = 0; //etc etc
 
     private void Start()
     {
@@ -32,18 +32,8 @@ public class UnitQueue : MonoBehaviour
         Transform unit = Instantiate(unit1);
         unit.SetParent(transform);
         coords.y -= 45;
-        noUnits++;
+        usedResource += 3;
         unit.transform.localPosition = coords; //ignore all of this stuff lmao
         //queue.Enqueue(unit1);
-    }
-
-    public void addUnit2()
-    {
-        Transform unit = Instantiate(unit2);
-        unit.SetParent(transform);
-        coords.y -= 45;
-        noUnits++;
-        unit.transform.localPosition = coords;
-        //queue.Enqueue(unit2);
     }
 }
