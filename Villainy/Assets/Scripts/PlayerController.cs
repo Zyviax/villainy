@@ -12,19 +12,40 @@ public class PlayerController : MonoBehaviour
     2 = Heal Spell
     3 = Speed Spell
          */
-    static int currentSpell = 0;
-    static Transform aimPrefab;
+    int currentSpell = 0;
+    public Transform aimPrefab;
+    static SpellArea spellArea;
 
-    static void useSpell(int spell)
-    {
-        currentSpell = spell;
-    }
-
-    private void Update()
+    public void useSpell(int spell)
     {
         if(currentSpell!=0)
         {
+            return;
+        }
+        currentSpell = spell;
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        Transform spellCircle = Instantiate(aimPrefab, new Vector3(mousePosition.x, mousePosition.y, 0), Quaternion.identity);
+        spellArea = spellCircle.GetComponent<SpellArea>();
+        spellArea.spell = spell;
+    }
 
+    void Update()
+    {
+        //Remove when done testing
+        if(Input.GetMouseButtonDown(0))
+            {
+            useSpell(1);
+        }
+
+        //Checking if they clicked
+        if (currentSpell!=0)
+        {
+            if(Input.GetMouseButtonDown(1))
+            {
+                spellArea.activateCircle();
+                currentSpell = 0;
+            }
         }
     }
 }
