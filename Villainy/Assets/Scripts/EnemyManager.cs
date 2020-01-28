@@ -31,4 +31,19 @@ public class EnemyManager : MonoBehaviour
             GameyManager.levelResources -= enemy.GetComponent<EnemyAI>().enemy.UnitCost;
         }
     }
+
+    public void Spawn1()
+    {
+        if (GameyManager.levelResources > 0)
+        {
+            enemy = Instantiate(enemies[1], nodePath.startNode.transform.position, Quaternion.identity).transform;
+
+            EnemyAI enemyScript = enemy.GetComponent<EnemyAI>();
+            enemyScript.Target = nodePath.startNode.GetComponent<Node>().nextNode;
+            enemyScript.nodePath = this.nodePath;
+
+            spawnedEnemies.Add(enemy);
+            GameyManager.levelResources -= enemy.GetComponent<EnemyAI>().enemy.UnitCost;
+        }
+    }
 }

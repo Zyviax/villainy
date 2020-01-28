@@ -7,8 +7,7 @@ public class Projectiles : MonoBehaviour
     public float speed;
     public Transform target;
 
-    public float damage;
-    public float aoeRadius;
+    public float damage, aoeRadius, disable;
     public bool aoe;
 
     void Update()
@@ -21,12 +20,18 @@ public class Projectiles : MonoBehaviour
             {
                 if (aoe)
                 {
-                    DamageAllEnemiesWithinRange(transform.position);
+                    Utility.DamageAllEnemiesWithinRange(transform.position, aoeRadius, damage);
                     target = null;
                 }
                 else
                 {
-                    target.GetComponent<EnemyAI>().currentHealth -= damage;
+                    EnemyAI enemy = target.GetComponent<EnemyAI>();
+                    if(disable <= 0)
+                    {
+                        enemy.disabled = true;
+                    }
+
+                    enemy.currentHealth -= damage;
                     target = null;
                 }
             }
@@ -34,20 +39,6 @@ public class Projectiles : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
-        }
-    }
-
-    void DamageAllEnemiesWithinRange(Vector3 pos)
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        foreach (GameObject enemy in enemies)
-        {
-            float distanceToEnemy = Vector3.Distance(pos, enemy.transform.position);
-            if (distanceToEnemy < aoeRadius)
-            {
-                enemy.GetComponent<EnemyAI>().currentHealth -= damage;
-            }
         }
     }
 

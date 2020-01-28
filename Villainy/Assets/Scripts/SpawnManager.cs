@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpawnDelay : MonoBehaviour
+public class SpawnManager : MonoBehaviour
 {
     public Queue<GameObject> enemiesToSpawn;
+    
 
     public float delay;
     public BasicNodePath nodePath;
@@ -14,16 +15,28 @@ public class SpawnDelay : MonoBehaviour
 
     public List<GameObject> enemies;
 
-    public void addEnemy()
+    public void Start()
     {
-        enemiesToSpawn.Enqueue(enemies[0]);
+        enemiesToSpawn = new Queue<GameObject>();
+        nodePath = GameObject.Find("/NodeManager").GetComponent<BasicNodePath>();
     }
 
-    IEnumerator spawnQueued()
+    public void AddToQueue(int enemy)
+    {     
+        enemiesToSpawn.Enqueue(enemies[enemy]);
+    }
+
+    public void StartSpawning()
+    {
+        StartCoroutine("SpawnQueued");
+    }
+
+    IEnumerator SpawnQueued()
     {
         while(enemiesToSpawn.Count > 0)
         {
             enemy = Instantiate(enemiesToSpawn.Dequeue(), nodePath.startNode.transform.position, Quaternion.identity).transform;
+            GameyManager.spawnedEnemies.Add(enemy);
 
             EnemyAI enemyScript = enemy.GetComponent<EnemyAI>();
             enemyScript.Target = nodePath.startNode.GetComponent<Node>().nextNode;
