@@ -34,6 +34,8 @@ public class SpellArea : MonoBehaviour
             foreach (GameObject enemy in enemies)
             {
                 float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+                print(spellRange);
+                print(distanceToEnemy);
 
                 if (distanceToEnemy <= spellRange)
                 {

@@ -6,6 +6,8 @@ public class TowerAI : MonoBehaviour
 {
     public Tower tower;
     public List<Transform> enemies;
+    private float stunCooldown = 3;
+    private float stunTimer = 0;
 
     public Transform target;
 
@@ -21,6 +23,16 @@ public class TowerAI : MonoBehaviour
 
     void Update()
     {
+        if(stun==true)
+        {
+            stunTimer = stunCooldown;
+            stun = false;
+        }
+        if(stunTimer>0)
+        {
+            stunTimer -= Time.deltaTime;
+            return;
+        }
         if (target != null && Vector3.Distance(transform.position, target.position) < tower.Range)
         {
             if (fireCooldown > 0)

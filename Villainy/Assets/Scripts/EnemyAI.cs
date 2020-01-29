@@ -10,6 +10,8 @@ public class EnemyAI : MonoBehaviour
     public Enemy enemy;
 
     public bool speedBuff = false;
+    private float speedBuffTimer = 0;
+    private float speedBuffCooldown = 3;
 
     public float currentHealth, speed, distanceTravelled = 0;
 
@@ -46,6 +48,20 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (speedBuff == true)
+        {
+            speedBuffTimer = speedBuffCooldown;
+            speedBuff = false;
+            speed = enemy.Speed * 2;
+        }
+        if (speedBuffTimer > 0)
+        {
+            speedBuffTimer -= Time.deltaTime;
+            if(speedBuffTimer<=0)
+            {
+                speed = enemy.Speed;
+            }
+        }
         HP.fillAmount = currentHealth / enemy.Health;
 
         if(nodePath.endNode == null)
