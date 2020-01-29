@@ -33,11 +33,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Remove when done testing
+        /*
         if(Input.GetMouseButtonDown(0))
             {
             useSpell(1);
         }
-
+        
         //Checking if they clicked
         if (currentSpell!=0)
         {
@@ -47,5 +48,6 @@ public class PlayerController : MonoBehaviour
                 currentSpell = 0;
             }
         }
+        */
     }
 }
