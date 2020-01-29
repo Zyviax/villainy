@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,7 @@ public class BasicNodePath : MonoBehaviour
 {
     public List<Transform> nodePath;
 
-    public GameObject node;
+    public GameObject node, objective;
 
     public Transform startNode;
     public Transform endNode;
@@ -30,5 +30,19 @@ public class BasicNodePath : MonoBehaviour
         nextNode.SetParent(this.transform);
         nextNode.name = "Node" + nodePath.Count;
         nodePath.Add(nextNode.transform);
+    }
+
+    public void CreateObjective()
+    {
+        if(startNode != null)
+        {
+            nextNode = Instantiate(objective, endNode.position, Quaternion.identity).transform;
+            endNode.GetComponent<Node>().nextNode = nextNode.transform;
+            endNode = nextNode;
+
+            nextNode.SetParent(this.transform);
+            nextNode.name = "Node" + nodePath.Count;
+            nodePath.Add(nextNode.transform);
+        }
     }
 }

@@ -16,6 +16,9 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        resources.text = GameyManager.levelResources.ToString();
+        if (resources != null)
+        {
+            resources.text = GameyManager.levelResources.ToString();
+        }
     }
 }

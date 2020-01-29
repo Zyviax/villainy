@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
     public void Start()
     {
         enemiesToSpawn = new Queue<GameObject>();
-        nodePath = GameObject.Find("/NodeManager").GetComponent<BasicNodePath>();
+        nodePath = GameObject.FindGameObjectWithTag("NodeManager").GetComponent<BasicNodePath>();
     }
 
     public void AddToQueue(int enemy)

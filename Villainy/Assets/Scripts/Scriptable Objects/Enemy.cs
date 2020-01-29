@@ -4,7 +4,7 @@
 public class Enemy : ScriptableObject
 {
     [SerializeField]
-    private float health, speed, damage, healCooldown, healRadii, healAmount, speedAmount;
+    private float health, speed, damage, healCooldown, healRadii, healAmount;
     [SerializeField]
     private int unitCost;
     [SerializeField]
@@ -16,7 +16,6 @@ public class Enemy : ScriptableObject
     public float HealCooldown { get { return healCooldown; } set {; } }
     public float HealRadii { get { return healRadii; } set {; } }
     public float HealAmount { get { return healAmount; } set {; } }
-    public float SpeedAmount { get { return speedAmount; } set{; } }
 
     public int UnitCost { get { return unitCost; } set {; } }
 
