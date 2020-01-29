@@ -20,7 +20,7 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField]
     private Transform target;
-    private float attackCooldown = 0, healCooldown = 0, healRadii, healAmount, disabledTimer = 0, speedAmount;
+    private float healCooldown = 0, healRadii, healAmount, disabledTimer = 0, speedAmount, checkCooldown = 0;
     private List<GameObject> enemies;
     private List<GameObject> firstFourEnemies;
 
@@ -29,7 +29,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nodePath = GameObject.Find("/NodeManager").GetComponent<BasicNodePath>();
+        nodePath = GameObject.FindGameObjectWithTag("NodeManager").GetComponent<BasicNodePath>();
         target = nodePath.startNode;
         enemies = new List<GameObject>();
         firstFourEnemies = new List<GameObject>();
@@ -38,6 +38,7 @@ public class EnemyAI : MonoBehaviour
         speed = enemy.Speed;
         name.text = enemy.enemyName;
         isHealer = enemy.IsHealer;
+        isSpeeder = enemy.IsSpeeder;
         healCooldown = enemy.HealCooldown;
         healRadii = enemy.HealRadii;
         healAmount = enemy.HealAmount;
@@ -57,6 +58,15 @@ public class EnemyAI : MonoBehaviour
         {
             GameyManager.spawnedEnemies.Remove(transform);
             Destroy(this.gameObject);
+        }
+
+        if (speedBuff)
+        {
+            speed = enemy.Speed * 1.2f;
+        }
+        else
+        {
+            speed = enemy.Speed;
         }
 
         if (transform.position != target.transform.position)
@@ -81,7 +91,7 @@ public class EnemyAI : MonoBehaviour
 
         if (disabled)
         {
-            if(disabledTimer <= 0)
+            if (disabledTimer <= 0)
             {
                 disabled = false;
             }
@@ -89,11 +99,6 @@ public class EnemyAI : MonoBehaviour
             {
                 disabledTimer -= Time.deltaTime;
             }
-        }
-
-        if (disabled)
-        {
-            return;
         }
         else if (isHealer)
         {
@@ -108,12 +113,29 @@ public class EnemyAI : MonoBehaviour
         }
         else if (isSpeeder)
         {
-            enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
-            enemies = enemies.OrderBy(x => Vector2.Distance(this.transform.position, x.transform.position)).ToList();
-
-            foreach(GameObject e in enemies.Take(4))
+            if (checkCooldown <= 0)
             {
-                e.GetComponent<EnemyAI>().speed *= speedAmount;
+                enemies.Clear();
+                enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+                enemies.Remove(this.gameObject);
+                enemies = enemies.OrderBy(x => Vector2.Distance(this.transform.position, x.transform.position)).ToList();
+
+                foreach (GameObject e in enemies.Take(Mathf.Min(enemies.Count, 4)))
+                {
+                    Debug.Log("Test");
+                    e.GetComponent<EnemyAI>().speedBuff = true;
+                }
+
+                foreach (GameObject e in enemies.Skip(4))
+                {
+                    e.GetComponent<EnemyAI>().speedBuff = false;
+                }
+
+                checkCooldown = 1;
+            }
+            else
+            {
+                checkCooldown -= Time.deltaTime;
             }
         }
     }

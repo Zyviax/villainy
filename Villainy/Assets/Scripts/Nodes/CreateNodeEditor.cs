@@ -15,6 +15,11 @@ public class CreateNodeEditor : Editor
         {
             nodePath.CreateNewNode();
         }
+
+        if (GUILayout.Button("Create Objective"))
+        {
+            nodePath.CreateNewNode();
+        }
     }
 
 }

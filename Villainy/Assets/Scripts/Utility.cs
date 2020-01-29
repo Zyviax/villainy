@@ -13,7 +13,13 @@ public class Utility : MonoBehaviour
             float distanceToEnemy = Vector3.Distance(pos, enemy.transform.position);
             if (distanceToEnemy < aoeRadius)
             {
-                enemy.GetComponent<EnemyAI>().currentHealth -= damage;
+                float health = enemy.GetComponent<EnemyAI>().currentHealth;
+                float maxHealth = enemy.GetComponent<EnemyAI>().enemy.Health;
+
+                if (health > 0 && health < maxHealth)
+                {
+                    enemy.GetComponent<EnemyAI>().currentHealth = Mathf.Clamp(health -= damage, 0, maxHealth);
+                }
             }
         }
     }
