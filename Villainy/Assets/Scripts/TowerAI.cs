@@ -42,7 +42,7 @@ public class TowerAI : MonoBehaviour
 
                 if (tower.AoE)
                 {
-                    ShootProjectile();
+                    Utility.DamageAllEnemiesWithinRange(transform.position, tower.Range, tower.Damage);
                     fireCooldown = tower.FireCooldown;
                 }
                 else
@@ -164,6 +164,7 @@ public class TowerAI : MonoBehaviour
         proj.damage = tower.Damage;
         proj.aoe = tower.AoE;
         proj.aoeRadius = tower.AoERadius;
+        proj.disable = tower.Disable;
     }
 
     private void OnDrawGizmos()
