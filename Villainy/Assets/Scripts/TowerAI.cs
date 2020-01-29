@@ -9,6 +9,8 @@ public class TowerAI : MonoBehaviour
 
     public Transform target;
 
+    public bool stun = false;
+
     private float fireCooldown;
 
     // Start is called before the first frame update
