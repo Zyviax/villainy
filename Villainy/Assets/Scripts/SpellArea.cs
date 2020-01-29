@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpellArea : MonoBehaviour
 {
     public int spell;
+    private int healGain = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,16 +27,50 @@ public class SpellArea : MonoBehaviour
         spellRange = spellRange * GetComponentInParent<Transform>().localScale.x;
 
 
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Monster");
-        foreach (GameObject enemy in enemies)
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
+        if(spell==2 || spell==3)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-
-            if (distanceToEnemy <= spellRange)
+            foreach (GameObject enemy in enemies)
             {
-                enemy.GetComponent<Turtle>().Hit(1);
+                float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+
+                if (distanceToEnemy <= spellRange)
+                {
+                    EnemyAI enemyScript = enemy.GetComponent<EnemyAI>();
+                    if (spell == 2) //Heal
+                    {
+                        if (enemyScript.currentHealth > (enemyScript.enemy.Health - healGain))
+                        {
+                            enemyScript.currentHealth = enemyScript.enemy.Health;
+                        }
+                        else
+                        {
+                            enemyScript.currentHealth += 5;
+                        }
+                    }
+                    else if (spell == 3) //Speed
+                    {
+                        enemyScript.speedBuff = true;
+                    }
+                }
+            }
+        } else if(spell==1)
+        {
+            foreach (GameObject tower in towers)
+            {
+                float distanceToTower = Vector3.Distance(transform.position, tower.transform.position);
+
+                if(distanceToTower<= spellRange)
+                {
+                    TowerAI towerScript = tower.GetComponent<TowerAI>();
+                    if (spell == 1)//Stun
+                    {
+                        towerScript.stun = true;
+                    }
             }
         }
+        
         Destroy(this.gameObject);
     }
 }

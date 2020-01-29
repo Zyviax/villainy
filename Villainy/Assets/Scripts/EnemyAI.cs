@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour
     public BasicNodePath nodePath;
     public Enemy enemy;
 
+    public bool speedBuff = false;
+
     public float currentHealth, speed, distanceTravelled = 0;
 
     public bool disabled, isHealer;
