@@ -8,7 +8,7 @@ public class Projectiles : MonoBehaviour
     public Transform target;
 
     public float damage, aoeRadius, disable;
-    public bool aoe;
+    public bool aoe, isPercentage;
 
     void Update()
     {
@@ -31,8 +31,15 @@ public class Projectiles : MonoBehaviour
                         enemy.disabled = true;
                     }
 
-                    enemy.currentHealth -= damage;
-                    target = null;
+                    if (isPercentage)
+                    {
+                        enemy.currentHealth -= enemy.enemy.Health * damage;
+                    }
+                    else
+                    {
+                        enemy.currentHealth -= damage;
+                        target = null;
+                    }
                 }
             }
         }

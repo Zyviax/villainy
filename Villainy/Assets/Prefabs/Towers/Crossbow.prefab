@@ -105,6 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2035b76f1f06c47d6905269360208a23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 11400000, guid: 2f20a1f8d99ce43b6bcf3a40c5e1095a, type: 2}
+  tower: {fileID: 11400000, guid: 75a65d5eb51c94f529b58b34d7683c52, type: 2}
   enemies: []
   target: {fileID: 0}

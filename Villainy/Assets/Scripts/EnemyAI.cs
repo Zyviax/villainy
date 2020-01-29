@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,14 +11,16 @@ public class EnemyAI : MonoBehaviour
 
     public float currentHealth, speed, distanceTravelled = 0;
 
-    public bool disabled, isHealer;
+    public bool disabled, isHealer, isSpeeder;
 
     public Image HP;
     public Text name;
 
     [SerializeField]
     private Transform target;
-    private float attackCooldown = 0, healCooldown = 0, healRadii, healAmount, disabledTimer = 0;
+    private float attackCooldown = 0, healCooldown = 0, healRadii, healAmount, disabledTimer = 0, speedAmount;
+    private List<GameObject> enemies;
+    private List<GameObject> firstFourEnemies;
 
     public Transform Target { get { return target; } set { target = value; } }
 
@@ -26,6 +29,8 @@ public class EnemyAI : MonoBehaviour
     {
         nodePath = GameObject.Find("/NodeManager").GetComponent<BasicNodePath>();
         target = nodePath.startNode;
+        enemies = new List<GameObject>();
+        firstFourEnemies = new List<GameObject>();
 
         currentHealth = enemy.Health;
         speed = enemy.Speed;
@@ -84,7 +89,11 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        if (isHealer && !disabled)
+        if (disabled)
+        {
+            return;
+        }
+        else if (isHealer)
         {
             if (healCooldown <= 0)
             {
@@ -93,6 +102,16 @@ public class EnemyAI : MonoBehaviour
             else
             {
                 healCooldown -= Time.deltaTime;
+            }
+        }
+        else if (isSpeeder)
+        {
+            enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+            enemies = enemies.OrderBy(x => Vector2.Distance(this.transform.position, x.transform.position)).ToList();
+
+            foreach(GameObject e in enemies.Take(4))
+            {
+                e.GetComponent<EnemyAI>().speed *= speedAmount;
             }
         }
     }

@@ -165,6 +165,7 @@ public class TowerAI : MonoBehaviour
         proj.aoe = tower.AoE;
         proj.aoeRadius = tower.AoERadius;
         proj.disable = tower.Disable;
+        proj.isPercentage = tower.PercentageDamage;
     }
 
     private void OnDrawGizmos()
