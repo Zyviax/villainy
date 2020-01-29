@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
 
     public float currentHealth, speed, distanceTravelled = 0;
 
-    public bool disabled, isHealer, isSpeeder;
+    public bool disabled, isHealer, isSpeeder, unitSpeedBuff = false;
 
     public Image HP;
     public Text name;
@@ -49,6 +49,14 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*if (unitSpeedBuff)
+        {
+            speed = enemy.Speed * 1.2f;
+        }
+        else
+        {
+            speed = enemy.Speed;
+        }
         if (speedBuff == true)
         {
             speedBuffTimer = speedBuffCooldown;
@@ -62,7 +70,36 @@ public class EnemyAI : MonoBehaviour
             {
                 speed = enemy.Speed;
             }
+        }*/
+
+
+        if (speedBuff)
+        {
+            speedBuffTimer = speedBuffCooldown;
+            speedBuff = false;
+            
+            if (unitSpeedBuff)
+            {
+                speed = enemy.Speed * 2.4f;
+            }
+            else
+            {
+                speed = enemy.Speed * 2;
+            }
         }
+        else if (speedBuffTimer > 0)
+        {
+            speedBuffTimer -= Time.deltaTime;
+        }
+        else if (unitSpeedBuff)
+        {
+            speed = enemy.Speed * 1.2f;
+        }
+        else
+        {
+            speed = enemy.Speed;
+        }
+
         HP.fillAmount = currentHealth / enemy.Health;
 
         if(nodePath.endNode == null)
@@ -74,15 +111,6 @@ public class EnemyAI : MonoBehaviour
         {
             GameyManager.spawnedEnemies.Remove(transform);
             Destroy(this.gameObject);
-        }
-
-        if (speedBuff)
-        {
-            speed = enemy.Speed * 1.2f;
-        }
-        else
-        {
-            speed = enemy.Speed;
         }
 
         if (transform.position != target.transform.position)
@@ -139,12 +167,12 @@ public class EnemyAI : MonoBehaviour
                 foreach (GameObject e in enemies.Take(Mathf.Min(enemies.Count, 4)))
                 {
                     Debug.Log("Test");
-                    e.GetComponent<EnemyAI>().speedBuff = true;
+                    e.GetComponent<EnemyAI>().unitSpeedBuff = true;
                 }
 
                 foreach (GameObject e in enemies.Skip(4))
                 {
-                    e.GetComponent<EnemyAI>().speedBuff = false;
+                    e.GetComponent<EnemyAI>().unitSpeedBuff = false;
                 }
 
                 checkCooldown = 1;
