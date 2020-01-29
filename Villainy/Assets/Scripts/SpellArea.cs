@@ -61,13 +61,14 @@ public class SpellArea : MonoBehaviour
             {
                 float distanceToTower = Vector3.Distance(transform.position, tower.transform.position);
 
-                if(distanceToTower<= spellRange)
+                if (distanceToTower <= spellRange)
                 {
                     TowerAI towerScript = tower.GetComponent<TowerAI>();
                     if (spell == 1)//Stun
                     {
                         towerScript.stun = true;
                     }
+                }
             }
         }
         
