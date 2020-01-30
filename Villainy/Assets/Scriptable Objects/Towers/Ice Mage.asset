@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1da5b7868fe24694a664c230cdc3a8e, type: 3}
   m_Name: Ice Mage
   m_EditorClassIdentifier: 
-  fireCooldown: 0
-  damage: 0
-  range: 0
+  fireCooldown: 0.5
+  damage: 1
+  range: 2
   aoeRadius: 0
   disable: 0
   targeting: 0
@@ -22,4 +22,4 @@ MonoBehaviour:
     type: 3}
   percentageDamage: 0
   aoe: 0
-  towerName: 
+  towerName: Ice Mage

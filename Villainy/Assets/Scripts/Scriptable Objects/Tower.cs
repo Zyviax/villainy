@@ -3,8 +3,10 @@
 [CreateAssetMenu(fileName = "New Tower", menuName = "Towers")]
 public class Tower : ScriptableObject
 {
+    
     [SerializeField]
     private float fireCooldown, damage, range, aoeRadius, disable;
+    [Tooltip("1 first\n2 closest\n3last")]
     [SerializeField]
     private int targeting;
     [SerializeField]
@@ -20,6 +22,7 @@ public class Tower : ScriptableObject
 
     public int Targeting { get { return targeting; } set {; } }
 
+    
     public GameObject Projectile { get { return projectile; } set {; } }
 
     public bool PercentageDamage { get { return percentageDamage; } set {; } }

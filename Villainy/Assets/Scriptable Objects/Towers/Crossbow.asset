@@ -17,7 +17,7 @@ MonoBehaviour:
   range: 2
   aoeRadius: 0
   disable: 0
-  targeting: 1
+  targeting: 2
   projectile: {fileID: 5172375375401269636, guid: 135801d5999e34d1ab9b4d0895cea70e,
     type: 3}
   percentageDamage: 0
