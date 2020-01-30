@@ -18,7 +18,7 @@ MonoBehaviour:
   aoeRadius: 0
   disable: 0
   targeting: 0
-  projectile: {fileID: 7553033153270548294, guid: 0242533f0e95745108c5c9a82a4715f6,
+  projectile: {fileID: 5172375375401269636, guid: 135801d5999e34d1ab9b4d0895cea70e,
     type: 3}
   percentageDamage: 1
   aoe: 0
