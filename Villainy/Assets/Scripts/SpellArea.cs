@@ -76,4 +76,9 @@ public class SpellArea : MonoBehaviour
         
         Destroy(this.gameObject);
     }
+
+    public void endCircle()
+    {
+        Destroy(this.gameObject);
+    }
 }

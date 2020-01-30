@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         if(currentSpell!=0)
         {
-            return;
+            spellArea.endCircle();
         }
         currentSpell = spell;
         Vector3 mousePosition = Input.mousePosition;
@@ -32,22 +32,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //Remove when done testing
-        
-        if(Input.GetMouseButtonDown(0))
-            {
-            useSpell(3);
-        }
-        
-        //Checking if they clicked
-        if (currentSpell!=0)
+        if (currentSpell != 0)
         {
-            if(Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(0))
             {
                 spellArea.activateCircle();
                 currentSpell = 0;
             }
         }
-        
     }
 }
