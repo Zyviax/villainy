@@ -843,6 +843,7 @@ GameObject:
   - component: {fileID: 2707332868339578479}
   - component: {fileID: 1496841994083929507}
   - component: {fileID: 6404494554919808352}
+  - component: {fileID: 4183025179262187500}
   m_Layer: 5
   m_Name: Unit
   m_TagString: Untagged
@@ -905,6 +906,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4183025179262187500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124856064724650956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 0
 --- !u!1 &3881375203825509640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,7 +1852,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 8700090487695256193}
   m_OnClick:
     m_PersistentCalls:
@@ -2056,7 +2072,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play
+  m_Text: '>'
 --- !u!1 &8700090488022024260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,7 +2263,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 8700090488028896118}
   m_OnClick:
     m_PersistentCalls:
@@ -2450,7 +2466,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 8700090488082433919}
   m_OnClick:
     m_PersistentCalls:
@@ -2579,7 +2595,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 8700090488084425251}
   m_OnClick:
     m_PersistentCalls:
@@ -2785,7 +2801,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 8700090488131592177}
   m_OnClick:
     m_PersistentCalls:
@@ -3225,6 +3241,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8700090488970061223}
         m_MethodName: StartSpawning
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2100430989060063525}
+        m_MethodName: TogglePause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4276,7 +4303,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 8700090489212002913}
   m_OnClick:
     m_PersistentCalls:
@@ -4409,7 +4436,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8700090489229641272}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2100430989060063525}
+        m_MethodName: ToggleFast
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8700090489243681581
 GameObject:
   m_ObjectHideFlags: 0
@@ -4458,6 +4496,7 @@ GameObject:
   - component: {fileID: 8700090489398827767}
   - component: {fileID: 8700090489398827766}
   - component: {fileID: 1481342222044121694}
+  - component: {fileID: 2100430989060063525}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4562,6 +4601,20 @@ MonoBehaviour:
   pauseMenu: {fileID: 4546173300035801669}
   GameEnd: {fileID: 2746182354497181434}
   mainUI: {fileID: 8700090488889777398}
+--- !u!114 &2100430989060063525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700090489398827765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1b516ace7738f46a27b1d7e0932bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  play: {fileID: 8700090487876679659}
+  fast: {fileID: 8700090488279457228}
 --- !u!1 &8700090489419141696
 GameObject:
   m_ObjectHideFlags: 0

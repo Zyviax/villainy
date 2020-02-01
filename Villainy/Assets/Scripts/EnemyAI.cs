@@ -167,7 +167,7 @@ public class EnemyAI : MonoBehaviour
 
                 foreach (GameObject e in enemies.Take(Mathf.Min(enemies.Count, 4)))
                 {
-                    Debug.Log("Test");
+                    //Debug.Log("Test");
                     e.GetComponent<EnemyAI>().unitSpeedBuff = true;
                 }
 
