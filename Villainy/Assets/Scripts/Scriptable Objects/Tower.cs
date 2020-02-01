@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#pragma warning disable 0649 //this disables variable never assigned to warnings
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Tower", menuName = "Towers")]
 public class Tower : ScriptableObject

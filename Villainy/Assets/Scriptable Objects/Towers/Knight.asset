@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireCooldown: 1
   damage: 1
-  range: 2
+  range: 2.5
   aoeRadius: 2
   disable: 0
   targeting: 1

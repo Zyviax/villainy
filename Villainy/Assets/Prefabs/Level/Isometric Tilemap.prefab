@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4661783877673591854}
   - component: {fileID: 4661783877673591855}
   m_Layer: 0
-  m_Name: Tilemap
+  m_Name: Iso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4661783877673591853}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4661783877683961676}
   m_RootOrder: 0
@@ -41,6 +41,24 @@ Tilemap:
   m_GameObject: {fileID: 4661783877673591853}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: -6, y: -12, z: 0}
+    second:
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: -5, y: -11, z: 0}
+    second:
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: -1, y: -11, z: 0}
     second:
       m_TileIndex: 1
@@ -2419,17 +2437,17 @@ Tilemap:
       m_ColliderType: 1
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: f80d8fdbf71f04aedacae9d74f4b2ea3, type: 2}
   - m_RefCount: 264
     m_Data: {fileID: 11400000, guid: 546a2343fea6745a9b01236b0019114a, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 21300000, guid: 61ffceca2fac94a4ba515f6024088f41, type: 3}
   - m_RefCount: 264
     m_Data: {fileID: 21300000, guid: 07561f239ff5742fd9b2523fb1ce769e, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 264
+  - m_RefCount: 266
     m_Data:
       e00: 1
       e01: 0
@@ -2448,7 +2466,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 264
+  - m_RefCount: 266
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2545,7 +2563,7 @@ Transform:
   m_GameObject: {fileID: 4661783877683961682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 4661783877673591852}
   m_Father: {fileID: 0}

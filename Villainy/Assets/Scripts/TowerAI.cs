@@ -15,10 +15,9 @@ public class TowerAI : MonoBehaviour
 
     private float fireCooldown;
 
-    // Start is called before the first frame update
-    void Start()
+    private float Distance(Vector3 a, Vector3 b)
     {
-        
+        return (Mathf.Sqrt((a.x-b.x) + Mathf.Pow((8.64f/4.98f)*(a.y-b.y),2)));
     }
 
     void Update()
@@ -33,7 +32,7 @@ public class TowerAI : MonoBehaviour
             stunTimer -= Time.deltaTime;
             return;
         }
-        if (target != null && Vector3.Distance(transform.position, target.position) < tower.Range)
+        if (target != null && Distance(transform.position, target.position) < tower.Range)
         {
             if (fireCooldown > 0)
             {
@@ -92,7 +91,7 @@ public class TowerAI : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            float distanceToEnemy = Distance(transform.position, enemy.transform.position);
 
             if (distanceToEnemy < shortestDistance && distanceToEnemy <= tower.Range)
             {
@@ -120,7 +119,7 @@ public class TowerAI : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            float distanceToEnemy = Distance(transform.position, enemy.transform.position);
 
             float distanceTravelled = enemy.GetComponent<EnemyAI>().distanceTravelled;
             if (distanceTravelled > longest && distanceToEnemy < tower.Range)
@@ -149,7 +148,7 @@ public class TowerAI : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            float distanceToEnemy = Distance(transform.position, enemy.transform.position);
 
             float distanceTravelled = enemy.GetComponent<EnemyAI>().distanceTravelled;
             if (distanceTravelled < shortest && distanceToEnemy < tower.Range)

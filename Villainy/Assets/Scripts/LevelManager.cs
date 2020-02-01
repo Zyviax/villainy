@@ -20,5 +20,7 @@ public class LevelManager : MonoBehaviour
         {
             resources.text = GameyManager.levelResources.ToString();
         }
+
+        //while game running: check if base destroyed or no units left
     }
 }

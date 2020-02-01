@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour
     public bool disabled, isHealer, isSpeeder, unitSpeedBuff = false;
 
     public Image HP;
-    public Text name;
+    public Text nameField;
 
     [SerializeField]
     private Transform target;
@@ -38,7 +38,7 @@ public class EnemyAI : MonoBehaviour
 
         currentHealth = enemy.Health;
         speed = enemy.Speed;
-        name.text = enemy.enemyName;
+        nameField.text = enemy.enemyName;
         isHealer = enemy.IsHealer;
         isSpeeder = enemy.IsSpeeder;
         healCooldown = enemy.HealCooldown;
@@ -104,6 +104,7 @@ public class EnemyAI : MonoBehaviour
 
         if(nodePath.endNode == null)
         {
+            //Change animation to a dancing animation
             return;
         }
 

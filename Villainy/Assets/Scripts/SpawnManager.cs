@@ -15,15 +15,30 @@ public class SpawnManager : MonoBehaviour
 
     public List<GameObject> enemies;
 
+    public Transform queueItem;
+    public Transform wholeQueue;
+    private Vector3 coords;
+
     public void Start()
     {
         enemiesToSpawn = new Queue<GameObject>();
         nodePath = GameObject.FindGameObjectWithTag("NodeManager").GetComponent<BasicNodePath>();
+
+        coords = new Vector3(0, 290,0);
     }
 
     public void AddToQueue(int enemy)
     {     
         enemiesToSpawn.Enqueue(enemies[enemy]);
+        Transform unit = Instantiate(queueItem);
+        unit.SetParent(wholeQueue);
+        coords.y -= 40;
+        unit.transform.localPosition = coords;
+        Image imageComponent = unit.GetComponent<Image>();
+        imageComponent.sprite = enemies[enemy].GetComponent<SpriteRenderer>().sprite;
+
+        //enemies[enemy]
+
     }
 
     public void StartSpawning()
@@ -36,6 +51,7 @@ public class SpawnManager : MonoBehaviour
         while(enemiesToSpawn.Count > 0)
         {
             enemy = Instantiate(enemiesToSpawn.Dequeue(), nodePath.startNode.transform.position, Quaternion.identity).transform;
+            wholeQueue.position += Vector3.up * 40f;
             GameyManager.spawnedEnemies.Add(enemy);
 
             EnemyAI enemyScript = enemy.GetComponent<EnemyAI>();
