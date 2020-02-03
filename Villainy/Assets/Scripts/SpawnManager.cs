@@ -36,6 +36,7 @@ public class SpawnManager : MonoBehaviour
         unit.transform.localPosition = coords;
         Image imageComponent = unit.GetComponent<Image>();
         imageComponent.sprite = enemies[enemy].GetComponent<SpriteRenderer>().sprite;
+        GameyManager.levelResources -= enemies[enemy].GetComponent<EnemyAI>().enemy.UnitCost;
 
         //enemies[enemy]
 
