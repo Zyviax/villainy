@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireCooldown: 0.5
   damage: 2.5
-  range: 2
+  range: 2.5
   aoeRadius: 0
   disable: 0
-  targeting: 2
+  targeting: 1
   projectile: {fileID: 5172375375401269636, guid: 135801d5999e34d1ab9b4d0895cea70e,
     type: 3}
   percentageDamage: 0
   aoe: 0
-  towerName: 
+  towerName: Repeater

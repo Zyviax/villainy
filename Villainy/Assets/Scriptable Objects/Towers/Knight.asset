@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireCooldown: 1
   damage: 1
-  range: 5
+  range: 2.5
   aoeRadius: 2
   disable: 0
   targeting: 1
@@ -22,4 +22,4 @@ MonoBehaviour:
     type: 3}
   percentageDamage: 0
   aoe: 1
-  towerName: AoE
+  towerName: Knight

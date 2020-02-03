@@ -5,18 +5,9 @@ using UnityEngine.UI;
 
 public class UnitQueue : MonoBehaviour
 {
-    public Transform unit1;
-    public Transform unit2;
+    public List<GameObject> enemies;
 
     private Vector3 coords;
-
-    //public GameObject textObject;
-    //private Text text;
-
-    
-
-    //public Queue<Transform> queue;
-
 
     public int maxResource = 10;
     public int usedResource = 0; //etc etc
@@ -27,13 +18,15 @@ public class UnitQueue : MonoBehaviour
 
     }
 
-    public void addUnit1()
+    public void addUnit(int i)
     {
-        Transform unit = Instantiate(unit1);
-        unit.SetParent(transform);
-        coords.y -= 45;
-        usedResource += 3;
-        unit.transform.localPosition = coords; //ignore all of this stuff lmao
+        //enemies[i]
+        //get all the stuff from the units scriptable object
+        //Transform unit = Instantiate(enemies[i]);
+        // unit.SetParent(transform);
+        // coords.y -= 45;
+        // usedResource += 3;
+        // unit.transform.localPosition = coords; //ignore all of this stuff lmao
         //queue.Enqueue(unit1);
     }
 }
