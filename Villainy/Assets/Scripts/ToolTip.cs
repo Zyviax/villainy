@@ -27,6 +27,7 @@ public class ToolTip : MonoBehaviour
     private void OnMouseEnter()
     {
         currentToolTipText = toolTipText;
+        currentToolTipText = currentToolTipText.Replace("\\n", "\n");
     }
     private void OnMouseExit()
     {
