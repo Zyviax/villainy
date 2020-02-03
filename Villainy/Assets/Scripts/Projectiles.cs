@@ -35,6 +35,7 @@ public class Projectiles : MonoBehaviour
                     if (isPercentage)
                     {
                         enemy.currentHealth -= enemy.enemy.Health * damage;
+                        target = null;
                     }
                     else
                     {

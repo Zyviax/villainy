@@ -17,7 +17,10 @@ public class TowerAI : MonoBehaviour
 
     private float Distance(Vector3 a, Vector3 b)
     {
-        return (Mathf.Sqrt((a.x-b.x) + Mathf.Pow((8.64f/4.98f)*(a.y-b.y),2)));
+        a.z = 0;
+        b.z = 0;
+        //return (Mathf.Sqrt((a.x-b.x) + Mathf.Pow((4.98f/ 8.64f) *(a.y-b.y),2)));
+        return Vector3.Distance(a, b);
     }
 
     void Update()
