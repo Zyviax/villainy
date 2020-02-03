@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 74328100}
   - component: {fileID: 74328099}
   - component: {fileID: 74328101}
+  - component: {fileID: 74328102}
   m_Layer: 0
   m_Name: Turtle
   m_TagString: Monster
@@ -213,6 +214,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57875ed5084e142c0b958cfcc28bcc6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &74328102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74328098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db2c322dedd248118f098a234a747f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolTipText: Hi I'm a turtle
 --- !u!1001 &459177237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405,6 +419,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNode: {fileID: 0}
+--- !u!1 &724671283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6452014295359860450, guid: 7c8a9677dd8984b2ebf59c71a5fd597f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2021693242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &724671289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724671283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db2c322dedd248118f098a234a747f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolTipText: Im a crossbow tower so I must say that you are an evil person.
 --- !u!1 &1089023199
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +825,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1954972138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2861710762829488929, guid: eb930423987d949d98626a9e7cf7a46a,
+    type: 3}
+  m_PrefabInstance: {fileID: 459177237}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1954972139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954972138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db2c322dedd248118f098a234a747f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolTipText: Help me im jeff
 --- !u!1001 &2021693242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -802,12 +854,12 @@ PrefabInstance:
     - target: {fileID: 6452014295359860447, guid: 7c8a9677dd8984b2ebf59c71a5fd597f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7424159
+      value: 0.79
       objectReference: {fileID: 0}
     - target: {fileID: 6452014295359860447, guid: 7c8a9677dd8984b2ebf59c71a5fd597f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9209666
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 6452014295359860447, guid: 7c8a9677dd8984b2ebf59c71a5fd597f,
         type: 3}
@@ -853,6 +905,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860447, guid: 7c8a9677dd8984b2ebf59c71a5fd597f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.319
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860447, guid: 7c8a9677dd8984b2ebf59c71a5fd597f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.254
       objectReference: {fileID: 0}
     - target: {fileID: 6452014295359860450, guid: 7c8a9677dd8984b2ebf59c71a5fd597f,
         type: 3}

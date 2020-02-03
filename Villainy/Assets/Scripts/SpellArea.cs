@@ -33,7 +33,9 @@ public class SpellArea : MonoBehaviour
         {
             foreach (GameObject enemy in enemies)
             {
-                float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+                Vector3 enemyPos = enemy.transform.position;
+                enemyPos.z = 0;
+                float distanceToEnemy = Vector3.Distance(transform.position, enemyPos);
                 //print(spellRange);
                 //print(distanceToEnemy);
 
@@ -61,7 +63,9 @@ public class SpellArea : MonoBehaviour
         {
             foreach (GameObject tower in towers)
             {
-                float distanceToTower = Vector3.Distance(transform.position, tower.transform.position);
+                Vector3 towerPos = tower.transform.position;
+                towerPos.z = 0;
+                float distanceToTower = Vector3.Distance(transform.position, towerPos);
 
                 if (distanceToTower <= spellRange)
                 {
