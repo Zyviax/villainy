@@ -18,7 +18,7 @@ MonoBehaviour:
   healCooldown: 0
   healRadii: 0
   healAmount: 0
-  unitCost: 0
+  unitCost: 4
   isHealer: 0
   isSpeeder: 0
   enemyName: Turtle

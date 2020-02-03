@@ -694,6 +694,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8275606839781554746, guid: c1fe5d59bc7ee2142a961b073b1a61ef,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1fe5d59bc7ee2142a961b073b1a61ef, type: 3}
 --- !u!4 &1105199818 stripped
@@ -792,6 +797,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4661783876493186604}
     m_Modifications:
+    - target: {fileID: 3420879639646207446, guid: 7c8a9677dd8984b2ebf59c71a5fd597f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6452014295359860447, guid: 7c8a9677dd8984b2ebf59c71a5fd597f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1003,6 +1013,11 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8700090488970061222, guid: 9df68b15fbd964d168b8c0952189757c,
+        type: 3}
+      propertyPath: levelResources
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 8700090489043166710, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: m_Name
@@ -1160,6 +1175,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4661783876493186604}
     m_Modifications:
+    - target: {fileID: 3136166426487742196, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5661561161930210645, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6452014295359860447, guid: e867678fcaef6ec468ff32cca2c6f520,
         type: 3}
       propertyPath: m_LocalPosition.x

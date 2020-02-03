@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d872db2c81ae94a30ba1e34b0af4f883, type: 3}
   m_Name: Valkyrie
   m_EditorClassIdentifier: 
-  health: 10
+  health: 40
   speed: 5
-  damage: 1
+  damage: 40
   healCooldown: 0
   healRadii: 0
   healAmount: 0
-  unitCost: 0
+  unitCost: 2
   isHealer: 0
   isSpeeder: 1
   enemyName: Valkyrie
