@@ -172,7 +172,6 @@ public class TowerAI : MonoBehaviour
     {
         Transform projectile = Instantiate(tower.Projectile, transform.position, Quaternion.identity).transform;
         Projectiles proj = projectile.GetComponent<Projectiles>();
-
         proj.target = target;
         proj.damage = tower.Damage;
         proj.aoe = tower.AoE;

@@ -15,7 +15,6 @@ public class Projectiles : MonoBehaviour
         if (target != null) { 
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
-
             if (transform.position == target.position)
             {
                 if (aoe)
