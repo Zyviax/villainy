@@ -1925,7 +1925,6 @@ GameObject:
   - component: {fileID: 3734804222697881194}
   - component: {fileID: 3918399573279264648}
   - component: {fileID: 3142810005489160315}
-  - component: {fileID: 5284312783028081643}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -2032,7 +2031,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5284312783028081643}
+      - m_Target: {fileID: 1481342222044121694}
         m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
@@ -2043,21 +2042,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5284312783028081643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4724667605883011398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36057a72cb2f1fd468f25b7ac2922f24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
-  GameEnd: {fileID: 0}
-  mainUI: {fileID: 0}
 --- !u!1 &4776841910847471511
 GameObject:
   m_ObjectHideFlags: 0
@@ -3908,7 +3892,7 @@ GameObject:
   - component: {fileID: 8700090487876679572}
   - component: {fileID: 8700090487876679659}
   m_Layer: 5
-  m_Name: Text
+  m_Name: play text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5071,7 +5055,7 @@ GameObject:
   - component: {fileID: 8700090488279457229}
   - component: {fileID: 8700090488279457228}
   m_Layer: 5
-  m_Name: Text
+  m_Name: fast text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
