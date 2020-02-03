@@ -26,9 +26,10 @@ public class Projectiles : MonoBehaviour
                 else
                 {
                     EnemyAI enemy = target.GetComponent<EnemyAI>();
-                    if(disable <= 0)
+                    if(disable > 0)
                     {
                         enemy.disabled = true;
+                        enemy.setDisabledTimer(disable);
                     }
 
                     if (isPercentage)

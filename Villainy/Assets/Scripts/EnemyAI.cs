@@ -28,6 +28,11 @@ public class EnemyAI : MonoBehaviour
 
     public Transform Target { get { return target; } set { target = value; } }
 
+    public void setDisabledTimer(float time)
+    {
+        disabledTimer = time;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
