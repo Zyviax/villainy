@@ -405,6 +405,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNode: {fileID: 0}
+--- !u!1 &724671283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6452014295359860450, guid: 7c8a9677dd8984b2ebf59c71a5fd597f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2021693242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &724671289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724671283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db2c322dedd248118f098a234a747f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolTipText: Im a crossbow tower so I must say that you are an evil person.
 --- !u!1 &1089023199
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,12 +821,12 @@ PrefabInstance:
     - target: {fileID: 6452014295359860447, guid: 7c8a9677dd8984b2ebf59c71a5fd597f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7424159
+      value: -0.42
       objectReference: {fileID: 0}
     - target: {fileID: 6452014295359860447, guid: 7c8a9677dd8984b2ebf59c71a5fd597f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9209666
+      value: 2.74
       objectReference: {fileID: 0}
     - target: {fileID: 6452014295359860447, guid: 7c8a9677dd8984b2ebf59c71a5fd597f,
         type: 3}
