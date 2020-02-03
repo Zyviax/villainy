@@ -17,6 +17,7 @@ public class Projectiles : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
             if (transform.position == target.position)
             {
+                //print(disable);
                 if (aoe)
                 {
                     Utility.DamageAllEnemiesWithinRange(transform.position, aoeRadius, damage);
