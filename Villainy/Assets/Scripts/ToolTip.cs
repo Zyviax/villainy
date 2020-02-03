@@ -22,6 +22,8 @@ public class ToolTip : MonoBehaviour
         guiStyleBack.alignment = TextAnchor.UpperLeft;
         guiStyleBack.fontSize = 35;
         guiStyleBack.wordWrap = true;
+
+
     }
 
     private void OnMouseEnter()
@@ -43,6 +45,9 @@ public class ToolTip : MonoBehaviour
             GUI.Label(new Rect(x - 149, y + 23, 300, 60), currentToolTipText, guiStyleBack);
             GUI.Label(new Rect(x - 150, y + 20, 300, 60), currentToolTipText, guiStyleFore);
         }
+
+        // Display the tooltip from the element that has mouseover or keyboard focus
+        GUI.Label(new Rect(10, 40, 100, 40), GUI.tooltip);
     }
     // Update is called once per frame
     void Update()
