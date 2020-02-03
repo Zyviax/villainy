@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
         Transform spellCircle = Instantiate(aimPrefab, new Vector3(mousePosition.x, mousePosition.y, 0), Quaternion.identity);
         spellArea = spellCircle.GetComponent<SpellArea>();
         spellArea.spell = spell;
+        //todo: change the -= to not be hardcoded
+        GameyManager.levelMana -= 100;
     }
 
     void Update()

@@ -12,8 +12,12 @@ public class GameMenu : MonoBehaviour
 
     void Start()
     {
-        pauseActive = false;
-        pauseMenu.SetActive(pauseActive);
+        //this is just to make it so i could add this script to restart level for alpha version
+        if(pauseMenu != null)
+        {
+            pauseActive = false;
+            pauseMenu.SetActive(pauseActive);
+        }
     }
 
     void Update()
