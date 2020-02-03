@@ -519,4 +519,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db2c322dedd248118f098a234a747f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolTipText: Targets highest health  Does percentage damage
+  toolTipText: Targets highest health\nDoes percentage damage

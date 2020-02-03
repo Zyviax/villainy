@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db2c322dedd248118f098a234a747f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolTipText: Targets first  Kills the first unit that reaches it
+  toolTipText: Targets first\n\nKills the first unit that reaches it
 --- !u!1 &6604097033625813874
 GameObject:
   m_ObjectHideFlags: 0

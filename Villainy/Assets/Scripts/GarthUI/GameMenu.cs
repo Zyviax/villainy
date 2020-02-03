@@ -18,10 +18,12 @@ public class GameMenu : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.Escape))
+        //todo make the button change on GUI for paused/play
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
+            pauseActive = !pauseActive;
             Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-            pauseMenu.SetActive(!pauseActive);
+            pauseMenu.SetActive(pauseActive);
         }
     }
 
@@ -37,7 +39,8 @@ public class GameMenu : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenu.SetActive(!pauseActive);
+        pauseActive = !pauseActive;
+        pauseMenu.SetActive(pauseActive);
         Time.timeScale = 1;
     }
 
