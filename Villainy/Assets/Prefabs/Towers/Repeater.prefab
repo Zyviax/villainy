@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 3856236894883763357}
   m_Layer: 0
   m_Name: radius
-  m_TagString: Untagged
+  m_TagString: Range
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

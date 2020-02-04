@@ -10,6 +10,8 @@ public class GameMenu : MonoBehaviour
     public GameObject GameEnd;
     public GameObject mainUI;
 
+    private GameObject[] rangeObjects;
+
     void Start()
     {
         //this is just to make it so i could add this script to restart level for alpha version
@@ -18,6 +20,13 @@ public class GameMenu : MonoBehaviour
             pauseActive = false;
             pauseMenu.SetActive(pauseActive);
         }
+        rangeObjects = GameObject.FindGameObjectsWithTag("Range");
+        foreach (GameObject obj in rangeObjects)
+        {
+            obj.SetActive(false);
+        }
+
+
     }
 
     void Update()
@@ -51,6 +60,14 @@ public class GameMenu : MonoBehaviour
     public void Settings()
     {
         //todo
+    }
+
+    public void ToggleRadius()
+    {
+        foreach(GameObject obj in rangeObjects)
+        {
+            obj.SetActive(!obj.activeSelf);
+        }
     }
 
 }

@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 2861710762829488940}
   - component: {fileID: -8875550921925007721}
   - component: {fileID: 2861710762829488928}
+  - component: {fileID: 7685697551406440687}
   m_Layer: 0
   m_Name: Imp
   m_TagString: Enemy
@@ -281,6 +282,22 @@ MonoBehaviour:
   HP: {fileID: 5157652374294462011}
   nameField: {fileID: 1087431144896357786}
   target: {fileID: 0}
+--- !u!114 &7685697551406440687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861710762829488929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad5de530b15a4d7fa63693bd879642a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSprites:
+  - {fileID: 21300000, guid: 001739c80ff704be791620869da5b754, type: 3}
+  - {fileID: 21300000, guid: fa36978b9e0c84236868d3ad9edfdbd3, type: 3}
+  framesPerSec: 3
 --- !u!1 &8447956105891455016
 GameObject:
   m_ObjectHideFlags: 0

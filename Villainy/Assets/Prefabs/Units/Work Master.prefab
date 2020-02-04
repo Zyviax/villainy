@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 2861710762829488940}
   - component: {fileID: -350378320024596254}
   - component: {fileID: 2861710762829488928}
+  - component: {fileID: 7745693026551788554}
   m_Layer: 0
   m_Name: Work Master
   m_TagString: Enemy
@@ -200,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 2861710762829488929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -3}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 613766973200015304}
   m_Father: {fileID: 0}
@@ -244,7 +245,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 1b429ac1a159144658bba6adeec6c5a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -280,6 +281,24 @@ MonoBehaviour:
   HP: {fileID: 6875293544402035339}
   nameField: {fileID: 7798927808855588325}
   target: {fileID: 0}
+--- !u!114 &7745693026551788554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861710762829488929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad5de530b15a4d7fa63693bd879642a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSprites:
+  - {fileID: 21300000, guid: 9a46cbbd36ceb4d8e82ddb711ab4f14f, type: 3}
+  - {fileID: 21300000, guid: 0db06d3af017b45b8ad91d857e8336b0, type: 3}
+  - {fileID: 21300000, guid: 164938799c5ba45c199c973a5b629854, type: 3}
+  - {fileID: 21300000, guid: 0db06d3af017b45b8ad91d857e8336b0, type: 3}
+  framesPerSec: 20
 --- !u!1 &5835649148488675307
 GameObject:
   m_ObjectHideFlags: 0

@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 2861710762829488940}
   - component: {fileID: 7350987397235400641}
   - component: {fileID: 2861710762829488928}
+  - component: {fileID: 4415613956631658317}
   m_Layer: 0
   m_Name: Turtle
   m_TagString: Enemy
@@ -245,9 +246,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fdf26f1e7965c464a8621d31468d8b4e, type: 3}
-  m_Color: {r: 1, g: 0.21226418, b: 0.21226418, a: 1}
-  m_FlipX: 1
+  m_Sprite: {fileID: 21300000, guid: ecd93599d2e24478f9e3b805221059b5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.16, y: 0.92}
@@ -281,6 +282,24 @@ MonoBehaviour:
   HP: {fileID: 5157652374294462011}
   nameField: {fileID: 1087431144896357786}
   target: {fileID: 0}
+--- !u!114 &4415613956631658317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861710762829488929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad5de530b15a4d7fa63693bd879642a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSprites:
+  - {fileID: 21300000, guid: ecd93599d2e24478f9e3b805221059b5, type: 3}
+  - {fileID: 21300000, guid: d07e05d74c769427c8d6bc3f0c72c7c2, type: 3}
+  - {fileID: 21300000, guid: 289e62b7b179e4fbe8a1583a30ec042f, type: 3}
+  - {fileID: 21300000, guid: d07e05d74c769427c8d6bc3f0c72c7c2, type: 3}
+  framesPerSec: 3
 --- !u!1 &8447956105891455016
 GameObject:
   m_ObjectHideFlags: 0
