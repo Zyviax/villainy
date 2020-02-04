@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         if(currentSpell!=0)
         {
-            return;
+            spellArea.endCircle();
         }
         currentSpell = spell;
         Vector3 mousePosition = Input.mousePosition;
@@ -28,26 +28,19 @@ public class PlayerController : MonoBehaviour
         Transform spellCircle = Instantiate(aimPrefab, new Vector3(mousePosition.x, mousePosition.y, 0), Quaternion.identity);
         spellArea = spellCircle.GetComponent<SpellArea>();
         spellArea.spell = spell;
+        //todo: change the -= to not be hardcoded
+        GameyManager.levelMana -= 100;
     }
 
     void Update()
     {
-        //Remove when done testing
-        
-        if(Input.GetMouseButtonDown(0))
-            {
-            useSpell(3);
-        }
-        
-        //Checking if they clicked
-        if (currentSpell!=0)
+        if (currentSpell != 0)
         {
-            if(Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(0))
             {
                 spellArea.activateCircle();
                 currentSpell = 0;
             }
         }
-        
     }
 }

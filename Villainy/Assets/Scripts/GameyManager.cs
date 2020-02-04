@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameyManager : MonoBehaviour
 {
     public static int levelResources = 0;
+    public static float levelMana = 0;
 
     public static List<Transform> spawnedEnemies = new List<Transform>();
 }

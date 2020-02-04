@@ -15,9 +15,9 @@ public class Projectiles : MonoBehaviour
         if (target != null) { 
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
-
             if (transform.position == target.position)
             {
+                //print(disable);
                 if (aoe)
                 {
                     Utility.DamageAllEnemiesWithinRange(transform.position, aoeRadius, damage);
@@ -26,14 +26,16 @@ public class Projectiles : MonoBehaviour
                 else
                 {
                     EnemyAI enemy = target.GetComponent<EnemyAI>();
-                    if(disable <= 0)
+                    if(disable > 0)
                     {
                         enemy.disabled = true;
+                        enemy.setDisabledTimer(disable);
                     }
 
                     if (isPercentage)
                     {
                         enemy.currentHealth -= enemy.enemy.Health * damage;
+                        target = null;
                     }
                     else
                     {

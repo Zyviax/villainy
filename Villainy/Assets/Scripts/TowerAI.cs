@@ -15,12 +15,6 @@ public class TowerAI : MonoBehaviour
 
     private float fireCooldown;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if(stun==true)
@@ -33,7 +27,7 @@ public class TowerAI : MonoBehaviour
             stunTimer -= Time.deltaTime;
             return;
         }
-        if (target != null && Vector3.Distance(transform.position, target.position) < tower.Range)
+        if (target != null && Utility.Distance(transform.position, target.position) < tower.Range)
         {
             if (fireCooldown > 0)
             {
@@ -92,7 +86,7 @@ public class TowerAI : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            float distanceToEnemy = Utility.Distance(transform.position, enemy.transform.position);
 
             if (distanceToEnemy < shortestDistance && distanceToEnemy <= tower.Range)
             {
@@ -120,7 +114,7 @@ public class TowerAI : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            float distanceToEnemy = Utility.Distance(transform.position, enemy.transform.position);
 
             float distanceTravelled = enemy.GetComponent<EnemyAI>().distanceTravelled;
             if (distanceTravelled > longest && distanceToEnemy < tower.Range)
@@ -149,7 +143,7 @@ public class TowerAI : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            float distanceToEnemy = Utility.Distance(transform.position, enemy.transform.position);
 
             float distanceTravelled = enemy.GetComponent<EnemyAI>().distanceTravelled;
             if (distanceTravelled < shortest && distanceToEnemy < tower.Range)
@@ -173,7 +167,8 @@ public class TowerAI : MonoBehaviour
     {
         Transform projectile = Instantiate(tower.Projectile, transform.position, Quaternion.identity).transform;
         Projectiles proj = projectile.GetComponent<Projectiles>();
-
+        //print(tower.Disable);
+        //print(tower.Damage);
         proj.target = target;
         proj.damage = tower.Damage;
         proj.aoe = tower.AoE;
@@ -184,13 +179,15 @@ public class TowerAI : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        //Targeting line
         if (target != null)
         {
             Gizmos.color = Color.green;
             Gizmos.DrawLine(transform.position, target.position);
         }
 
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, tower.Range);
+        //Top down sphere range representation
+        //Gizmos.color = Color.cyan;
+        //Gizmos.DrawWireSphere(transform.position, tower.Range);
     }
 }

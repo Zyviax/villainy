@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour
     public bool disabled, isHealer, isSpeeder, unitSpeedBuff = false;
 
     public Image HP;
-    public Text name;
+    public Text nameField;
 
     [SerializeField]
     private Transform target;
@@ -27,6 +27,11 @@ public class EnemyAI : MonoBehaviour
     private List<GameObject> firstFourEnemies;
 
     public Transform Target { get { return target; } set { target = value; } }
+
+    public void setDisabledTimer(float time)
+    {
+        disabledTimer = time;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +43,7 @@ public class EnemyAI : MonoBehaviour
 
         currentHealth = enemy.Health;
         speed = enemy.Speed;
-        name.text = enemy.enemyName;
+        nameField.text = enemy.enemyName;
         isHealer = enemy.IsHealer;
         isSpeeder = enemy.IsSpeeder;
         healCooldown = enemy.HealCooldown;
@@ -104,6 +109,7 @@ public class EnemyAI : MonoBehaviour
 
         if(nodePath.endNode == null)
         {
+            //Change animation to a dancing animation
             return;
         }
 
@@ -166,7 +172,7 @@ public class EnemyAI : MonoBehaviour
 
                 foreach (GameObject e in enemies.Take(Mathf.Min(enemies.Count, 4)))
                 {
-                    Debug.Log("Test");
+                    //Debug.Log("Test");
                     e.GetComponent<EnemyAI>().unitSpeedBuff = true;
                 }
 
