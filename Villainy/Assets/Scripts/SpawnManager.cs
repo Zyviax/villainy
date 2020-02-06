@@ -29,21 +29,22 @@ public class SpawnManager : MonoBehaviour
 
     public void AddToQueue(int enemy)
     {     
-        enemiesToSpawn.Enqueue(enemies[enemy]);
-        Transform unit = Instantiate(queueItem);
-        unit.SetParent(wholeQueue);
-        coords.y -= 40;
-        unit.transform.localPosition = coords;
-        Image imageComponent = unit.GetComponent<Image>();
-        imageComponent.sprite = enemies[enemy].GetComponent<SpriteRenderer>().sprite;
-        GameyManager.levelResources -= enemies[enemy].GetComponent<EnemyAI>().enemy.UnitCost;
-
-        //enemies[enemy]
-
+        if(enemies[enemy].GetComponent<EnemyAI>().enemy.UnitCost <= GameyManager.levelResources)
+        {
+            enemiesToSpawn.Enqueue(enemies[enemy]);
+            Transform unit = Instantiate(queueItem);
+            unit.SetParent(wholeQueue);
+            coords.y -= 40;
+            unit.transform.localPosition = coords;
+            Image imageComponent = unit.GetComponent<Image>();
+            imageComponent.sprite = enemies[enemy].GetComponent<SpriteRenderer>().sprite;
+            GameyManager.levelResources -= enemies[enemy].GetComponent<EnemyAI>().enemy.UnitCost;
+        }
     }
 
     public void StartSpawning()
     {
+        GameyManager.gameState = GameyManager.GameState.Play;
         StartCoroutine("SpawnQueued");
     }
 

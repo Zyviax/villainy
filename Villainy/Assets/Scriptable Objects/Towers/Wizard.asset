@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wizard
   m_EditorClassIdentifier: 
   fireCooldown: 0.4
-  damage: 0.5
+  damage: 0.1
   range: 2.5
   aoeRadius: 0
   disable: 0

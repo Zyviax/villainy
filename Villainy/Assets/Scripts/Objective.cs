@@ -11,10 +11,17 @@ public class Objective : MonoBehaviour
 
     public Image HP;
 
+    //public GameObject PauseEnd;
+    public GameObject UI, GameEnd;
+
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = health;
+        UI = GameObject.FindWithTag("MainUI");
+        //PauseEnd = GameObject.FindWithTag("PauseUI");
+        GameEnd = GameObject.FindWithTag("EndUI");
+        GameEnd.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,6 +31,12 @@ public class Objective : MonoBehaviour
 
         if (health <= 0)
         {
+            GameyManager.gameState = GameyManager.GameState.End;
+            UI.SetActive(false);
+            GameEnd.SetActive(true);
+            Text endText = GameEnd.GetComponentInChildren<Text>();
+            endText.text = "Congratulations!";
+            //enable fire effect... or some animation of a house burning down
             Destroy(this.gameObject);
         }
     }

@@ -9,6 +9,9 @@ TagManager:
   - Tower
   - NodeManager
   - Range
+  - MainUI
+  - PauseUI
+  - EndUI
   layers:
   - Default
   - TransparentFX
