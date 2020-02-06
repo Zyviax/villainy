@@ -15,6 +15,11 @@ public class EnemyAI : MonoBehaviour
 
     public float currentHealth, speed, distanceTravelled = 0;
 
+    //used to flip sprite for different directions of movement
+    private Vector3 lastPos;
+    private Vector3 oldVelocity;
+    private Vector3 velocity;
+
     public bool disabled, isHealer, isSpeeder, unitSpeedBuff = false;
 
     public Image HP;
@@ -49,6 +54,8 @@ public class EnemyAI : MonoBehaviour
         healCooldown = enemy.HealCooldown;
         healRadii = enemy.HealRadii;
         healAmount = enemy.HealAmount;
+
+        lastPos = transform.position;
     }
 
     // Update is called once per frame
@@ -188,5 +195,18 @@ public class EnemyAI : MonoBehaviour
                 checkCooldown -= Time.deltaTime;
             }
         }
+
+        //lastPos
+        //oldVelocity
+        //velocity
+        velocity = transform.position - lastPos;
+        lastPos = transform.position;
+
+        //checks if velocity and oldVelocity has had a changed sign bit
+        if((velocity.x *oldVelocity.x) >= 0.0f)
+        {
+            this.GetComponent<SpriteRenderer>().flipX = !(velocity.x > 0);
+        }
+        oldVelocity = velocity;
     }
 }

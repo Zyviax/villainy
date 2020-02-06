@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     3 = Speed Spell
          */
 
-
     //todo: different costs for different spells?
 
     int currentSpell = 0;
@@ -26,15 +25,19 @@ public class PlayerController : MonoBehaviour
         {
             spellArea.endCircle();
         }
-        if(100 <= GameyManager.levelMana))
-        currentSpell = spell;
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Transform spellCircle = Instantiate(aimPrefab, new Vector3(mousePosition.x, mousePosition.y, 0), Quaternion.identity);
-        spellArea = spellCircle.GetComponent<SpellArea>();
-        spellArea.spell = spell;
-        //todo: change the -= to not be hardcoded
-        GameyManager.levelMana -= 100;
+
+        //hardcoded 100
+        if(100 <= GameyManager.levelMana) {
+            currentSpell = spell;
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            Transform spellCircle = Instantiate(aimPrefab, new Vector3(mousePosition.x, mousePosition.y, 0), Quaternion.identity);
+            spellArea = spellCircle.GetComponent<SpellArea>();
+            spellArea.spell = spell;
+            //todo: change the -= to not be hardcoded
+            GameyManager.levelMana -= 100;
+        }
+        
     }
 
     void Update()
