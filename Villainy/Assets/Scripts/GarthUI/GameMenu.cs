@@ -21,12 +21,7 @@ public class GameMenu : MonoBehaviour
             pauseMenu.SetActive(pauseActive);
         }
         rangeObjects = GameObject.FindGameObjectsWithTag("Range");
-        foreach (GameObject obj in rangeObjects)
-        {
-            obj.SetActive(false);
-        }
-
-
+        ToggleRadius();
     }
 
     void Update()
@@ -69,5 +64,4 @@ public class GameMenu : MonoBehaviour
             obj.SetActive(!obj.activeSelf);
         }
     }
-
 }

@@ -30,10 +30,20 @@ public class ToolTip : MonoBehaviour
     {
         currentToolTipText = toolTipText;
         currentToolTipText = currentToolTipText.Replace("\\n", "\n");
+        ToggleChildren();
     }
     private void OnMouseExit()
     {
         currentToolTipText = "";
+        ToggleChildren();
+    }
+
+    private void ToggleChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(!child.gameObject.activeSelf);
+        }
     }
 
     private void OnGUI()

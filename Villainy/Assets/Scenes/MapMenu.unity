@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 796.26, y: 475}
+  m_AnchoredPosition: {x: 839.54, y: -481.52}
   m_SizeDelta: {x: 240.93, y: 85.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &54693877
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.7201116, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -188,9 +188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Alpha version
-
-    Ignore art'
+  m_Text: Beta version
 --- !u!222 &54693878
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -261,15 +259,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 60
-    m_Alignment: 4
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level
-
-    1'
+  m_Text: Level 1
 --- !u!222 &91903950
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -314,7 +310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -668.9, y: -394.3}
+  m_AnchoredPosition: {x: -770, y: -449}
   m_SizeDelta: {x: 341.3, y: 150.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202302233
@@ -469,15 +465,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 60
-    m_Alignment: 4
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Tutorial
-
-    2'
+  m_Text: Tutorial 2
 --- !u!222 &225968139
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -522,8 +516,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -208, y: -233}
-  m_SizeDelta: {x: 263.3, y: 315.7}
+  m_AnchoredPosition: {x: -285, y: -298.7}
+  m_SizeDelta: {x: 263.3, y: 234.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &339634938
 MonoBehaviour:
@@ -545,7 +539,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.08235294}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.14509805}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -670,7 +664,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6f13a7c0a930cb2478af2a5834879ba1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc010bf4bbe63c24dab2165841f117c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -724,8 +718,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -768.15, y: 329}
-  m_SizeDelta: {x: 223.4, y: 292.7}
+  m_AnchoredPosition: {x: -624.2, y: 355.9}
+  m_SizeDelta: {x: 276.7, y: 175.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &608568712
 MonoBehaviour:
@@ -747,7 +741,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.08235294}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.14509805}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -879,15 +873,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 60
-    m_Alignment: 4
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level
-
-    4'
+  m_Text: Level 4
 --- !u!222 &638089799
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -932,8 +924,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 504, y: 216}
-  m_SizeDelta: {x: 277.6, y: 284.2}
+  m_AnchoredPosition: {x: 568, y: 338.28}
+  m_SizeDelta: {x: 403.9, y: 311.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &691589271
 MonoBehaviour:
@@ -955,7 +947,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.08235294}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.14509805}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1087,15 +1079,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 60
-    m_Alignment: 4
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Tutorial
-
-    1'
+  m_Text: Tutorial 1
 --- !u!222 &894982404
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1428,18 +1418,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 50
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Back
 --- !u!222 &1937836554
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1484,8 +1474,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -771, y: -162}
-  m_SizeDelta: {x: 229.1, y: 264.2}
+  m_AnchoredPosition: {x: -707, y: -110}
+  m_SizeDelta: {x: 305.3, y: 264.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2080818703
 MonoBehaviour:
@@ -1507,7 +1497,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.08235294}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.14509805}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}

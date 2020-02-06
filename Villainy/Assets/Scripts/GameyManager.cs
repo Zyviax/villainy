@@ -18,4 +18,6 @@ public class GameyManager : MonoBehaviour
     public static GameState gameState;
 
     public static List<Transform> spawnedEnemies = new List<Transform>();
+
+    public static int levelsCompleted = 0;
 }
