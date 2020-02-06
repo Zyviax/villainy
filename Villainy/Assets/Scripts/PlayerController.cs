@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     2 = Heal Spell
     3 = Speed Spell
          */
+
+
+    //todo: different costs for different spells?
+
     int currentSpell = 0;
     public Transform aimPrefab;
     static SpellArea spellArea;
@@ -22,6 +26,7 @@ public class PlayerController : MonoBehaviour
         {
             spellArea.endCircle();
         }
+        if(100 <= GameyManager.levelMana))
         currentSpell = spell;
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
