@@ -9,6 +9,7 @@ public class GameyManager : MonoBehaviour
 
     public enum GameState
     {
+        Menu,
         Tutorial,
         Queue,
         Play,
