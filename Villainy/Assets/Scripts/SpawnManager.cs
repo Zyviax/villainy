@@ -19,12 +19,35 @@ public class SpawnManager : MonoBehaviour
     public Transform wholeQueue;
     private Vector3 coords;
 
+    private GameObject GameEnd;
+    private Objective objective; 
+
     public void Start()
     {
         enemiesToSpawn = new Queue<GameObject>();
         nodePath = GameObject.FindGameObjectWithTag("NodeManager").GetComponent<BasicNodePath>();
 
         coords = new Vector3(0, 290,0);
+
+        GameEnd = GameObject.FindWithTag("EndUI");
+        GameObject objectiveGO = GameObject.FindGameObjectWithTag("Objective");
+        objective = objectiveGO.GetComponent<Objective>();
+    }
+
+    void Update()
+    {
+        if(GameyManager.gameState == GameyManager.GameState.Play)
+        {
+            if(enemiesToSpawn.Count == 0 && GameObject.FindGameObjectWithTag("Enemy") == null)
+            {
+                GameyManager.gameState = GameyManager.GameState.End;
+                GameObject UI = GameObject.FindWithTag("MainUI");
+                UI.SetActive(false);
+                Text endText = GameEnd.GetComponentInChildren<Text>();
+                endText.text = "Rats! \n I needed " + objective.health + " more damage";
+                GameEnd.SetActive(true);
+            }
+        }
     }
 
     public void AddToQueue(int enemy)
@@ -44,8 +67,15 @@ public class SpawnManager : MonoBehaviour
 
     public void StartSpawning()
     {
-        GameyManager.gameState = GameyManager.GameState.Play;
-        StartCoroutine("SpawnQueued");
+        //stops the player from spawning multiple waves.
+        if(GameyManager.gameState == GameyManager.GameState.Play)
+        {
+            return;
+        } else {
+            GameyManager.gameState = GameyManager.GameState.Play;
+            StartCoroutine("SpawnQueued");
+        }
+        
     }
 
     IEnumerator SpawnQueued()

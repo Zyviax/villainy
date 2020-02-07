@@ -12,7 +12,7 @@ public class Objective : MonoBehaviour
     public Image HP;
 
     //public GameObject PauseEnd;
-    public GameObject UI, GameEnd;
+    private GameObject UI, GameEnd;
 
     // Start is called before the first frame update
     void Start()

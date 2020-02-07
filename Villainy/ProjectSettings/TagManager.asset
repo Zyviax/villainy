@@ -12,6 +12,7 @@ TagManager:
   - MainUI
   - PauseUI
   - EndUI
+  - Objective
   layers:
   - Default
   - TransparentFX

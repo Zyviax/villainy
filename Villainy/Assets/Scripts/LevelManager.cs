@@ -34,8 +34,5 @@ public class LevelManager : MonoBehaviour
         {
             mana.text = GameyManager.levelMana.ToString();
         }
-
-        
-        //todo: while game running: check if base destroyed or no units left
     }
 }
