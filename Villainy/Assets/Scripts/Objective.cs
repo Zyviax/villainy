@@ -41,9 +41,7 @@ public class Objective : MonoBehaviour
                 GameEnd.SetActive(true);
                 Text endText = GameEnd.GetComponentInChildren<Text>();
                 endText.text = "Congratulations!";
-                Debug.Log(GameyManager.levelsCompleted);
                 GameyManager.levelsCompleted += 1;
-                Debug.Log(GameyManager.levelsCompleted);
                 //enable fire effect... or some animation of a house burning down
                 Destroy(this.gameObject);
             }
