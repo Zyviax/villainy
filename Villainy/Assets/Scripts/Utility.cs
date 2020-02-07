@@ -19,6 +19,7 @@ public class Utility : MonoBehaviour {
         //return Vector3.Distance(a, b);
     }
 
+    //todo make the range visible
     public static void DamageAllEnemiesWithinRange(Vector3 pos, float aoeRadius, float damage)
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");

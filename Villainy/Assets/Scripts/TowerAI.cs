@@ -15,8 +15,30 @@ public class TowerAI : MonoBehaviour
 
     private float fireCooldown;
 
+    private LineRenderer lineRenderer;
+
+    void Start()
+    {
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        lineRenderer.widthMultiplier = 0.2f;
+        lineRenderer.positionCount = 2;
+    }
+
     void Update()
     {
+        //make this a thin targeting line or perhaps outline individual unit
+        //and then make this just a line for wizard/ice tower...
+        //Targeting line
+        if (target != null)
+        {
+            lineRenderer.SetPosition(0, transform.position);
+            lineRenderer.SetPosition(1, target.position); 
+        } else {
+            lineRenderer.SetPosition(0, transform.position);
+            lineRenderer.SetPosition(1, transform.position); 
+        }
+
         if(stun==true)
         {
             stunTimer = stunCooldown;
