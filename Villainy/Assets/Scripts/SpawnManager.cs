@@ -30,12 +30,16 @@ public class SpawnManager : MonoBehaviour
         coords = new Vector3(0, 290,0);
 
         GameEnd = GameObject.FindWithTag("EndUI");
+        Transform child = GameEnd.GetComponentsInChildren<Transform>(true)[1];
+        child.gameObject.SetActive(false);
+
         GameObject objectiveGO = GameObject.FindGameObjectWithTag("Objective");
         objective = objectiveGO.GetComponent<Objective>();
     }
 
     void Update()
     {
+        //Checks if all enemies are dead.
         if(GameyManager.gameState == GameyManager.GameState.Play)
         {
             if(enemiesToSpawn.Count == 0 && GameObject.FindGameObjectWithTag("Enemy") == null)
@@ -43,9 +47,12 @@ public class SpawnManager : MonoBehaviour
                 GameyManager.gameState = GameyManager.GameState.End;
                 GameObject UI = GameObject.FindWithTag("MainUI");
                 UI.SetActive(false);
+                
+                GameEnd = GameObject.FindWithTag("EndUI");
+                Transform child = GameEnd.GetComponentsInChildren<Transform>(true)[1];
+                child.gameObject.SetActive(true);
                 Text endText = GameEnd.GetComponentInChildren<Text>();
                 endText.text = "Rats! \n I needed " + objective.health + " more damage";
-                GameEnd.SetActive(true);
             }
         }
     }

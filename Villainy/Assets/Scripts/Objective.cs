@@ -23,7 +23,8 @@ public class Objective : MonoBehaviour
             UI = GameObject.FindWithTag("MainUI");
             //PauseEnd = GameObject.FindWithTag("PauseUI");
             GameEnd = GameObject.FindWithTag("EndUI");
-            GameEnd.SetActive(false);
+            Transform child = GameEnd.GetComponentsInChildren<Transform>(true)[1];
+            child.gameObject.SetActive(false);
         }
     }
 
@@ -38,8 +39,9 @@ public class Objective : MonoBehaviour
             {
                 GameyManager.gameState = GameyManager.GameState.End;
                 UI.SetActive(false);
-                GameEnd.SetActive(true);
-                Text endText = GameEnd.GetComponentInChildren<Text>();
+                Transform child = GameEnd.GetComponentsInChildren<Transform>(true)[1];
+                child.gameObject.SetActive(true);
+                Text endText = GameEnd.GetComponentInChildren<Text>(true);
                 endText.text = "Congratulations!";
                 GameyManager.levelsCompleted += 1;
                 //enable fire effect... or some animation of a house burning down
