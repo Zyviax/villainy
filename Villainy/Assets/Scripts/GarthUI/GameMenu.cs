@@ -29,10 +29,15 @@ public class GameMenu : MonoBehaviour
         //todo make the button change on GUI for paused/play
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseActive = !pauseActive;
-            Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-            pauseMenu.SetActive(pauseActive);
+            TogglePause();
         }
+    }
+
+    public void TogglePause()
+    {
+        pauseActive = !pauseActive;
+        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        pauseMenu.SetActive(pauseActive);
     }
 
     public void MapMenu()

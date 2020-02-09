@@ -556,6 +556,11 @@ PrefabInstance:
       propertyPath: highlights.Array.data[0]
       value: 
       objectReference: {fileID: 1137776830}
+    - target: {fileID: 5053697908410001253, guid: 9df68b15fbd964d168b8c0952189757c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7813446468155318164, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -936,7 +941,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1639, y: 402.3}
+  m_AnchoredPosition: {x: -1473.3, y: 490.3}
   m_SizeDelta: {x: 160, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &566510452

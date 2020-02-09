@@ -1300,8 +1300,8 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[2]
-      value: This is where I can see my queued units. These will enter the road in
-        order and destroy all those who oppose us!!
+      value: This is where I can see my queued units. These will enter the road one
+        at a time and destroy all those who oppose us!!
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -1345,6 +1345,11 @@ PrefabInstance:
       propertyPath: panels.Array.data[1]
       value: As you can see these are the units I can summon at will!\n\n\n(click
         the highlighted area)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053697908410001253, guid: 9df68b15fbd964d168b8c0952189757c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5177085739493282222, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -1793,7 +1798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1639, y: 402.3}
+  m_AnchoredPosition: {x: -1473.3, y: 490.3}
   m_SizeDelta: {x: 160, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040914393

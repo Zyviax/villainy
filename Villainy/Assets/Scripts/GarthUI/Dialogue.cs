@@ -20,6 +20,7 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         parent = GameObject.FindWithTag("Dialogue");
+        if(parent == null) return;
         Transform child = parent.GetComponentsInChildren<Transform>(true)[1];
         child.gameObject.SetActive(false);
         panelNo = 0;
@@ -38,6 +39,7 @@ public class Dialogue : MonoBehaviour
     {
         if(GameyManager.gameState != GameyManager.GameState.Tutorial)
         {
+            if(parent == null) return;
             Transform child = parent.GetComponentsInChildren<Transform>(true)[1];
             child.gameObject.SetActive(false);
             foreach(GameObject hl in highlights) {
