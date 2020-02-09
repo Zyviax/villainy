@@ -15,9 +15,14 @@ public class LevelManager : MonoBehaviour
     public Text resources;
     public Text mana;
 
+    public static bool tutorialDone = false;
+
     void Start()
     {
         GameyManager.gameState = isTutorial == true ? GameState.Tutorial : GameState.Queue;
+        if(tutorialDone) {
+            GameyManager.gameState = GameState.Queue;
+        }
 
         GameyManager.levelMana = this.levelMana;
         GameyManager.levelResources = this.levelResources;

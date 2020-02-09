@@ -27,7 +27,7 @@ public class MenuAnimate : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GameyManager.gameState = GameyManager.GameState.Menu;
+        //GameyManager.gameState = GameyManager.GameState.Menu;
         // Get a reference to game object renderer and
         // cast it to Sprite Render
         sr = GetComponent<Image>();
