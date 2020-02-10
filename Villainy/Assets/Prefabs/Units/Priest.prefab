@@ -298,6 +298,8 @@ MonoBehaviour:
   HP: {fileID: 5157652374294462011}
   nameField: {fileID: 1087431144896357786}
   target: {fileID: 0}
+  healPrefab: {fileID: 1789584988055018484, guid: 31e02f266125a4dfeb356967316dea38,
+    type: 3}
 --- !u!114 &-4838617591152492460
 MonoBehaviour:
   m_ObjectHideFlags: 0

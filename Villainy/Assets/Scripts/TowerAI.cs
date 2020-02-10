@@ -14,6 +14,7 @@ public class TowerAI : MonoBehaviour
     public bool stun = false;
 
     private float fireCooldown;
+    public Transform bloodPrefab;
 
     private LineRenderer lineRenderer;
 
@@ -72,7 +73,7 @@ public class TowerAI : MonoBehaviour
 
                 if (tower.AoE)
                 {
-                    Utility.DamageAllEnemiesWithinRange(transform.position, tower.Range, tower.Damage);
+                    Utility.DamageAllEnemiesWithinRange(transform.position, tower.Range, tower.Damage, bloodPrefab);
                     fireCooldown = tower.FireCooldown;
                 }
                 else
