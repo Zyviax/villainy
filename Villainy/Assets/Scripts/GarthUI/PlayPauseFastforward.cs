@@ -14,12 +14,17 @@ public class PlayPauseFastforward : MonoBehaviour
     {
         currentMax = 1;
         Time.timeScale = 0;
-        play.text = ">";
+        play.text = "Play";
     }
 
     public void TogglePause()
     {
         Time.timeScale = Time.timeScale == 0 ? currentMax : 0;
+        if(play.text == "Play")
+        {
+            play.text = ">";
+            return;
+        }
         play.text = play.text == ">" ? "||" : ">";
     }
 

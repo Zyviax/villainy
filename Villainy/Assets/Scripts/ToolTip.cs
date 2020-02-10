@@ -9,8 +9,6 @@ public class ToolTip : MonoBehaviour
     private GUIStyle guiStyleFore;
     private GUIStyle guiStyleBack;
 
-    public GameObject tooltip;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,23 +22,34 @@ public class ToolTip : MonoBehaviour
         guiStyleBack.alignment = TextAnchor.UpperLeft;
         guiStyleBack.fontSize = 35;
         guiStyleBack.wordWrap = true;
+
+
     }
 
     private void OnMouseEnter()
     {
-        /*currentToolTipText = toolTipText;
-        currentToolTipText = currentToolTipText.Replace("\\n", "\n");*/
-        tooltip.SetActive(true);
+        currentToolTipText = toolTipText;
+        currentToolTipText = currentToolTipText.Replace("\\n", "\n");
+        ToggleChildren();
     }
     private void OnMouseExit()
     {
         currentToolTipText = "";
-        tooltip.SetActive(false);
+        ToggleChildren();
+    }
+
+    private void ToggleChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(!child.gameObject.activeSelf);
+        }
     }
 
     private void OnGUI()
     {
-        if(currentToolTipText!="") { 
+        if(currentToolTipText!="")
+        {
             float x = Event.current.mousePosition.x;
             float y = Event.current.mousePosition.y;
             GUI.Label(new Rect(x - 149, y + 23, 300, 60), currentToolTipText, guiStyleBack);

@@ -21,12 +21,7 @@ public class GameMenu : MonoBehaviour
             pauseMenu.SetActive(pauseActive);
         }
         rangeObjects = GameObject.FindGameObjectsWithTag("Range");
-        foreach (GameObject obj in rangeObjects)
-        {
-            obj.SetActive(false);
-        }
-
-
+        ToggleRadius();
     }
 
     void Update()
@@ -34,10 +29,15 @@ public class GameMenu : MonoBehaviour
         //todo make the button change on GUI for paused/play
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseActive = !pauseActive;
-            Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-            pauseMenu.SetActive(pauseActive);
+            TogglePause();
         }
+    }
+
+    public void TogglePause()
+    {
+        pauseActive = !pauseActive;
+        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        pauseMenu.SetActive(pauseActive);
     }
 
     public void MapMenu()
@@ -69,5 +69,4 @@ public class GameMenu : MonoBehaviour
             obj.SetActive(!obj.activeSelf);
         }
     }
-
 }

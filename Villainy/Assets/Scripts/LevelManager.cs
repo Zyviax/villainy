@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static GameyManager;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,13 +10,22 @@ public class LevelManager : MonoBehaviour
     public int levelMana;
     public float manaRestoreRate;
 
+    public bool isTutorial;
+
     public Text resources;
     public Text mana;
 
+    public static bool tutorialDone = false;
+
     void Start()
     {
+        GameyManager.gameState = isTutorial == true ? GameState.Tutorial : GameState.Queue;
+        if(tutorialDone) {
+            GameyManager.gameState = GameState.Queue;
+        }
+
         GameyManager.levelMana = this.levelMana;
-        GameyManager.levelResources = this.levelResources;    
+        GameyManager.levelResources = this.levelResources;
     }
 
     private void Update()
@@ -29,7 +39,5 @@ public class LevelManager : MonoBehaviour
         {
             mana.text = GameyManager.levelMana.ToString();
         }
-
-        //todo: while game running: check if base destroyed or no units left
     }
 }
