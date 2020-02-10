@@ -49,6 +49,25 @@ public class PlayerController : MonoBehaviour
                 spellArea.activateCircle();
                 currentSpell = 0;
             }
+            if(Input.GetMouseButtonDown(1))
+            {
+                currentSpell = 0;
+                GameyManager.levelMana += 100;
+                Destroy(spellArea.gameObject);
+            }
+        }
+        if(currentSpell==0 && GameyManager.gameState == GameyManager.GameState.Play)
+        {
+            if(Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                useSpell(1);
+            } else if(Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                useSpell(2);
+            } else if(Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                useSpell(3);
+            }
         }
     }
 }

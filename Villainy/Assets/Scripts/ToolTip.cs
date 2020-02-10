@@ -9,6 +9,8 @@ public class ToolTip : MonoBehaviour
     private GUIStyle guiStyleFore;
     private GUIStyle guiStyleBack;
 
+    public GameObject tooltip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +33,13 @@ public class ToolTip : MonoBehaviour
         currentToolTipText = toolTipText;
         currentToolTipText = currentToolTipText.Replace("\\n", "\n");
         ToggleChildren();
+        tooltip.SetActive(true);
     }
     private void OnMouseExit()
     {
         currentToolTipText = "";
         ToggleChildren();
+        tooltip.SetActive(false);
     }
 
     private void ToggleChildren()
@@ -48,7 +52,7 @@ public class ToolTip : MonoBehaviour
 
     private void OnGUI()
     {
-        if(currentToolTipText!="")
+        /*if(currentToolTipText!="")
         {
             float x = Event.current.mousePosition.x;
             float y = Event.current.mousePosition.y;
@@ -57,7 +61,7 @@ public class ToolTip : MonoBehaviour
         }
 
         // Display the tooltip from the element that has mouseover or keyboard focus
-        GUI.Label(new Rect(10, 40, 100, 40), GUI.tooltip);
+        GUI.Label(new Rect(10, 40, 100, 40), GUI.tooltip);*/
     }
     // Update is called once per frame
     void Update()
