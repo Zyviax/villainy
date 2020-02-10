@@ -23,6 +23,10 @@ public class LevelManager : MonoBehaviour
         if(tutorialDone) {
             GameyManager.gameState = GameState.Queue;
         }
+        if (GameyManager.gameState == GameState.Tutorial)
+        {
+            tutorialDone = isTutorial;
+        }
 
         GameyManager.levelMana = this.levelMana;
         GameyManager.levelResources = this.levelResources;
