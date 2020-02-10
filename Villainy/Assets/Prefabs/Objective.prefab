@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 797800734809225814}
   - component: {fileID: 797800734809225812}
   - component: {fileID: 797800734809225813}
+  - component: {fileID: 5114427587558685081}
   m_Layer: 0
   m_Name: HealthBG
   m_TagString: Untagged
@@ -164,7 +165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fa701c217c58d4dd294df562682c9a67, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -174,6 +175,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5114427587558685081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797800734809225815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &797800735091249216
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +278,7 @@ GameObject:
   - component: {fileID: 797800735618236510}
   - component: {fileID: 797800735618236508}
   - component: {fileID: 797800735618236509}
+  - component: {fileID: 7791952074997954687}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -324,6 +341,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7791952074997954687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797800735618236511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: 5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &797800736466182257
 GameObject:
   m_ObjectHideFlags: 0

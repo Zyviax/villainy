@@ -1,37 +1,33 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class BarScript : MonoBehaviour
 {
     public Image image;
-    public Image secondImage;
 
-    public float imageScale;
-    public float secondImageScale;
+    public int selected = 0;
 
-    public float firstVariable = 100;
-    public float secondVariable = 100;
-
-    public float thirdVariable = 30;
+    private int resourceMax;
+    private float manaMax;
 
     private void Start()
     {
-        //image.transform.localScale
-        //secondImage.transform.localScale = new Vector3(secondImageScale, ;
+        resourceMax = GameyManager.levelResources;
+        manaMax = GameyManager.levelMana;
     }
 
-    void Update()
+    private void Update()
     {
-        image.fillAmount = firstVariable / secondVariable;
-    }
-
-    private void OnMouseEnter()
-    {
-        
-    }
-
-    private void OnMouseExit()
-    {
+        switch (selected)
+        {
+            case 0:
+                image.fillAmount = (float)GameyManager.levelResources / resourceMax;
+                break;
+            case 1:
+                image.fillAmount = (float)GameyManager.levelMana / manaMax;
+                break;
+        }
         
     }
 }

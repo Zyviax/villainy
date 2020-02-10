@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 8581965440778523772}
   - component: {fileID: 3845871936672967814}
   - component: {fileID: 5768430191948906875}
+  - component: {fileID: 9088451065380211902}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -299,6 +300,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9088451065380211902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806042862903710823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: 5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6797110379372370697
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +326,7 @@ GameObject:
   - component: {fileID: 7491129277311342918}
   - component: {fileID: 3134460384493475177}
   - component: {fileID: 2110788875887615050}
+  - component: {fileID: 2728298229781320339}
   m_Layer: 0
   m_Name: HealthBG
   m_TagString: Untagged
@@ -373,6 +390,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2728298229781320339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6797110379372370697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: 5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8447956105891455016
 GameObject:
   m_ObjectHideFlags: 0
