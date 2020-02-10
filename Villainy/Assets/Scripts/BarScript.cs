@@ -49,7 +49,7 @@ public class BarScript : MonoBehaviour
                     break;
                 case 1:
                     image.fillAmount = (float)(GameyManager.levelMana - cost) / manaMax;
-                    Debug.Log("Test");
+                    //Debug.Log("Test");
                     break;
             }
             

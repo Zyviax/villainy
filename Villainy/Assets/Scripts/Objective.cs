@@ -12,7 +12,7 @@ public class Objective : MonoBehaviour
     public Image HP;
 
     //public GameObject PauseEnd;
-    private GameObject UI, GameEnd;
+    public GameObject UI, GameEnd;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +20,15 @@ public class Objective : MonoBehaviour
         if(GameyManager.gameState != GameyManager.GameState.Menu)
         {
             maxHealth = health;
-            UI = GameObject.FindWithTag("MainUI");
+            //UI = GameObject.FindWithTag("MainUI");
             //PauseEnd = GameObject.FindWithTag("PauseUI");
-            GameEnd = GameObject.FindWithTag("EndUI");
+            //GameEnd = GameObject.FindWithTag("EndUI");
             Transform child = GameEnd.GetComponentsInChildren<Transform>(true)[1];
             child.gameObject.SetActive(false);
+        }
+        if(UI == null)
+        {
+            Debug.Log("no UI found");
         }
     }
 

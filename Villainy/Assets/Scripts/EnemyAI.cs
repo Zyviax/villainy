@@ -127,6 +127,12 @@ public class EnemyAI : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+        if(target == null)
+        {
+            //Debug.Log("No target");
+            return;
+        }
+
         if (transform.position != target.transform.position)
         {
             float step = speed * Time.deltaTime;
@@ -135,7 +141,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            if (target == nodePath.endNode)
+            if (target == nodePath.endNode && nodePath.endNode.GetComponent<Objective>() != null)
             { 
                 nodePath.endNode.GetComponent<Objective>().health -= enemy.Damage;
                 GameyManager.spawnedEnemies.Remove(transform);
