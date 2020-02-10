@@ -3464,57 +3464,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &8700090487723349082
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8700090487723349060}
-  - component: {fileID: 8700090487723349083}
-  m_Layer: 0
-  m_Name: NodeManager
-  m_TagString: NodeManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8700090487723349060
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8700090487723349082}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8700090489043166711}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8700090487723349083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8700090487723349082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48b137c38bc984e1a94b9e000ad60a4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodePath:
-  - {fileID: 0}
-  - {fileID: 0}
-  node: {fileID: 1828623316144688298, guid: ac8de0aef8ead495cb146706377443dc, type: 3}
-  objective: {fileID: 797800736466182257, guid: 7fd9228866ea04a599a46047cdf0ba21,
-    type: 3}
-  startNode: {fileID: 0}
-  endNode: {fileID: 0}
 --- !u!1 &8700090487828054172
 GameObject:
   m_ObjectHideFlags: 0
@@ -5827,7 +5776,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8700090489043166711}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8700090488970061223
 MonoBehaviour:
@@ -5967,7 +5916,6 @@ Transform:
   - {fileID: 2516514855786776583}
   - {fileID: 8700090489398827761}
   - {fileID: 8700090488554691030}
-  - {fileID: 8700090487723349060}
   - {fileID: 8700090488970061221}
   m_Father: {fileID: 0}
   m_RootOrder: 0
