@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 351006439}
   - component: {fileID: 351006443}
   m_Layer: 5
-  m_Name: Tut2
+  m_Name: next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -439,7 +439,7 @@ MonoBehaviour:
   animSprites:
   - {fileID: 21300000, guid: 76f7cd87818640a4f93d828b96bde644, type: 3}
   - {fileID: 21300000, guid: 3f71291cb0dc1ef42a2536758d7b5b89, type: 3}
-  framesPerSec: 1
+  framesPerSec: 2
 --- !u!114 &351006440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1650,6 +1650,11 @@ PrefabInstance:
       propertyPath: isTutorial
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8700090488970061223, guid: 9df68b15fbd964d168b8c0952189757c,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 2104922320}
     - target: {fileID: 8700090489043166710, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: m_Name
@@ -2151,6 +2156,18 @@ MonoBehaviour:
     type: 3}
   startNode: {fileID: 238005053}
   endNode: {fileID: 1851384404}
+--- !u!114 &2104922320 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2546519238659375166, guid: 9df68b15fbd964d168b8c0952189757c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1861582055}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8ca00ce86a643a6a0b899c9252fdac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4661783877822623376
 Transform:
   m_ObjectHideFlags: 0

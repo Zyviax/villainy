@@ -47,6 +47,7 @@ public class Objective : MonoBehaviour
                 child.gameObject.SetActive(true);
                 Text endText = GameEnd.GetComponentInChildren<Text>(true);
                 endText.text = "Congratulations!";
+                //todo: disable the retry button here
                 GameyManager.levelsCompleted += 1;
                 //enable fire effect... or some animation of a house burning down
                 Destroy(this.gameObject);

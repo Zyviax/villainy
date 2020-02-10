@@ -15,11 +15,8 @@ public class BarScript : MonoBehaviour
     {
         resourceMax = GameyManager.resourcesMax;
         manaMax = GameyManager.manaMax;
-    }
 
-    public void Update()
-    {
-        
+        UpdateImage();
     }
 
     public void UpdateImage()
