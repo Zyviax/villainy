@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 7775356352896779462}
   - component: {fileID: 8358851282313683748}
   - component: {fileID: 1403990609068476376}
+  - component: {fileID: 6828055998954159609}
   m_Layer: 0
   m_Name: HealthBG
   m_TagString: Untagged
@@ -174,6 +175,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6828055998954159609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888361379428802423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: 1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2861710762829488929
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +288,7 @@ MonoBehaviour:
   nodePath: {fileID: 0}
   enemy: {fileID: 11400000, guid: a74572b1a53cb420385f3e8837a00a99, type: 2}
   speedBuff: 0
-  currentHealth: 0
+  currentHealth: 1
   speed: 0
   distanceTravelled: 0
   disabled: 0
@@ -386,6 +402,7 @@ GameObject:
   - component: {fileID: 496543654388537881}
   - component: {fileID: 8543178748580547818}
   - component: {fileID: 5157652374294462011}
+  - component: {fileID: 9206248824819762981}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -448,3 +465,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9206248824819762981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8882588117354633751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: 11}
+  m_UseGraphicAlpha: 1
