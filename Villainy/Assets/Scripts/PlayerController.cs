@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public Transform aimPrefab;
     static SpellArea spellArea;
 
+    public BarScript bar;
+
     public void useSpell(int spell)
     {
         if(currentSpell!=0)
@@ -55,8 +57,10 @@ public class PlayerController : MonoBehaviour
                 GameyManager.levelMana += 100;
                 Destroy(spellArea.gameObject);
             }
+
+            bar.UpdateImage();
         }
-        if(currentSpell==0 && GameyManager.gameState == GameyManager.GameState.Play)
+        if (currentSpell==0 && GameyManager.gameState == GameyManager.GameState.Play)
         {
             if(Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -68,6 +72,8 @@ public class PlayerController : MonoBehaviour
             {
                 useSpell(3);
             }
+
+            bar.UpdateImage();
         }
     }
 }

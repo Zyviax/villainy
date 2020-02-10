@@ -6,6 +6,7 @@ public class SpellArea : MonoBehaviour
 {
     public int spell;
     private int healGain = 5;
+
     // Start is called before the first frame update
     void Start()
     {

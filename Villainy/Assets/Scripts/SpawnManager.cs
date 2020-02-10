@@ -20,7 +20,9 @@ public class SpawnManager : MonoBehaviour
     private Vector3 coords;
 
     private GameObject GameEnd;
-    private Objective objective; 
+    private Objective objective;
+
+    public BarScript bar;
 
     public void Start()
     {
@@ -69,6 +71,8 @@ public class SpawnManager : MonoBehaviour
             Image imageComponent = unit.GetComponent<Image>();
             imageComponent.sprite = enemies[enemy].GetComponent<SpriteRenderer>().sprite;
             GameyManager.levelResources -= enemies[enemy].GetComponent<EnemyAI>().enemy.UnitCost;
+
+            bar.UpdateImage();
         }
     }
 

@@ -7,6 +7,9 @@ public class GameyManager : MonoBehaviour
     public static int levelResources = 0;
     public static float levelMana = 0;
 
+    public static int resourcesMax;
+    public static int manaMax;
+
     public enum GameState
     {
         Menu,

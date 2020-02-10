@@ -26,6 +26,8 @@ public class LevelManager : MonoBehaviour
 
         GameyManager.levelMana = this.levelMana;
         GameyManager.levelResources = this.levelResources;
+        GameyManager.manaMax = this.levelMana;
+        GameyManager.resourcesMax = this.levelResources;
     }
 
     private void Update()

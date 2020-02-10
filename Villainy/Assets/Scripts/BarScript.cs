@@ -4,7 +4,7 @@ using UnityEditor;
 
 public class BarScript : MonoBehaviour
 {
-    public Image image;
+    public Image image, imageHover;
 
     public int selected = 0;
 
@@ -13,21 +13,58 @@ public class BarScript : MonoBehaviour
 
     private void Start()
     {
-        resourceMax = GameyManager.levelResources;
-        manaMax = GameyManager.levelMana;
+        resourceMax = GameyManager.resourcesMax;
+        manaMax = GameyManager.manaMax;
     }
 
-    private void Update()
+    public void Update()
+    {
+        
+    }
+
+    public void UpdateImage()
     {
         switch (selected)
         {
             case 0:
                 image.fillAmount = (float)GameyManager.levelResources / resourceMax;
+                imageHover.fillAmount = (float)GameyManager.levelResources / resourceMax;
                 break;
             case 1:
                 image.fillAmount = (float)GameyManager.levelMana / manaMax;
+                imageHover.fillAmount = (float)GameyManager.levelMana / manaMax;
                 break;
         }
         
+    }
+
+    public void UpdateHover(int cost, bool hovering)
+    {
+        if (hovering)
+        {
+            switch (selected)
+            {
+                case 0:
+                    image.fillAmount = (float)(GameyManager.levelResources - cost) / resourceMax;
+                    break;
+                case 1:
+                    image.fillAmount = (float)(GameyManager.levelMana - cost) / manaMax;
+                    Debug.Log("Test");
+                    break;
+            }
+            
+        }
+        else
+        {
+            switch (selected)
+            {
+                case 0:
+                    image.fillAmount = (float)GameyManager.levelResources / resourceMax;
+                    break;
+                case 1:
+                    image.fillAmount = (float)GameyManager.levelMana / manaMax;
+                    break;
+            }
+        }
     }
 }
