@@ -29,6 +29,7 @@ public class EnemyAI : MonoBehaviour
     private Transform target;
     private float healCooldown = 0, healRadii, healAmount, disabledTimer = 0, speedAmount, checkCooldown = 0;
     private List<GameObject> enemies;
+    public Transform healPrefab;
     private List<GameObject> firstFourEnemies;
 
     public Transform Target { get { return target; } set { target = value; } }
@@ -161,7 +162,8 @@ public class EnemyAI : MonoBehaviour
         {
             if (healCooldown <= 0)
             {
-                Utility.DamageAllEnemiesWithinRange(transform.position, healRadii, healAmount);
+                Utility.DamageAllEnemiesWithinRange(transform.position, healRadii, healAmount, healPrefab);
+                healCooldown = enemy.HealCooldown;
             }
             else
             {

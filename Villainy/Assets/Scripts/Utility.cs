@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Utility : MonoBehaviour { 
+public class Utility : MonoBehaviour {
 
     public static float Distance(Vector3 a, Vector3 b)
     {
@@ -20,7 +20,7 @@ public class Utility : MonoBehaviour {
     }
 
     //todo make the range visible
-    public static void DamageAllEnemiesWithinRange(Vector3 pos, float aoeRadius, float damage)
+    public static void DamageAllEnemiesWithinRange(Vector3 pos, float aoeRadius, float damage, Transform bloodPrefab)
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -29,6 +29,7 @@ public class Utility : MonoBehaviour {
             float distanceToEnemy = Distance(pos, enemy.transform.position);
             if (distanceToEnemy < aoeRadius)
             {
+                Transform bloodSplat = Instantiate(bloodPrefab, enemy.transform);
                 float health = enemy.GetComponent<EnemyAI>().currentHealth;
                 float maxHealth = enemy.GetComponent<EnemyAI>().enemy.Health;
 

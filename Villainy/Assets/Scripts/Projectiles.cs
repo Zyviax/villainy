@@ -9,6 +9,7 @@ public class Projectiles : MonoBehaviour
 
     public float damage, aoeRadius, disable;
     public bool aoe, isPercentage;
+    public Transform bloodPrefab;
 
     void Update()
     {
@@ -20,11 +21,12 @@ public class Projectiles : MonoBehaviour
                 //print(disable);
                 if (aoe)
                 {
-                    Utility.DamageAllEnemiesWithinRange(transform.position, aoeRadius, damage);
+                    Utility.DamageAllEnemiesWithinRange(transform.position, aoeRadius, damage, bloodPrefab);
                     target = null;
                 }
                 else
                 {
+                    Transform bloodSplat = Instantiate(bloodPrefab, target);
                     EnemyAI enemy = target.GetComponent<EnemyAI>();
                     if(disable > 0)
                     {
