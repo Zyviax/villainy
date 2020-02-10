@@ -49,6 +49,12 @@ public class PlayerController : MonoBehaviour
                 spellArea.activateCircle();
                 currentSpell = 0;
             }
+            if(Input.GetMouseButtonDown(1))
+            {
+                currentSpell = 0;
+                GameyManager.levelMana += 100;
+                Destroy(spellArea.gameObject);
+            }
         }
     }
 }
