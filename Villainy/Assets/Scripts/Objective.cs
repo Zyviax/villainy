@@ -11,20 +11,42 @@ public class Objective : MonoBehaviour
 
     public Image HP;
 
+    //public GameObject PauseEnd;
+    private GameObject UI, GameEnd;
+
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = health;
+        if(GameyManager.gameState != GameyManager.GameState.Menu)
+        {
+            maxHealth = health;
+            UI = GameObject.FindWithTag("MainUI");
+            //PauseEnd = GameObject.FindWithTag("PauseUI");
+            GameEnd = GameObject.FindWithTag("EndUI");
+            Transform child = GameEnd.GetComponentsInChildren<Transform>(true)[1];
+            child.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        HP.fillAmount = health / maxHealth;
-
-        if (health <= 0)
+        if(GameyManager.gameState != GameyManager.GameState.Menu)
         {
-            Destroy(this.gameObject);
+            HP.fillAmount = health / maxHealth;
+
+            if (health <= 0)
+            {
+                GameyManager.gameState = GameyManager.GameState.End;
+                UI.SetActive(false);
+                Transform child = GameEnd.GetComponentsInChildren<Transform>(true)[1];
+                child.gameObject.SetActive(true);
+                Text endText = GameEnd.GetComponentInChildren<Text>(true);
+                endText.text = "Congratulations!";
+                GameyManager.levelsCompleted += 1;
+                //enable fire effect... or some animation of a house burning down
+                Destroy(this.gameObject);
+            }
         }
     }
 }

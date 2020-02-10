@@ -8,6 +8,12 @@ TagManager:
   - Enemy
   - Tower
   - NodeManager
+  - Range
+  - MainUI
+  - PauseUI
+  - EndUI
+  - Objective
+  - Dialogue
   layers:
   - Default
   - TransparentFX

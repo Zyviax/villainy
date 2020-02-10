@@ -10,6 +10,8 @@ public class GameMenu : MonoBehaviour
     public GameObject GameEnd;
     public GameObject mainUI;
 
+    private GameObject[] rangeObjects;
+
     void Start()
     {
         //this is just to make it so i could add this script to restart level for alpha version
@@ -18,6 +20,8 @@ public class GameMenu : MonoBehaviour
             pauseActive = false;
             pauseMenu.SetActive(pauseActive);
         }
+        rangeObjects = GameObject.FindGameObjectsWithTag("Range");
+        ToggleRadius();
     }
 
     void Update()
@@ -25,10 +29,15 @@ public class GameMenu : MonoBehaviour
         //todo make the button change on GUI for paused/play
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseActive = !pauseActive;
-            Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-            pauseMenu.SetActive(pauseActive);
+            TogglePause();
         }
+    }
+
+    public void TogglePause()
+    {
+        pauseActive = !pauseActive;
+        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        pauseMenu.SetActive(pauseActive);
     }
 
     public void MapMenu()
@@ -53,4 +62,11 @@ public class GameMenu : MonoBehaviour
         //todo
     }
 
+    public void ToggleRadius()
+    {
+        foreach(GameObject obj in rangeObjects)
+        {
+            obj.SetActive(!obj.activeSelf);
+        }
+    }
 }
