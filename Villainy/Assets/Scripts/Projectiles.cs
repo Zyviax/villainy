@@ -30,6 +30,7 @@ public class Projectiles : MonoBehaviour
                     EnemyAI enemy = target.GetComponent<EnemyAI>();
                     if(disable > 0)
                     {
+
                         enemy.disabled = true;
                         enemy.setDisabledTimer(disable);
                     }
