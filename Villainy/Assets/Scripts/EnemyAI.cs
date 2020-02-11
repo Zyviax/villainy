@@ -106,7 +106,7 @@ public class EnemyAI : MonoBehaviour
         }
         else if (unitSpeedBuff)
         {
-            speed = enemy.Speed * 1.2f;
+            speed = enemy.Speed * 1.5f;
         }
         else
         {
@@ -222,7 +222,7 @@ public class EnemyAI : MonoBehaviour
             {
                 enemies.Clear();
                 enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
-                enemies.Remove(this.gameObject);
+                //enemies.Remove(this.gameObject);
                 enemies = enemies.OrderBy(x => Vector2.Distance(this.transform.position, x.transform.position)).ToList();
 
                 foreach (GameObject e in enemies.Take(Mathf.Min(enemies.Count, 4)))
