@@ -15,16 +15,21 @@ public class Projectiles : MonoBehaviour
     {
         if (target != null) { 
             float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position + Vector3.up * 0.4f, step);
 
             //this code is supposed to make each projectile rotate towards the target
             //but i guess it doesn't work
-            Vector3 direction = target.transform.position - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle*45, Vector3.forward);
-            //remove the *45 to make it so they dont spin like wild
+            Vector3 direction = target.transform.position + Vector3.up * 1.5f - transform.position;
+            if(Mathf.Abs(direction.x)>0.5)
+            {
+                //flip the sprite
+                this.GetComponent<SpriteRenderer>().flipX = transform.position.x >= target.transform.position.x;
+            }
 
-            if (transform.position == target.position)
+            
+            
+
+            if (transform.position == target.position + Vector3.up * 0.4f)
             {
                 //print(disable);
                 if (aoe)

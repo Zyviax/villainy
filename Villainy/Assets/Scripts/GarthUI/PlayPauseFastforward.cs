@@ -20,6 +20,7 @@ public class PlayPauseFastforward : MonoBehaviour
 
     public void TogglePause()
     {
+        if (GameyManager.levelResources == GameyManager.resourcesMax) return;
         if(play.text == "Play")
         {
             play.text = ">";

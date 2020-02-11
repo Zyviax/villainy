@@ -61,6 +61,7 @@ public class Dialogue : MonoBehaviour
     {
         //LevelManager.tutorialDone = false;
         //reload level
+        GameyManager.visitedLevels.Remove(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         GameyManager.gameState = GameyManager.GameState.Tutorial;
     }

@@ -451,8 +451,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1200, y: 58.7}
-  m_SizeDelta: {x: 212.4, y: 310}
+  m_AnchoredPosition: {x: -939, y: 195.4}
+  m_SizeDelta: {x: 193.8, y: 256.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &673205481
 MonoBehaviour:
@@ -639,14 +639,14 @@ PrefabInstance:
         type: 3}
       propertyPath: panels.Array.data[0]
       value: Hmm.. They are using knight towers.\n\nThese towers are an area effect
-        so imps do poorly.. unless I use my latest creation, the Demon Priest
+        so imps do poorly..\n\nunless I use my latest creation, the Demon Priest
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[1]
-      value: Oh. And they have an ice mage tower.\n\nThese will disable the special
-        abilities like the priests heal temporarily...\n\nWe will have to see how
-        this plays out...
+      value: Ah and they have an ice mage tower.\n\nThese will disable special abilities
+        temporarily\n(like the priests heal)\n\nWe will have to see how this plays
+        out...
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -671,7 +671,8 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[3]
-      value: I can also undo my mistakes!\n\nDelightfully devilish!
+      value: I can also undo my mistakes!\n\nDelightfully devilish!\n\n(see button
+        next to queue)
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}

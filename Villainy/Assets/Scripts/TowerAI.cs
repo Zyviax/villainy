@@ -195,7 +195,12 @@ public class TowerAI : MonoBehaviour
 
     void ShootProjectile()
     {
-        Transform projectile = Instantiate(tower.Projectile, transform.position, Quaternion.identity).transform;
+        //rotate the proectile
+        Vector3 direction = target.transform.position + Vector3.up * 1.5f - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle-45, Vector3.forward);
+
+        Transform projectile = Instantiate(tower.Projectile, transform.position+Vector3.up * 1.25f, rotation).transform;
         Projectiles proj = projectile.GetComponent<Projectiles>();
         //print(tower.Disable);
         //print(tower.Damage);

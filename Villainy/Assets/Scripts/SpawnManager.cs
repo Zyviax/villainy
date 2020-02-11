@@ -99,7 +99,7 @@ public class SpawnManager : MonoBehaviour
     {
         // if(Time.timeScale != PlayPauseFastforward.normalMax) Time.timeScale = PlayPauseFastforward.normalMax;
         //stops the player from spawning multiple waves.
-        if(GameyManager.gameState == GameyManager.GameState.Play)
+        if(GameyManager.gameState == GameyManager.GameState.Play || enemiesToSpawn.Count == 0)
         {
             return;
         } else {

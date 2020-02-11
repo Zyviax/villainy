@@ -439,8 +439,8 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[2]
-      value: I will have to cast a spell... A stun spell!\n\n(click the spell and
-        click on the tower when you want to cast it)
+      value: I will have to cast a spell... A stun spell!\n\n(Spells are cast while
+        your evil army moves)
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -460,8 +460,8 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[3]
-      value: (By the way, you can press 1,2 or 3 for to cast the respective spell
-        while your units are moving)
+      value: And, for my evil convenience I have bound the spells to the Keyboard!\n\n(Press
+        1,2,3 for the respective spells)
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -581,12 +581,12 @@ PrefabInstance:
     - target: {fileID: 8700090488970061222, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: levelResources
-      value: 12
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8700090488970061222, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: levelMana
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8700090488970061222, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -1493,6 +1493,91 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248352692}
   m_CullTransparentMesh: 0
+--- !u!1001 &1500143805
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4661783876789083924}
+    m_Modifications:
+    - target: {fileID: 3136166426487742196, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 11.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136166426487742196, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860447, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860447, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860447, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860447, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860447, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860447, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860447, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860447, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860447, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860447, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860447, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452014295359860450, guid: e867678fcaef6ec468ff32cca2c6f520,
+        type: 3}
+      propertyPath: m_Name
+      value: Wizard (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e867678fcaef6ec468ff32cca2c6f520, type: 3}
+--- !u!4 &1500143806 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6452014295359860447, guid: e867678fcaef6ec468ff32cca2c6f520,
+    type: 3}
+  m_PrefabInstance: {fileID: 1500143805}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1657486983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,8 +2266,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1237, y: 74}
-  m_SizeDelta: {x: 174.6, y: 300}
+  m_AnchoredPosition: {x: -1513, y: 236.99995}
+  m_SizeDelta: {x: 174.6, y: 248}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1766242576
 MonoBehaviour:
@@ -2613,6 +2698,7 @@ Transform:
   - {fileID: 1723120964}
   - {fileID: 1815486882}
   - {fileID: 976969}
+  - {fileID: 1500143806}
   m_Father: {fileID: 4661783876781630580}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

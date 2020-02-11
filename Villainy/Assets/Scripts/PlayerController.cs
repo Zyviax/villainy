@@ -113,7 +113,8 @@ public class PlayerController : MonoBehaviour
     {
         foreach(Button button in spellButtons)
         {
-            button.interactable = true;
+
+            if(button.name != "disabled") button.interactable = true;
         }
         spellsEnabled = true;
     }
