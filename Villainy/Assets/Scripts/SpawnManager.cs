@@ -90,7 +90,7 @@ public class SpawnManager : MonoBehaviour
         {
             if(enemies[i].GetComponent<EnemyAI>().enemy.UnitCost > GameyManager.levelResources)
             {
-                unitButtons[i].interactable = false;;
+                unitButtons[i].interactable = false;
             }
         }
     }
@@ -154,6 +154,8 @@ public class SpawnManager : MonoBehaviour
 
     public void UndoQueue()
     {
+        if(enemiesToSpawn.Count == 0) return;
+        
         GameyManager.levelResources += enemiesToSpawn[enemiesToSpawn.Count - 1].GetComponent<EnemyAI>().enemy.UnitCost;
 
         Destroy(queueUnits[queueUnits.Count - 1].gameObject);
@@ -164,6 +166,17 @@ public class SpawnManager : MonoBehaviour
         coords.y += queueSize;
 
         bar.UpdateImage();
+
+        for(int i=0; i<enemies.Count; i++)
+        {
+            if(enemies[i].GetComponent<EnemyAI>().enemy.UnitCost < GameyManager.levelResources)
+            {
+                if(unitButtons[i].name != "disabled") 
+                {
+                    unitButtons[i].interactable = true;
+                }
+            }
+        }
     }
 
     public void ResetQueue()

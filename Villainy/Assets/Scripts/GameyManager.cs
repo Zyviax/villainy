@@ -19,6 +19,8 @@ public class GameyManager : MonoBehaviour
         End
     }
 
+    public static List<string> visitedLevels;
+
     public static GameState gameState;
 
     public static List<Transform> spawnedEnemies = new List<Transform>();

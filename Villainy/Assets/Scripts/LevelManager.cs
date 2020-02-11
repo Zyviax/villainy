@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using static GameyManager;
 
 public class LevelManager : MonoBehaviour
@@ -15,18 +16,25 @@ public class LevelManager : MonoBehaviour
     public Text resources;
     public Text mana;
 
-    public static bool tutorialDone = false;
+    public GameObject undo;
 
     void Start()
     {
-        GameyManager.gameState = isTutorial == true ? GameState.Tutorial : GameState.Queue;
-        if(tutorialDone) {
-            GameyManager.gameState = GameState.Queue;
-        }
-        if (GameyManager.gameState == GameState.Tutorial)
+        
+        if(GameyManager.visitedLevels.Contains(SceneManager.GetActiveScene().name))
         {
-            tutorialDone = isTutorial;
+            gameState = GameState.Queue;
+        } else
+        {
+            GameyManager.gameState = isTutorial == true ? GameState.Tutorial : GameState.Queue;
+            GameyManager.visitedLevels.Add(SceneManager.GetActiveScene().name);
         }
+        
+        // if(isTutorial)
+        // {
+        //     tutorialDone = false;
+        // }
+        
 
         GameyManager.levelMana = this.levelMana;
         GameyManager.levelResources = this.levelResources;
@@ -44,6 +52,16 @@ public class LevelManager : MonoBehaviour
         if(mana != null)
         {
             mana.text = GameyManager.levelMana.ToString();
+        }
+
+        if(gameState == GameState.Play && undo.activeSelf == true)
+        {
+            undo.SetActive(false);
+        }
+
+        if((gameState == GameState.Queue || gameState == GameState.Tutorial) && undo.activeSelf == false)
+        {
+            undo.SetActive(true);
         }
     }
 }

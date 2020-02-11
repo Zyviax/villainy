@@ -48,7 +48,7 @@ public class Dialogue : MonoBehaviour
                     hl.SetActive(false);
                 }
             }
-            LevelManager.tutorialDone = true;
+            //LevelManager.tutorialDone = true;
         }
     }
 
@@ -59,7 +59,7 @@ public class Dialogue : MonoBehaviour
 
     public void BeginTut()
     {
-        LevelManager.tutorialDone = false;
+        //LevelManager.tutorialDone = false;
         //reload level
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         GameyManager.gameState = GameyManager.GameState.Tutorial;
