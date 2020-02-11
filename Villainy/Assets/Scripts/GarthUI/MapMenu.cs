@@ -11,7 +11,7 @@ public class MapMenu : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 1;
+        Time.timeScale = PlayPauseFastforward.normalMax;
         GameyManager.gameState = GameyManager.GameState.Menu;
         if(GameyManager.levelsCompleted != levels.Count)
         {

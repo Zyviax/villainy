@@ -9148,6 +9148,16 @@ PrefabInstance:
       propertyPath: m_Text
       value: Can deal a bunch, but can't take it
       objectReference: {fileID: 0}
+    - target: {fileID: 5104985783428645039, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -24.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104985783428645039, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 329.88
+      objectReference: {fileID: 0}
     - target: {fileID: 6760231709937915666, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}
       propertyPath: m_IsActive

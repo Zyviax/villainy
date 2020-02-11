@@ -5,32 +5,33 @@ using UnityEngine.UI;
 
 public class PlayPauseFastforward : MonoBehaviour
 {
-    private float currentMax;
+    public static float currentMax;
+    public static float normalMax;
     
     public Text play;
     public Text fast;
 
     void Start()
     {
-        currentMax = 1;
-        Time.timeScale = 0;
+        normalMax = 0.5f;
+        currentMax = normalMax;
         play.text = "Play";
     }
 
     public void TogglePause()
     {
-        Time.timeScale = Time.timeScale == 0 ? currentMax : 0;
         if(play.text == "Play")
         {
             play.text = ">";
-            return;
+            //return;
         }
         play.text = play.text == ">" ? "||" : ">";
+        Time.timeScale = play.text == ">" ? 0 : currentMax;
     }
 
     public void ToggleFast()
     {
-        currentMax = currentMax == 1 ? 3 : 1;
+        currentMax = currentMax == normalMax ? normalMax*3 : normalMax;
         Time.timeScale = Time.timeScale == 0 ? 0 : currentMax;
         fast.text = fast.text == ">>" ? "[>>]" : ">>";
     }

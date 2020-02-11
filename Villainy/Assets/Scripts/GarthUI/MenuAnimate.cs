@@ -31,6 +31,7 @@ public class MenuAnimate : MonoBehaviour
         // Get a reference to game object renderer and
         // cast it to Sprite Render
         sr = GetComponent<Image>();
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -38,6 +39,8 @@ public class MenuAnimate : MonoBehaviour
         // Add time since last game frame to time since last
         // animation frame change
         timeSinceLastFrame += Time.deltaTime;
+        //Debug.Log(timeSinceLastFrame);
+        //Debug.Log(Time.timeScale);
 
         //Check if it's time for animation frame change
         if (timeSinceLastFrame > 1f / (float)framesPerSec)
@@ -54,5 +57,10 @@ public class MenuAnimate : MonoBehaviour
             //Reset time since last animation frame
             timeSinceLastFrame -= 1f / (float)framesPerSec;
         }
+    }
+
+    void OnDisable()
+    {
+        Time.timeScale = PlayPauseFastforward.currentMax;
     }
 }

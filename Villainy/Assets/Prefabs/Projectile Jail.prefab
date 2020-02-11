@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1501505091413833963}
   - component: {fileID: 3868878895306498123}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Projectile Jail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: fa701c217c58d4dd294df562682c9a67, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a91728ae95f0b4671a770760ee053fc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

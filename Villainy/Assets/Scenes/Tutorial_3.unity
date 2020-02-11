@@ -628,12 +628,12 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: highlights.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -658,6 +658,16 @@ PrefabInstance:
       propertyPath: highlights.Array.data[1]
       value: 
       objectReference: {fileID: 1894406939}
+    - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
+        type: 3}
+      propertyPath: panels.Array.data[2]
+      value: I can always hover over a tower or unit to find out more about it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
+        type: 3}
+      propertyPath: highlights.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6445187033764178314, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: m_IsActive
@@ -672,6 +682,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Interactable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700090488082433916, guid: 9df68b15fbd964d168b8c0952189757c,
+        type: 3}
+      propertyPath: m_Name
+      value: disabled
       objectReference: {fileID: 0}
     - target: {fileID: 8700090488082433918, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}

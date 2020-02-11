@@ -418,12 +418,12 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: highlights.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -457,6 +457,17 @@ PrefabInstance:
       propertyPath: highlights.Array.data[0]
       value: 
       objectReference: {fileID: 1137776830}
+    - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
+        type: 3}
+      propertyPath: panels.Array.data[3]
+      value: (By the way, you can press 1,2 or 3 for to cast the respective spell
+        while your units are moving)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
+        type: 3}
+      propertyPath: highlights.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5053697908410001253, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: m_RootOrder
@@ -476,6 +487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Interactable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700090487695256198, guid: 9df68b15fbd964d168b8c0952189757c,
+        type: 3}
+      propertyPath: m_Name
+      value: disabled
       objectReference: {fileID: 0}
     - target: {fileID: 8700090487723349083, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -516,6 +532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Interactable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700090488082433916, guid: 9df68b15fbd964d168b8c0952189757c,
+        type: 3}
+      propertyPath: m_Name
+      value: disabled
       objectReference: {fileID: 0}
     - target: {fileID: 8700090488082433918, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -2160,7 +2181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1190.7, y: 120}
+  m_AnchoredPosition: {x: -1237, y: 74}
   m_SizeDelta: {x: 174.6, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1766242576

@@ -97,6 +97,7 @@ public class SpawnManager : MonoBehaviour
 
     public void StartSpawning()
     {
+        // if(Time.timeScale != PlayPauseFastforward.normalMax) Time.timeScale = PlayPauseFastforward.normalMax;
         //stops the player from spawning multiple waves.
         if(GameyManager.gameState == GameyManager.GameState.Play)
         {
