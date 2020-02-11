@@ -201,7 +201,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &225916998
 GameObject:
@@ -361,8 +361,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39, y: 29}
-  m_SizeDelta: {x: 2000, y: 300}
+  m_AnchoredPosition: {x: -0.00012207, y: 7.9}
+  m_SizeDelta: {x: 1000, y: 228.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &281215075
 MonoBehaviour:
@@ -389,13 +389,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 0
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 200 HP
 --- !u!222 &281215076
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -571,7 +571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.219}
+  m_AnchoredPosition: {x: -0.09, y: -1.17}
   m_SizeDelta: {x: 1000, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &540034862
@@ -1232,7 +1232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851384403}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.85, y: 3.92, z: 0}
+  m_LocalPosition: {x: 7.776, y: 3.984, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 540034861}
@@ -1277,7 +1277,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 21d1484e38c529a46b68efc6a06b9970, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13b9de1610cc643e79bc861b62b31919, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1698,7 +1698,7 @@ PrefabInstance:
     - target: {fileID: 8700090489043166711, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8700090489043166711, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -3749,7 +3749,7 @@ Transform:
   - {fileID: 4661783877822623376}
   - {fileID: 2074427058}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &4661783877832726001
 Grid:

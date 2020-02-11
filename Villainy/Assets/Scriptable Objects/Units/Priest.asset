@@ -15,8 +15,8 @@ MonoBehaviour:
   health: 20
   speed: 2.5
   damage: 25
-  healCooldown: 0.75
-  healRadii: 2
+  healCooldown: 0.1
+  healRadii: 2.5
   healAmount: -5
   unitCost: 3
   isHealer: 1
