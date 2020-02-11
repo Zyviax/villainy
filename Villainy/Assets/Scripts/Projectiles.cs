@@ -30,6 +30,7 @@ public class Projectiles : MonoBehaviour
                     EnemyAI enemy = target.GetComponent<EnemyAI>();
                     if(disable > 0)
                     {
+
                         enemy.disabled = true;
                         enemy.setDisabledTimer(disable);
                     }
@@ -37,11 +38,14 @@ public class Projectiles : MonoBehaviour
                     if (isPercentage)
                     {
                         enemy.currentHealth -= enemy.enemy.Health * damage;
+                        GameyManager.damageTaken += (int)(enemy.enemy.Health * damage);
+
                         target = null;
                     }
                     else
                     {
                         enemy.currentHealth -= damage;
+                        GameyManager.damageTaken += (int)damage;
                         target = null;
                     }
                 }

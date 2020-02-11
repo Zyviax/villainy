@@ -28,8 +28,11 @@ public class BarScript : MonoBehaviour
                 imageHover.fillAmount = (float)GameyManager.levelResources / resourceMax;
                 break;
             case 1:
-                image.fillAmount = (float)GameyManager.levelMana / manaMax;
-                imageHover.fillAmount = (float)GameyManager.levelMana / manaMax;
+                if (manaMax > 0)
+                {
+                    image.fillAmount = (float)GameyManager.levelMana / manaMax;
+                    imageHover.fillAmount = (float)GameyManager.levelMana / manaMax;
+                }
                 break;
         }
         
@@ -45,8 +48,10 @@ public class BarScript : MonoBehaviour
                     image.fillAmount = (float)(GameyManager.levelResources - cost) / resourceMax;
                     break;
                 case 1:
-                    image.fillAmount = (float)(GameyManager.levelMana - cost) / manaMax;
-                    //Debug.Log("Test");
+                    if (manaMax > 0)
+                    {
+                        image.fillAmount = (float)(GameyManager.levelMana - cost) / manaMax;
+                    }
                     break;
             }
             
@@ -59,7 +64,10 @@ public class BarScript : MonoBehaviour
                     image.fillAmount = (float)GameyManager.levelResources / resourceMax;
                     break;
                 case 1:
-                    image.fillAmount = (float)GameyManager.levelMana / manaMax;
+                    if (manaMax > 0)
+                    {
+                        image.fillAmount = (float)GameyManager.levelMana / manaMax;
+                    }
                     break;
             }
         }

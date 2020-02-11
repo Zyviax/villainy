@@ -5,16 +5,20 @@ using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
-    public Queue<GameObject> enemiesToSpawn;
+    public List<GameObject> enemiesToSpawn;
     
 
     public float delay;
     public BasicNodePath nodePath;
 
+    private int queueSize = 40;
+
     private Transform enemy;
 
     public List<GameObject> enemies;
     public List<Button> unitButtons;
+
+    public List<Transform> queueUnits;
 
     public Transform queueItem;
     public Transform wholeQueue;
@@ -29,7 +33,7 @@ public class SpawnManager : MonoBehaviour
 
     public void Start()
     {
-        enemiesToSpawn = new Queue<GameObject>();
+        enemiesToSpawn = new List<GameObject>();
         nodePath = GameObject.FindGameObjectWithTag("NodeManager").GetComponent<BasicNodePath>();
 
         coords = new Vector3(0, 290,0);
@@ -58,6 +62,8 @@ public class SpawnManager : MonoBehaviour
                 child.gameObject.SetActive(true);
                 Text endText = GameEnd.GetComponentInChildren<Text>();
                 endText.text = "Rats! \n I needed " + objective.health + " more damage";
+
+                GameyManager.retries += 1;
             }
         }
     }
@@ -66,14 +72,16 @@ public class SpawnManager : MonoBehaviour
     {     
         if(enemies[enemy].GetComponent<EnemyAI>().enemy.UnitCost <= GameyManager.levelResources)
         {
-            enemiesToSpawn.Enqueue(enemies[enemy]);
+            enemiesToSpawn.Add(enemies[enemy]);
             Transform unit = Instantiate(queueItem);
             unit.SetParent(wholeQueue);
-            coords.y -= 40;
+            coords.y -= queueSize;
             unit.transform.localPosition = coords;
             Image imageComponent = unit.GetComponent<Image>();
             imageComponent.sprite = enemies[enemy].GetComponent<SpriteRenderer>().sprite;
             GameyManager.levelResources -= enemies[enemy].GetComponent<EnemyAI>().enemy.UnitCost;
+
+            queueUnits.Add(unit);
 
             bar.UpdateImage();
         }
@@ -105,8 +113,35 @@ public class SpawnManager : MonoBehaviour
     {
         while(enemiesToSpawn.Count > 0)
         {
-            enemy = Instantiate(enemiesToSpawn.Dequeue(), nodePath.startNode.transform.position, Quaternion.identity).transform;
-            wholeQueue.position += Vector3.up * 40f;
+            enemy = Instantiate(enemiesToSpawn[0], nodePath.startNode.transform.position, Quaternion.identity).transform;
+
+            switch (enemy.GetComponent<EnemyAI>().enemy.enemyName)
+            {
+                case "Imp":
+                    GameyManager.enemiesSpawned[0] += 1;
+                    GameyManager.resourcesSpent += enemy.GetComponent<EnemyAI>().enemy.UnitCost;
+                    break;
+                case "Priest":
+                    GameyManager.enemiesSpawned[1] += 1;
+                    GameyManager.resourcesSpent += enemy.GetComponent<EnemyAI>().enemy.UnitCost;
+                    break;
+                case "Turtle":
+                    GameyManager.enemiesSpawned[2] += 1;
+                    GameyManager.resourcesSpent += enemy.GetComponent<EnemyAI>().enemy.UnitCost;
+                    break;
+                case "Valkyrie":
+                    GameyManager.enemiesSpawned[3] += 1;
+                    GameyManager.resourcesSpent += enemy.GetComponent<EnemyAI>().enemy.UnitCost;
+                    break;
+                case "Work Master":
+                    GameyManager.enemiesSpawned[4] += 1;
+                    GameyManager.resourcesSpent += enemy.GetComponent<EnemyAI>().enemy.UnitCost;
+                    break;
+            }
+            
+            enemiesToSpawn.RemoveAt(0);
+
+            wholeQueue.localPosition += Vector3.up * queueSize;
             GameyManager.spawnedEnemies.Add(enemy);
 
             EnemyAI enemyScript = enemy.GetComponent<EnemyAI>();
@@ -115,5 +150,36 @@ public class SpawnManager : MonoBehaviour
 
             yield return new WaitForSeconds(delay);
         }
+    }
+
+    public void UndoQueue()
+    {
+        GameyManager.levelResources += enemiesToSpawn[enemiesToSpawn.Count - 1].GetComponent<EnemyAI>().enemy.UnitCost;
+
+        Destroy(queueUnits[queueUnits.Count - 1].gameObject);
+            
+        queueUnits.RemoveAt(queueUnits.Count - 1);
+        enemiesToSpawn.RemoveAt(enemiesToSpawn.Count - 1);
+
+        coords.y += queueSize;
+
+        bar.UpdateImage();
+    }
+
+    public void ResetQueue()
+    {
+        GameyManager.levelResources = GameyManager.resourcesMax;
+
+        coords.y += queueUnits.Count * queueSize;
+
+        foreach(Transform unit in queueUnits)
+        {
+            Destroy(unit.gameObject);
+        }
+
+        queueUnits.Clear(); 
+        enemiesToSpawn.Clear(); 
+
+        bar.UpdateImage();
     }
 }

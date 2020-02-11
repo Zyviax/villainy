@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
             {
                 spellArea.activateCircle();
                 currentSpell = 0;
+                GameyManager.spellsCast += 1;
             }
             if(Input.GetMouseButtonDown(1))
             {
@@ -85,17 +86,23 @@ public class PlayerController : MonoBehaviour
 
             bar.UpdateImage();
         }
+
         if (currentSpell==0 && GameyManager.gameState == GameyManager.GameState.Play)
         {
             if(Input.GetKeyDown(KeyCode.Alpha1))
             {
                 useSpell(1);
-            } else if(Input.GetKeyDown(KeyCode.Alpha2))
+                GameyManager.spellsCast += 1;
+            }
+            else if(Input.GetKeyDown(KeyCode.Alpha2))
             {
                 useSpell(2);
-            } else if(Input.GetKeyDown(KeyCode.Alpha3))
+                GameyManager.spellsCast += 1;
+            }
+            else if(Input.GetKeyDown(KeyCode.Alpha3))
             {
                 useSpell(3);
+                GameyManager.spellsCast += 1;
             }
 
             bar.UpdateImage();

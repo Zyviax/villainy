@@ -45,14 +45,7 @@ public class SpellArea : MonoBehaviour
                     EnemyAI enemyScript = enemy.GetComponent<EnemyAI>();
                     if (spell == 2) //Heal
                     {
-                        if (enemyScript.currentHealth > (enemyScript.enemy.Health - healGain))
-                        {
-                            enemyScript.currentHealth = enemyScript.enemy.Health;
-                        }
-                        else
-                        {
-                            enemyScript.currentHealth += 5;
-                        }
+                        enemyScript.currentHealth += Mathf.Clamp(.5f*enemyScript.enemy.Health,0,enemyScript.enemy.Health);
                     }
                     else if (spell == 3) //Speed
                     {

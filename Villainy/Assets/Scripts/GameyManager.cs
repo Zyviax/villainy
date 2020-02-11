@@ -24,4 +24,16 @@ public class GameyManager : MonoBehaviour
     public static List<Transform> spawnedEnemies = new List<Transform>();
 
     public static int levelsCompleted = 0;
+
+    public static int resourcesSpent = 0;
+
+    public static int retries = 0;
+
+    public static int spellsCast = 0;
+
+    public static int damageTaken = 0;
+
+    public static int[] enemiesDead = { 0, 0, 0, 0, 0 };
+    public static int[] enemiesSpawned = { 0, 0, 0, 0, 0 };
+    public static int[] enemiesReachedEnd = { 0, 0, 0, 0, 0 };
 }

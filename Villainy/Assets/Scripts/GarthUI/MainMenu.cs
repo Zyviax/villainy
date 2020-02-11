@@ -10,6 +10,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MapMenu");
     }
 
+    public void Stats()
+    {
+        SceneManager.LoadScene("Stats");
+    }
+
 
     //either add a controls menu or settings menu :)
     // public void Controls()
