@@ -31,14 +31,21 @@ public class TowerAI : MonoBehaviour
         //make this a thin targeting line or perhaps outline individual unit
         //and then make this just a line for wizard/ice tower...
         //Targeting line
-        if (target != null)
+        if(tower.name == "Wizard" || tower.name == "Ice Mage")
         {
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, target.position); 
-        } else {
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, transform.position); 
+            if (target != null)
+            {
+                lineRenderer.material.color = tower.name == "Wizard" ? Color.magenta : Color.cyan;
+                lineRenderer.SetPosition(0, transform.position + Vector3.up * 1.25f);
+                lineRenderer.SetPosition(1, target.position);
+            }
+            else
+            {
+                lineRenderer.SetPosition(0, transform.position);
+                lineRenderer.SetPosition(1, transform.position);
+            }
         }
+        
 
         if(stun==true)
         {

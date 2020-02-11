@@ -433,7 +433,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 492909076}
         m_MethodName: BeginTut
         m_Mode: 1
         m_Arguments:
@@ -593,6 +593,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 492909074}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &492909076 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
+    type: 3}
+  m_PrefabInstance: {fileID: 492909074}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 074f932750f43bc42b77c1c3306eb590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &560119760
 GameObject:
   m_ObjectHideFlags: 0

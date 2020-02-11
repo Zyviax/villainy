@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8698139021313179798}
   - component: {fileID: 1501505091413833963}
   - component: {fileID: 3868878895306498123}
+  - component: {fileID: 7610369333765757645}
   m_Layer: 0
   m_Name: Projectile Crossbow
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5172375375401269636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -102,3 +103,18 @@ MonoBehaviour:
   isPercentage: 0
   bloodPrefab: {fileID: 1789584988055018484, guid: ef6099d9ce3754ecc930522f7dfb0aca,
     type: 3}
+--- !u!114 &7610369333765757645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5172375375401269636}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
+  m_EffectDistance: {x: 10, y: -10}
+  m_UseGraphicAlpha: 1
