@@ -35,7 +35,6 @@ public class BarScript : MonoBehaviour
                 imageHover.fillAmount = (float)GameyManager.levelMana / manaMax;
                 break;
         }
-        
     }
 
     public void UpdateHover(int cost, bool hovering)
@@ -49,7 +48,6 @@ public class BarScript : MonoBehaviour
                     break;
                 case 1:
                     image.fillAmount = (float)(GameyManager.levelMana - cost) / manaMax;
-                    Debug.Log("Test");
                     break;
             }
             
