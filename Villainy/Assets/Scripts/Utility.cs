@@ -6,10 +6,6 @@ public class Utility : MonoBehaviour {
 
     public static float Distance(Vector3 a, Vector3 b)
     {
-        a.y -= 1.5f;
-        a.z = 0;
-        b.z = 0;
-
         //todo: make this work, possibly change the logic to portions of squares away instead... this would make it better i think
 
         //x = 1 then y = x * 4.98/8.64
@@ -17,7 +13,16 @@ public class Utility : MonoBehaviour {
         //Debug.Log(Mathf.Pow((b.x-a.x),2)/Mathf.Sqrt(8.64f) + Mathf.Pow((b.x-a.x),2)/Mathf.Sqrt(4.98f));
         
         //return (Mathf.Pow((b.x-a.x),2)/Mathf.Sqrt(8.64f) + Mathf.Pow((b.y-a.y),2)/Mathf.Sqrt(4.98f));
-        return Mathf.Pow(b.x-a.x,2) + Mathf.Pow(b.y-a.y,2)/(4.98f/8.64f);
+        //Debug.Log(Mathf.Pow(b.x - a.x, 2) + Mathf.Pow(b.y - a.y, 2) / (4.98f / 8.64f));
+        //return (Mathf.Pow(b.x - a.x, 2) + Mathf.Pow(b.y - a.y, 2) / (4.98f / 8.64f));
+
+
+        a.z = 0;
+        b.z = 0;
+
+        //a.y *= 1.69f;
+        //b.y *= 1.69f;
+        return Vector3.Distance(a, b);
 
         //return Vector3.Distance(a, b);
     }
