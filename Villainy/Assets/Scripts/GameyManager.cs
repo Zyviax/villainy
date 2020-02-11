@@ -19,7 +19,7 @@ public class GameyManager : MonoBehaviour
         End
     }
 
-    public static List<string> visitedLevels;
+    public static List<string> visitedLevels = new List<string>();
 
     public static GameState gameState;
 
