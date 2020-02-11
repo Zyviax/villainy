@@ -203,8 +203,7 @@ MonoBehaviour:
   enemies: []
   target: {fileID: 0}
   stun: 0
-  bloodPrefab: {fileID: 1789584988055018484, guid: ef6099d9ce3754ecc930522f7dfb0aca,
-    type: 3}
+  bloodPrefab: {fileID: 0}
 --- !u!212 &-3503803626019635774
 SpriteRenderer:
   m_ObjectHideFlags: 0
