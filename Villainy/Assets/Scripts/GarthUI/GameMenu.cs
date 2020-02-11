@@ -47,6 +47,7 @@ public class GameMenu : MonoBehaviour
 
     public void Retry()
     {
+        GameyManager.retries += 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

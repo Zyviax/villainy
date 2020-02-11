@@ -124,6 +124,26 @@ public class EnemyAI : MonoBehaviour
         if (currentHealth <= 0)
         {
             GameyManager.spawnedEnemies.Remove(transform);
+
+            switch (enemy.enemyName)
+            {
+                case "Imp":
+                    GameyManager.enemiesDead[0] += 1;
+                    break;
+                case "Priest":
+                    GameyManager.enemiesDead[1] += 1;
+                    break;
+                case "Turtle":
+                    GameyManager.enemiesDead[2] += 1;
+                    break;
+                case "Valkyrie":
+                    GameyManager.enemiesDead[3] += 1;
+                    break;
+                case "Work Master":
+                    GameyManager.enemiesDead[4] += 1;
+                    break;
+            }
+
             Destroy(this.gameObject);
         }
 
@@ -144,6 +164,26 @@ public class EnemyAI : MonoBehaviour
             if (target == nodePath.endNode && nodePath.endNode.GetComponent<Objective>() != null)
             { 
                 nodePath.endNode.GetComponent<Objective>().health -= enemy.Damage;
+
+                switch (enemy.enemyName)
+                {
+                    case "Imp":
+                        GameyManager.enemiesReachedEnd[0] += 1;
+                        break;
+                    case "Priest":
+                        GameyManager.enemiesReachedEnd[1] += 1;
+                        break;
+                    case "Turtle":
+                        GameyManager.enemiesReachedEnd[2] += 1;
+                        break;
+                    case "Valkyrie":
+                        GameyManager.enemiesReachedEnd[3] += 1;
+                        break;
+                    case "Work Master":
+                        GameyManager.enemiesReachedEnd[4] += 1;
+                        break;
+                }
+
                 GameyManager.spawnedEnemies.Remove(transform);
                 Destroy(this.gameObject);
             }

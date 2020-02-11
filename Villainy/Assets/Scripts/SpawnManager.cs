@@ -62,6 +62,8 @@ public class SpawnManager : MonoBehaviour
                 child.gameObject.SetActive(true);
                 Text endText = GameEnd.GetComponentInChildren<Text>();
                 endText.text = "Rats! \n I needed " + objective.health + " more damage";
+
+                GameyManager.retries += 1;
             }
         }
     }
@@ -112,6 +114,31 @@ public class SpawnManager : MonoBehaviour
         while(enemiesToSpawn.Count > 0)
         {
             enemy = Instantiate(enemiesToSpawn[0], nodePath.startNode.transform.position, Quaternion.identity).transform;
+
+            switch (enemy.GetComponent<EnemyAI>().enemy.enemyName)
+            {
+                case "Imp":
+                    GameyManager.enemiesSpawned[0] += 1;
+                    GameyManager.resourcesSpent += enemy.GetComponent<EnemyAI>().enemy.UnitCost;
+                    break;
+                case "Priest":
+                    GameyManager.enemiesSpawned[1] += 1;
+                    GameyManager.resourcesSpent += enemy.GetComponent<EnemyAI>().enemy.UnitCost;
+                    break;
+                case "Turtle":
+                    GameyManager.enemiesSpawned[2] += 1;
+                    GameyManager.resourcesSpent += enemy.GetComponent<EnemyAI>().enemy.UnitCost;
+                    break;
+                case "Valkyrie":
+                    GameyManager.enemiesSpawned[3] += 1;
+                    GameyManager.resourcesSpent += enemy.GetComponent<EnemyAI>().enemy.UnitCost;
+                    break;
+                case "Work Master":
+                    GameyManager.enemiesSpawned[4] += 1;
+                    GameyManager.resourcesSpent += enemy.GetComponent<EnemyAI>().enemy.UnitCost;
+                    break;
+            }
+            
             enemiesToSpawn.RemoveAt(0);
 
             wholeQueue.localPosition += Vector3.up * queueSize;
@@ -130,7 +157,7 @@ public class SpawnManager : MonoBehaviour
         GameyManager.levelResources += enemiesToSpawn[enemiesToSpawn.Count - 1].GetComponent<EnemyAI>().enemy.UnitCost;
 
         Destroy(queueUnits[queueUnits.Count - 1].gameObject);
-
+            
         queueUnits.RemoveAt(queueUnits.Count - 1);
         enemiesToSpawn.RemoveAt(enemiesToSpawn.Count - 1);
 
