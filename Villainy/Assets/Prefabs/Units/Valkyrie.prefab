@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.001, y: 0.3776}
+  m_AnchoredPosition: {x: 0, y: 1.6}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8055144792206943844
@@ -208,6 +208,7 @@ MonoBehaviour:
   HP: {fileID: 5768430191948906875}
   nameField: {fileID: 1087431144896357786}
   target: {fileID: 0}
+  healPrefab: {fileID: 0}
 --- !u!114 &3376752466960245905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 523}
+  m_AnchoredPosition: {x: 1, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3134460384493475177
@@ -439,7 +440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.1, y: 525}
+  m_AnchoredPosition: {x: 5.1, y: 0}
   m_SizeDelta: {x: 1800.7, y: 361}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4080845373870384611

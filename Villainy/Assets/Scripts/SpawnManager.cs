@@ -14,6 +14,7 @@ public class SpawnManager : MonoBehaviour
     private Transform enemy;
 
     public List<GameObject> enemies;
+    public List<Button> unitButtons;
 
     public Transform queueItem;
     public Transform wholeQueue;
@@ -23,6 +24,8 @@ public class SpawnManager : MonoBehaviour
     private Objective objective;
 
     public BarScript bar;
+
+    public PlayerController playerController;
 
     public void Start()
     {
@@ -74,6 +77,14 @@ public class SpawnManager : MonoBehaviour
 
             bar.UpdateImage();
         }
+
+        for(int i=0; i<enemies.Count; i++)
+        {
+            if(enemies[i].GetComponent<EnemyAI>().enemy.UnitCost > GameyManager.levelResources)
+            {
+                unitButtons[i].interactable = false;;
+            }
+        }
     }
 
     public void StartSpawning()
@@ -85,6 +96,7 @@ public class SpawnManager : MonoBehaviour
         } else {
             GameyManager.gameState = GameyManager.GameState.Play;
             StartCoroutine("SpawnQueued");
+            playerController.EnableSpells();
         }
         
     }

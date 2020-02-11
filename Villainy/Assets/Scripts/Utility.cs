@@ -15,7 +15,10 @@ public class Utility : MonoBehaviour {
         //x = 1 then y = x * 4.98/8.64
 
         //Debug.Log(Mathf.Pow((b.x-a.x),2)/Mathf.Sqrt(8.64f) + Mathf.Pow((b.x-a.x),2)/Mathf.Sqrt(4.98f));
-        return (Mathf.Pow((b.x-a.x),2)/Mathf.Sqrt(8.64f) + Mathf.Pow((b.y-a.y),2)/Mathf.Sqrt(4.98f));
+        
+        //return (Mathf.Pow((b.x-a.x),2)/Mathf.Sqrt(8.64f) + Mathf.Pow((b.y-a.y),2)/Mathf.Sqrt(4.98f));
+        return Mathf.Pow(b.x-a.x,2) + Mathf.Pow(b.y-a.y,2)/(4.98f/8.64f);
+
         //return Vector3.Distance(a, b);
     }
 

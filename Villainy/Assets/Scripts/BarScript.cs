@@ -15,11 +15,8 @@ public class BarScript : MonoBehaviour
     {
         resourceMax = GameyManager.resourcesMax;
         manaMax = GameyManager.manaMax;
-    }
 
-    public void Update()
-    {
-        
+        UpdateImage();
     }
 
     public void UpdateImage()
@@ -35,6 +32,7 @@ public class BarScript : MonoBehaviour
                 imageHover.fillAmount = (float)GameyManager.levelMana / manaMax;
                 break;
         }
+        
     }
 
     public void UpdateHover(int cost, bool hovering)
@@ -48,6 +46,7 @@ public class BarScript : MonoBehaviour
                     break;
                 case 1:
                     image.fillAmount = (float)(GameyManager.levelMana - cost) / manaMax;
+                    //Debug.Log("Test");
                     break;
             }
             

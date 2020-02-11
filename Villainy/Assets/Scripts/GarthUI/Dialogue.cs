@@ -115,5 +115,11 @@ public class Dialogue : MonoBehaviour
         {
             highlights[panelNo+1].SetActive(false);
         }
+
+        //if called next force user to click this element
+        if(highlights[panelNo] != null && highlights[panelNo].name == "next")
+        {
+            next.SetActive(false);
+        }
     }
 }

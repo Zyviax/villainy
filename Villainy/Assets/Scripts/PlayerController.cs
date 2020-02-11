@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //This is probably not going to be used
 public class PlayerController : MonoBehaviour
@@ -20,6 +21,21 @@ public class PlayerController : MonoBehaviour
     static SpellArea spellArea;
 
     public BarScript bar;
+
+    public List<Button> spellButtons;
+    private bool spellsEnabled;
+
+    void Start() 
+    {
+        if(GameyManager.gameState != GameyManager.GameState.Play)
+        {
+            foreach(Button button in spellButtons)
+            {
+                button.interactable = false;
+            }
+            spellsEnabled = false;
+        }
+    }
 
     public void useSpell(int spell)
     {
@@ -44,6 +60,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(GameyManager.levelMana < 100 && spellsEnabled == true)
+        {
+            foreach(Button button in spellButtons)
+            {
+                button.interactable = false;
+            }
+            spellsEnabled = false;
+        }
+
         if (currentSpell != 0)
         {
             if (Input.GetMouseButtonDown(0))
@@ -75,5 +100,14 @@ public class PlayerController : MonoBehaviour
 
             bar.UpdateImage();
         }
+    }
+
+    public void EnableSpells()
+    {
+        foreach(Button button in spellButtons)
+        {
+            button.interactable = true;
+        }
+        spellsEnabled = true;
     }
 }
