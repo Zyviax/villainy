@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         if(currentSpell!=0)
         {
             spellArea.endCircle();
+            GameyManager.levelMana += 100;
         }
 
         //hardcoded 100
@@ -82,12 +83,17 @@ public class PlayerController : MonoBehaviour
                 currentSpell = 0;
                 GameyManager.levelMana += 100;
                 Destroy(spellArea.gameObject);
+                foreach (Button button in spellButtons)
+                {
+                    button.interactable = true;
+                }
+                spellsEnabled = true;
             }
 
             bar.UpdateImage();
         }
 
-        if (currentSpell==0 && GameyManager.gameState == GameyManager.GameState.Play)
+        if (GameyManager.gameState == GameyManager.GameState.Play)
         {
             if(Input.GetKeyDown(KeyCode.Alpha1))
             {
