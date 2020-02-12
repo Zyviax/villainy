@@ -19,8 +19,9 @@ public class EnemyAI : MonoBehaviour
     private Vector3 lastPos;
     private Vector3 oldVelocity;
     private Vector3 velocity;
+    public float unitSpeedBuffTimer = 1f;
 
-    public bool disabled, isHealer, isSpeeder, unitSpeedBuff = false;
+    public bool disabled, isHealer, isSpeeder, unitSpeedBuff;
 
     public Image HP;
     public Text nameField;
@@ -85,7 +86,13 @@ public class EnemyAI : MonoBehaviour
             }
         }*/
 
-
+        if(unitSpeedBuffTimer>0)
+        {
+            unitSpeedBuffTimer -= Time.deltaTime;
+        } else
+        {
+            unitSpeedBuff = false;
+        }
         if (speedBuff)
         {
             speedBuffTimer = speedBuffCooldown;
@@ -93,7 +100,7 @@ public class EnemyAI : MonoBehaviour
             
             if (unitSpeedBuff)
             {
-                speed = enemy.Speed * 2.4f;
+                speed = enemy.Speed * 3f;
             }
             else
             {
@@ -106,7 +113,7 @@ public class EnemyAI : MonoBehaviour
         }
         else if (unitSpeedBuff)
         {
-            speed = enemy.Speed * 1.5f;
+            speed = enemy.Speed * 2f;
         }
         else
         {
@@ -228,15 +235,16 @@ public class EnemyAI : MonoBehaviour
                 foreach (GameObject e in enemies.Take(Mathf.Min(enemies.Count, 4)))
                 {
                     //Debug.Log("Test");
-                    e.GetComponent<EnemyAI>().unitSpeedBuff = true;
+                    e.GetComponent<EnemyAI>().unitSpeedBuff =true;
+                    e.GetComponent<EnemyAI>().unitSpeedBuffTimer = 1;
                 }
 
-                foreach (GameObject e in enemies.Skip(4))
+                /*foreach (GameObject e in enemies.Skip(4))
                 {
                     e.GetComponent<EnemyAI>().unitSpeedBuff = false;
-                }
+                }*/
 
-                checkCooldown = 1;
+                checkCooldown = .5f;
             }
             else
             {

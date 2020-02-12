@@ -564,6 +564,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2796994539879608084}
     m_Modifications:
+    - target: {fileID: 6391758475564220776, guid: 52308be49f7c55047a3a6f33bc32aafd,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6452014295359860447, guid: 52308be49f7c55047a3a6f33bc32aafd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -624,7 +629,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ice Mage
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1216366077170569262, guid: 52308be49f7c55047a3a6f33bc32aafd, type: 3}
+    - {fileID: 6391758475564220776, guid: 52308be49f7c55047a3a6f33bc32aafd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 52308be49f7c55047a3a6f33bc32aafd, type: 3}
 --- !u!4 &612523264 stripped
 Transform:
