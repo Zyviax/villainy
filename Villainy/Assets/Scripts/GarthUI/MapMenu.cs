@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MapMenu : MonoBehaviour
 {
-    public List<GameObject> levels;
+    public List<GameObject> levels = new List<GameObject>();
 
 
     void Start()

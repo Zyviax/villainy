@@ -82,6 +82,7 @@ public class TowerAI : MonoBehaviour
                 {
                     Utility.DamageAllEnemiesWithinRange(transform.position, tower.Range, tower.Damage, bloodPrefab);
                     fireCooldown = tower.FireCooldown;
+                    StartCoroutine("projectileAoE");
                 }
                 else
                 {
@@ -224,5 +225,13 @@ public class TowerAI : MonoBehaviour
         //Top down sphere range representation
         //Gizmos.color = Color.cyan;
         //Gizmos.DrawWireSphere(transform.position, tower.Range);
+    }
+
+    IEnumerator projectileAoE()
+    {
+
+        GameObject proj = Instantiate(tower.Projectile, transform);
+        yield return new WaitForSeconds(0.25f);
+        Destroy(proj);
     }
 }

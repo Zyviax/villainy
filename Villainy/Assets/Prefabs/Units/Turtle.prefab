@@ -316,7 +316,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d07e05d74c769427c8d6bc3f0c72c7c2, type: 3}
   - {fileID: 21300000, guid: 289e62b7b179e4fbe8a1583a30ec042f, type: 3}
   - {fileID: 21300000, guid: d07e05d74c769427c8d6bc3f0c72c7c2, type: 3}
-  framesPerSec: 3
+  framesPerSec: 6
 --- !u!1 &8447956105891455016
 GameObject:
   m_ObjectHideFlags: 0

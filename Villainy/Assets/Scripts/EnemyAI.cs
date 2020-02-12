@@ -248,9 +248,10 @@ public class EnemyAI : MonoBehaviour
         //oldVelocity
         //velocity
         velocity = transform.position - lastPos;
+        if (transform.position == lastPos) return;
         lastPos = transform.position;
-
         //checks if velocity and oldVelocity has had a changed sign bit
+        
         if((velocity.x *oldVelocity.x) >= 0.0f)
         {
             this.GetComponent<SpriteRenderer>().flipX = !(velocity.x > 0);
