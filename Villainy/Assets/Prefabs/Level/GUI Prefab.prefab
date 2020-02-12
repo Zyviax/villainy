@@ -8981,6 +8981,16 @@ PrefabInstance:
       propertyPath: m_Text
       value: Zoom zoom
       objectReference: {fileID: 0}
+    - target: {fileID: 5104985783428645039, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.408
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104985783428645039, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 519.28
+      objectReference: {fileID: 0}
     - target: {fileID: 6760231709937915666, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}
       propertyPath: m_IsActive
@@ -9104,15 +9114,15 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6, type: 3}
---- !u!224 &9008511353633567571 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7068718448839310616, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
-    type: 3}
-  m_PrefabInstance: {fileID: 2242098421353139787}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &461161928689562729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1836317417338206754, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2242098421353139787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &9008511353633567571 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7068718448839310616, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
     type: 3}
   m_PrefabInstance: {fileID: 2242098421353139787}
   m_PrefabAsset: {fileID: 0}
@@ -9151,12 +9161,12 @@ PrefabInstance:
     - target: {fileID: 5104985783428645039, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -24.002
+      value: 4.4082
       objectReference: {fileID: 0}
     - target: {fileID: 5104985783428645039, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 329.88
+      value: 519.28
       objectReference: {fileID: 0}
     - target: {fileID: 6760231709937915666, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}
@@ -9439,7 +9449,7 @@ PrefabInstance:
     - target: {fileID: 1806091954130765497, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}
       propertyPath: m_Text
-      value: "Cost: 4\nDamage: 10\nHealth: 100\t    "
+      value: "Cost: 3\nDamage: 10\nHealth: 100\t    "
       objectReference: {fileID: 0}
     - target: {fileID: 1836317417338206754, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}
@@ -9455,6 +9465,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: A thick shell, but not much else
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104985783428645039, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.408
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104985783428645039, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 519.28
       objectReference: {fileID: 0}
     - target: {fileID: 6760231709937915666, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}
@@ -9617,6 +9637,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Check out my new whip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104985783428645039, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.408
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104985783428645039, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 519.28
       objectReference: {fileID: 0}
     - target: {fileID: 7068718448839310616, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}

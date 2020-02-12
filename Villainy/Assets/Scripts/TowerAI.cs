@@ -49,6 +49,7 @@ public class TowerAI : MonoBehaviour
 
         if(stun==true)
         {
+            target = null;
             stunTimer = stunCooldown;
             stun = false;
         }

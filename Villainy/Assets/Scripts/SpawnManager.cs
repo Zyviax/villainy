@@ -170,7 +170,7 @@ public class SpawnManager : MonoBehaviour
 
         for(int i=0; i<enemies.Count; i++)
         {
-            if(enemies[i].GetComponent<EnemyAI>().enemy.UnitCost < GameyManager.levelResources)
+            if(enemies[i].GetComponent<EnemyAI>().enemy.UnitCost <= GameyManager.levelResources)
             {
                 if(unitButtons[i].name != "disabled") 
                 {
