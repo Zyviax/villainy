@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
-    private bool pauseActive;
+    public static bool pauseActive;
 
     public GameObject GameEnd;
     public GameObject mainUI;
@@ -28,7 +28,7 @@ public class GameMenu : MonoBehaviour
     void Update()
     {
         //todo make the button change on GUI for paused/play
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && GameyManager.gameState != GameyManager.GameState.Tutorial)
         {
             TogglePause();
         }

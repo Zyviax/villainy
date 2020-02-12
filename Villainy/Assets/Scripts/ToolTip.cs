@@ -14,44 +14,67 @@ public class ToolTip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        guiStyleFore = new GUIStyle();
-        guiStyleFore.normal.textColor = Color.white;
-        guiStyleFore.alignment = TextAnchor.UpperLeft;
-        guiStyleFore.fontSize = 35;
-        guiStyleFore.wordWrap = true;
-        guiStyleBack = new GUIStyle();
-        guiStyleBack.normal.textColor = Color.black;
-        guiStyleBack.alignment = TextAnchor.UpperLeft;
-        guiStyleBack.fontSize = 35;
-        guiStyleBack.wordWrap = true;
+        //guiStyleFore = new GUIStyle();
+        //guiStyleFore.normal.textColor = Color.white;
+        //guiStyleFore.alignment = TextAnchor.UpperLeft;
+        //guiStyleFore.fontSize = 35;
+        //guiStyleFore.wordWrap = true;
+        //guiStyleBack = new GUIStyle();
+        //guiStyleBack.normal.textColor = Color.black;
+        //guiStyleBack.alignment = TextAnchor.UpperLeft;
+        //guiStyleBack.fontSize = 35;
+        //guiStyleBack.wordWrap = true;
+    }
 
-
+    void FixedUpdate()
+    {
+        if(tooltip != null && GameMenu.pauseActive)
+        {
+            OnMouseExit();
+        }
     }
 
     private void OnMouseEnter()
     {
-        currentToolTipText = toolTipText;
-        currentToolTipText = currentToolTipText.Replace("\\n", "\n");
-        ToggleChildren();
-        tooltip.SetActive(true);
+        if(!GameMenu.pauseActive)
+        {
+            currentToolTipText = toolTipText;
+            currentToolTipText = currentToolTipText.Replace("\\n", "\n");
+            ToggleChildren(true);
+            tooltip.SetActive(true);
+        }
+        
     }
+
+    private void OnMouseOver()
+    {
+        if(currentToolTipText == "")
+        {
+            currentToolTipText = toolTipText;
+            currentToolTipText = currentToolTipText.Replace("\\n", "\n");
+            ToggleChildren(true);
+            tooltip.SetActive(true);
+        }
+        
+    }
+
     private void OnMouseExit()
     {
         currentToolTipText = "";
-        ToggleChildren();
+        ToggleChildren(false);
         tooltip.SetActive(false);
     }
 
-    private void ToggleChildren()
+    private void ToggleChildren(bool enabler)
     {
         foreach (Transform child in transform)
         {
-            child.gameObject.SetActive(!child.gameObject.activeSelf);
+            child.gameObject.SetActive(enabler);
         }
     }
 
-    private void OnGUI()
-    {
+    //private void OnGUI()
+    //{
         /*if(currentToolTipText!="")
         {
             float x = Event.current.mousePosition.x;
@@ -62,10 +85,5 @@ public class ToolTip : MonoBehaviour
 
         // Display the tooltip from the element that has mouseover or keyboard focus
         GUI.Label(new Rect(10, 40, 100, 40), GUI.tooltip);*/
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //}
 }
