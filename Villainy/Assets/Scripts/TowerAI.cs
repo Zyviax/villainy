@@ -31,6 +31,8 @@ public class TowerAI : MonoBehaviour
         //make this a thin targeting line or perhaps outline individual unit
         //and then make this just a line for wizard/ice tower...
         //Targeting line
+
+        //todo: create a dotted line between every other tower and target (not essential)
         if(tower.name == "Wizard" || tower.name == "Ice Mage")
         {
             if (target != null)
@@ -197,10 +199,12 @@ public class TowerAI : MonoBehaviour
 
     void ShootProjectile()
     {
-        //rotate the proectile
-        Vector3 direction = target.transform.position + Vector3.up * 1.5f - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle-45, Vector3.forward);
+        //rotate the projectile
+        //Vector3 direction = target.transform.position + Vector3.up * 1.5f - transform.position;
+        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        Quaternion rotation = Quaternion.LookRotation(target.transform.position - transform.position, transform.TransformDirection(Vector3.up));
+        rotation = new Quaternion(0, 0, rotation.z, rotation.w);
 
         Transform projectile = Instantiate(tower.Projectile, transform.position+Vector3.up * 1.25f, rotation).transform;
         Projectiles proj = projectile.GetComponent<Projectiles>();

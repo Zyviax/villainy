@@ -11,25 +11,31 @@ public class Projectiles : MonoBehaviour
     public bool aoe, isPercentage;
     public Transform bloodPrefab;
 
+    private float extraHeight = 0.5f;
+
+    void Start() 
+    {
+        Vector3 direction = target.transform.position + Vector3.up * extraHeight - transform.position;
+        this.GetComponent<SpriteRenderer>().flipX = direction.x < 0;
+        Quaternion rotation = Quaternion.LookRotation(direction, transform.TransformDirection(Vector3.up));
+        transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+    }
+
     void Update()
     {
         if (target != null) { 
             float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position + Vector3.up * 0.4f, step);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position + Vector3.up * extraHeight, step);
 
-            //this code is supposed to make each projectile rotate towards the target
-            //but i guess it doesn't work
-            Vector3 direction = target.transform.position + Vector3.up * 1.5f - transform.position;
-            if(Mathf.Abs(direction.x)>0.5)
+            //rotate towards the target
+            Vector3 direction = target.transform.position + Vector3.up * extraHeight - transform.position;
+            if(direction != Vector3.zero) 
             {
-                //flip the sprite
-                this.GetComponent<SpriteRenderer>().flipX = transform.position.x >= target.transform.position.x;
+                Quaternion rotation = Quaternion.LookRotation(direction, transform.TransformDirection(Vector3.up));
+                transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
             }
-
             
-            
-
-            if (transform.position == target.position + Vector3.up * 0.4f)
+            if (transform.position == target.position + Vector3.up * extraHeight)
             {
                 //print(disable);
                 if (aoe)

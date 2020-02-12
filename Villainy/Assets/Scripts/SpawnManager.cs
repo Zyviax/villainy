@@ -70,27 +70,30 @@ public class SpawnManager : MonoBehaviour
 
     public void AddToQueue(int enemy)
     {     
-        if(enemies[enemy].GetComponent<EnemyAI>().enemy.UnitCost <= GameyManager.levelResources)
+        if(GameyManager.gameState != GameyManager.GameState.Play)
         {
-            enemiesToSpawn.Add(enemies[enemy]);
-            Transform unit = Instantiate(queueItem);
-            unit.SetParent(wholeQueue);
-            coords.y -= queueSize;
-            unit.transform.localPosition = coords;
-            Image imageComponent = unit.GetComponent<Image>();
-            imageComponent.sprite = enemies[enemy].GetComponent<SpriteRenderer>().sprite;
-            GameyManager.levelResources -= enemies[enemy].GetComponent<EnemyAI>().enemy.UnitCost;
-
-            queueUnits.Add(unit);
-
-            bar.UpdateImage();
-        }
-
-        for(int i=0; i<enemies.Count; i++)
-        {
-            if(enemies[i].GetComponent<EnemyAI>().enemy.UnitCost > GameyManager.levelResources)
+            if(enemies[enemy].GetComponent<EnemyAI>().enemy.UnitCost <= GameyManager.levelResources)
             {
-                unitButtons[i].interactable = false;
+                enemiesToSpawn.Add(enemies[enemy]);
+                Transform unit = Instantiate(queueItem);
+                unit.SetParent(wholeQueue);
+                coords.y -= queueSize;
+                unit.transform.localPosition = coords;
+                Image imageComponent = unit.GetComponent<Image>();
+                imageComponent.sprite = enemies[enemy].GetComponent<SpriteRenderer>().sprite;
+                GameyManager.levelResources -= enemies[enemy].GetComponent<EnemyAI>().enemy.UnitCost;
+
+                queueUnits.Add(unit);
+
+                bar.UpdateImage();
+            }
+
+            for(int i=0; i<enemies.Count; i++)
+            {
+                if(enemies[i].GetComponent<EnemyAI>().enemy.UnitCost > GameyManager.levelResources)
+                {
+                    unitButtons[i].interactable = false;
+                }
             }
         }
     }

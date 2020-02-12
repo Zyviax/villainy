@@ -18,6 +18,14 @@ public class PlayPauseFastforward : MonoBehaviour
         play.text = "Play";
     }
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            TogglePause();
+        }
+    }
+
     public void TogglePause()
     {
         if (GameyManager.levelResources == GameyManager.resourcesMax) return;
