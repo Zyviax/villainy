@@ -638,15 +638,16 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[0]
-      value: Hmm.. They are using knight towers.\n\nThese towers are an area effect
-        so imps do poorly..\n\nunless I use my latest creation, the Demon Priest
+      value: Hmm.. They are using knight towers.\n\nThese towers damage in an area
+        around them so the imps will do poorly..\n\nUnless I use my latest creation,
+        the demonic priest!
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[1]
       value: Ah and they have an ice mage tower.\n\nThese will disable special abilities
-        temporarily\n(like the priests heal)\n\nWe will have to see how this plays
-        out...
+        temporarily\n(like the priests healing ability)\n\nWe will have to see how
+        this plays out...
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -661,7 +662,7 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[2]
-      value: I can always hover over a tower or unit to find out more about it.
+      value: I can always hover over a tower or minion to find out more about it.
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}

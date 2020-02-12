@@ -460,8 +460,8 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[3]
-      value: And, for my evil convenience I have bound the spells to the Keyboard!\n\n(Press
-        1,2,3 for the respective spells)
+      value: And, for my evil convenience I have bound the spells to the keyboard!\n\n(Press
+        1, 2, 3 for the respective spells)
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}

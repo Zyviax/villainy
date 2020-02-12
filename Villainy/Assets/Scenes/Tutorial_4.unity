@@ -500,19 +500,19 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[0]
-      value: My army is coming together now!\n\nWe now have all the units I need for
-        world domination!
+      value: My army is coming together now!\n\nWe now have all the minions I need
+        for world domination!
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[1]
-      value: I have even created a batch of new spell.\n\nWe can stun towers, heal
-        units and speed up units now.
+      value: I have even created a batch of new spells.\n\nWe can stun towers, and
+        even heal and speed up minions now.
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[2]
-      value: Ah, but they have a new tower. The jailmaster will capture a single unit.
+      value: Ah, but they have a new tower. The jailmaster will capture a single minion.
         Best make sure it's nothing too important.
       objectReference: {fileID: 0}
     - target: {fileID: 8700090488970061222, guid: 9df68b15fbd964d168b8c0952189757c,

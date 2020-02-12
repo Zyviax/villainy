@@ -1539,8 +1539,8 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[2]
-      value: This is where I can see my queued units. These will enter the road one
-        at a time and destroy all those who oppose us!!
+      value: This is where I can see my queued minions. These will enter the road
+        one at a time and destroy all those who oppose us!!
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -1556,14 +1556,14 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[4]
-      value: Now I should add another Imp and send my army onward!\n\n(add an imp
+      value: Now I should summon another imp and send my army onward!\n\n(add an imp
         and then click the play button)
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[0]
       value: I am Evil Dave!\n\nI wish to control the world but first I have to overcome
-        these pesky villagers
+        these pesky villagers.
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -1583,7 +1583,7 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[1]
-      value: As you can see these are the units I can summon at will!\n\n\n(click
+      value: As you can see these are the minions I can summon at will!\n\n\n(click
         the highlighted area)
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
