@@ -202,9 +202,14 @@ public class EnemyAI : MonoBehaviour
 
         if (disabled)
         {
+            Transform canvas = transform.GetChild(0);
+            Outline parentOutline = canvas.GetComponentInChildren<Outline>();
+            Outline outline = parentOutline.GetComponentsInChildren<Outline>()[1];
+            outline.effectColor = new Color32(100, 240, 240, 255);
             if (disabledTimer <= 0)
             {
                 disabled = false;
+                outline.effectColor = new Color32(0, 0, 0, 255);
             }
             else
             {
