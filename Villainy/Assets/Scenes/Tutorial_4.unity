@@ -372,7 +372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1473.3, y: 490.29996}
+  m_AnchoredPosition: {x: -1471.3, y: 490.29996}
   m_SizeDelta: {x: 160, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &380630525
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380630523}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
@@ -457,13 +457,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.48235297, g: 0.34117648, b: 0.15294118, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2b5eeebbf55854e9c8df6c70cbc1a2be, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -500,19 +500,19 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[0]
-      value: My army is coming together now!\n\nWe now have all the units I need for
-        world domination!
+      value: My army is coming together now!\n\nWe now have all the minions I need
+        for world domination!
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[1]
-      value: I have even created a batch of new spell.\n\nWe can stun towers, heal
-        units and speed up units now.
+      value: I have even created a batch of new spells.\n\nWe can stun towers, and
+        even heal and speed up minions now.
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[2]
-      value: Ah, but they have a new tower. The jailmaster will capture a single unit.
+      value: Ah, but they have a new tower. The jailmaster will capture a single minion.
         Best make sure it's nothing too important.
       objectReference: {fileID: 0}
     - target: {fileID: 8700090488970061222, guid: 9df68b15fbd964d168b8c0952189757c,
