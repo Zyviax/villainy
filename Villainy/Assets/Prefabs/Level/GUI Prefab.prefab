@@ -9621,7 +9621,7 @@ PrefabInstance:
     - target: {fileID: 1806091954130765497, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}
       propertyPath: m_Text
-      value: "Cost: 2\nDamage: 25\nHealth: 20\t\t    "
+      value: "Cost: 2\nDamage: 25\nHealth: 40\t    "
       objectReference: {fileID: 0}
     - target: {fileID: 1836317417338206754, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}
@@ -9631,7 +9631,7 @@ PrefabInstance:
     - target: {fileID: 1836317417338206754, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3405518270867920281, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}
