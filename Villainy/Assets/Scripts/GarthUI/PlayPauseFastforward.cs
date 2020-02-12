@@ -44,4 +44,5 @@ public class PlayPauseFastforward : MonoBehaviour
         Time.timeScale = Time.timeScale == 0 ? 0 : currentMax;
         fast.text = fast.text == ">>" ? "[>>]" : ">>";
     }
+
 }

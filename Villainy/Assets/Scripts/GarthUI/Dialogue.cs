@@ -55,6 +55,11 @@ public class Dialogue : MonoBehaviour
             }
 
             //LevelManager.tutorialDone = true;
+        } else {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                ExitTut();
+            }
         }
     }
 
@@ -83,7 +88,10 @@ public class Dialogue : MonoBehaviour
             text.text = text.text.Replace("\\n", "\n"); 
         }
         if(panelNo+1 == panels.Count) {
-            next.SetActive(false);
+            //end tutorial button
+            next.GetComponentInChildren<Text>().text = "Finish";
+            next.GetComponent<Button>().onClick.AddListener(() => ExitTut());
+            next.SetActive(true);
         }
         ShowHighlight();
         
@@ -126,7 +134,11 @@ public class Dialogue : MonoBehaviour
         //if called next force user to click this element
         if(highlights[panelNo] != null && highlights[panelNo].name == "next")
         {
-            next.SetActive(false);
+            if(GameyManager.levelResources >= 3)
+            {
+                next.SetActive(false);
+            }
+            
         }
     }
 }
