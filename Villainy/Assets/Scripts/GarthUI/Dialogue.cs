@@ -37,17 +37,23 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
+        //this was for if the gamelose was using the same dialogue menu, instead just copy pasted the existing one
+        //makes the logic a lot simpler
+        //if(!((GameyManager.gameState != GameyManager.GameState.Tutorial) ^ (GameyManager.gameState != GameyManager.GameState.End)))
+
         if(GameyManager.gameState != GameyManager.GameState.Tutorial)
         {
             if(parent == null) return;
             Transform child = parent.GetComponentsInChildren<Transform>(true)[1];
             child.gameObject.SetActive(false);
+
             foreach(GameObject hl in highlights) {
                 if(hl != null)
                 {
                     hl.SetActive(false);
                 }
             }
+
             //LevelManager.tutorialDone = true;
         }
     }

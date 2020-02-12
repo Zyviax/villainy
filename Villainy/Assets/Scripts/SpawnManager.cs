@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -19,12 +20,14 @@ public class SpawnManager : MonoBehaviour
     public List<Button> unitButtons;
 
     public List<Transform> queueUnits;
+    private List<int> oldQueueUnits = new List<int>();
 
     public Transform queueItem;
     public Transform wholeQueue;
     private Vector3 coords;
 
     private GameObject GameEnd;
+    public GameObject gameLose;
     private Objective objective;
 
     public BarScript bar;
@@ -42,6 +45,8 @@ public class SpawnManager : MonoBehaviour
         Transform child = GameEnd.GetComponentsInChildren<Transform>(true)[1];
         child.gameObject.SetActive(false);
 
+        //dialogue = GameObject.FindWithTag("Dialogue");
+
         GameObject objectiveGO = GameObject.FindGameObjectWithTag("Objective");
         objective = objectiveGO.GetComponent<Objective>();
     }
@@ -54,16 +59,25 @@ public class SpawnManager : MonoBehaviour
             if(enemiesToSpawn.Count == 0 && GameObject.FindGameObjectWithTag("Enemy") == null)
             {
                 GameyManager.gameState = GameyManager.GameState.End;
-                GameObject UI = GameObject.FindWithTag("MainUI");
-                UI.SetActive(false);
-                
-                GameEnd = GameObject.FindWithTag("EndUI");
-                Transform child = GameEnd.GetComponentsInChildren<Transform>(true)[1];
-                child.gameObject.SetActive(true);
-                Text endText = GameEnd.GetComponentInChildren<Text>();
-                endText.text = "Rats! \n I needed " + objective.health + " more damage";
+                gameLose.gameObject.SetActive(true);
+                Text text = gameLose.GetComponentInChildren<Text>();
+                if(GameyManager.levelResources > 1)
+                {
+                    text.text = "Hmm.. I do have " + GameyManager.levelResources + " resources left over.\n\nMaybe there is something I can do with that?";
+                } else if (GameyManager.levelMana >= 100)
+                {
+                    text.text = "No no no...\n\nWhat if i tried to cast another spell?";
+                } else {
+                    text.text = "Rats!\n\nI needed " + objective.health + " more damage.\n\nMaybe a different unit will help...";
+                }
 
-                GameyManager.retries += 1;
+                int max = oldQueueUnits.Count;
+                for(int i = 0; i < max; i++)
+                {
+                    AddToQueue(oldQueueUnits[i]);
+                }
+                //it does retries from the retry button anyway
+                //GameyManager.retries += 1;
             }
         }
     }
@@ -74,6 +88,7 @@ public class SpawnManager : MonoBehaviour
         {
             if(enemies[enemy].GetComponent<EnemyAI>().enemy.UnitCost <= GameyManager.levelResources)
             {
+                oldQueueUnits.Add(enemy);
                 enemiesToSpawn.Add(enemies[enemy]);
                 Transform unit = Instantiate(queueItem);
                 unit.SetParent(wholeQueue);
@@ -105,7 +120,7 @@ public class SpawnManager : MonoBehaviour
         if(GameyManager.gameState == GameyManager.GameState.Play || enemiesToSpawn.Count == 0)
         {
             return;
-        } else {
+        } else if (GameyManager.gameState != GameyManager.GameState.End) {
             GameyManager.gameState = GameyManager.GameState.Play;
             StartCoroutine("SpawnQueued");
             playerController.EnableSpells();
@@ -166,6 +181,7 @@ public class SpawnManager : MonoBehaviour
             
         queueUnits.RemoveAt(queueUnits.Count - 1);
         enemiesToSpawn.RemoveAt(enemiesToSpawn.Count - 1);
+        oldQueueUnits.RemoveAt(oldQueueUnits.Count - 1);
 
         coords.y += queueSize;
 
@@ -196,6 +212,7 @@ public class SpawnManager : MonoBehaviour
 
         queueUnits.Clear(); 
         enemiesToSpawn.Clear(); 
+        oldQueueUnits.Clear();
 
         bar.UpdateImage();
     }
