@@ -18,7 +18,8 @@ public class Objective : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(GameyManager.gameState != GameyManager.GameState.Menu)
+        maxHealth = health;
+        if (GameyManager.gameState != GameyManager.GameState.Menu)
         {
             maxHealth = health;
             //UI = GameObject.FindWithTag("MainUI");
