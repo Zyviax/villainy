@@ -44,14 +44,31 @@ public class Objective : MonoBehaviour
             if (health <= 0)
             {
                 GameyManager.gameState = GameyManager.GameState.End;
-                UI.SetActive(false);
+                //UI.SetActive(false);
+
                 Transform child = GameEnd.GetComponentsInChildren<Transform>(true)[1];
                 child.gameObject.SetActive(true);
-                Text endText = GameEnd.GetComponentInChildren<Text>(true);
-                endText.text = "Congratulations!";
-                //todo: disable the retry button here
-                //or actually will change the full thing
+                Text winText = GameEnd.GetComponentInChildren<Text>(true);
 
+                switch(Random.Range(1,5))
+                {
+                    case 1:
+                        winText.text = "Nothing but rubble, a shame really";
+                        break;
+                    case 2:
+                        winText.text = "My beautiful creations cannot be stopped!";
+                        break;
+                    case 3:
+                        winText.text = "Cower before my might!";
+                        break;
+                    case 4:
+                        winText.text = "First we take over Jeffs' house...\nthen we take over the world!!";
+                        break;
+
+                    default:
+                        winText.text = "Mwahahahaha";
+                        break;
+                }
 
                 //stop repeated completions
                 string levelname = SceneManager.GetActiveScene().name;

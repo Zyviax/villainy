@@ -71,15 +71,44 @@ public class SpawnManager : MonoBehaviour
                     text.text = "Rats!\n\nI needed " + objective.health + " more damage.\n\nMaybe a different unit will help...";
                 }
 
-                int max = oldQueueUnits.Count;
-                for(int i = 0; i < max; i++)
+                for(int i = 0; i < enemies.Count; i++)
                 {
-                    AddToQueue(oldQueueUnits[i]);
+                    unitButtons[i].interactable = false;
+                }
+
+                foreach(int enemyNo in oldQueueUnits)
+                {
+                    AddToQueueHistory(enemyNo);
                 }
                 //it does retries from the retry button anyway
                 //GameyManager.retries += 1;
             }
         }
+
+        if (objective.health <= 0 && oldQueueUnits.Count != 0)
+        {
+            for(int i = 0; i < enemies.Count; i++)
+                {
+                unitButtons[i].interactable = false;
+            }
+
+            foreach (int enemyNo in oldQueueUnits)
+            {
+                AddToQueueHistory(enemyNo);
+            }
+            oldQueueUnits.Clear();
+        }
+    }
+
+    private void AddToQueueHistory(int enemyNo)
+    {
+        //enemiesToSpawn.Add(enemies[enemyNo]);
+        Transform unit = Instantiate(queueItem);
+        unit.SetParent(wholeQueue);
+        coords.y -= queueSize;
+        unit.transform.localPosition = coords;
+        Image imageComponent = unit.GetComponent<Image>();
+        imageComponent.sprite = enemies[enemyNo].GetComponent<SpriteRenderer>().sprite;
     }
 
     public void AddToQueue(int enemy)
