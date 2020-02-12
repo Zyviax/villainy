@@ -56,7 +56,7 @@ public class SpawnManager : MonoBehaviour
         //Checks if all enemies are dead.
         if(GameyManager.gameState == GameyManager.GameState.Play)
         {
-            if(enemiesToSpawn.Count == 0 && GameObject.FindGameObjectWithTag("Enemy") == null)
+            if(enemiesToSpawn.Count == 0 && GameObject.FindGameObjectWithTag("Enemy") == null && objective.health > 0)
             {
                 GameyManager.gameState = GameyManager.GameState.End;
                 gameLose.gameObject.SetActive(true);
