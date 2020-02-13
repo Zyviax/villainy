@@ -46,11 +46,6 @@ public class SpawnManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
-            for (int i = 0; i < 50; i++)
-            {
-                enemiesToSpawn.Add(enemies[Random.Range(0, 5)]);
-            }
-
             StartCoroutine("SpawnMenu");
         }
     }
@@ -207,11 +202,10 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator SpawnMenu()
     {
-        while (enemiesToSpawn.Count > 0)
+        while (true)
         {
-            enemy = Instantiate(enemiesToSpawn[0], nodePath.startNode.transform.position, Quaternion.identity).transform;
-            Destroy(enemy.GetComponentInChildren<Canvas>());
-            enemiesToSpawn.RemoveAt(0);
+            enemy = Instantiate(enemies[Random.Range(0, 5)], nodePath.startNode.transform.position, Quaternion.identity).transform;
+            Destroy(enemy.GetComponentInChildren<Canvas>().gameObject);
             EnemyAI enemyScript = enemy.GetComponent<EnemyAI>();
             enemyScript.Target = nodePath.startNode.GetComponent<Node>().nextNode;
             enemyScript.nodePath = this.nodePath;
