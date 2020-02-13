@@ -52,7 +52,7 @@
          Quaternion pointQuaternion = Quaternion.AngleAxis (rotationAngle, Vector3.forward);
          Vector3 pointPosition;
          
-         pointPosition = new Vector3(radius.x * Mathf.Cos (angle), radius.y * Mathf.Sin (angle), 0.0f);
+         pointPosition = new Vector3(radius.x * Mathf.Cos (angle), radius.y * Mathf.Sin (angle)-0.1f, 0.0f);
          pointPosition = pointQuaternion * pointPosition;
          
          line.SetPosition(index, pointPosition);        

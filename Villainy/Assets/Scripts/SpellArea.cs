@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpellArea : MonoBehaviour
 {
     public int spell;
-    private int healGain = 5;
+    private float healPercent = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +45,7 @@ public class SpellArea : MonoBehaviour
                     EnemyAI enemyScript = enemy.GetComponent<EnemyAI>();
                     if (spell == 2) //Heal
                     {
-                        enemyScript.currentHealth += Mathf.Clamp(.5f*enemyScript.enemy.Health,0,enemyScript.enemy.Health);
+                        enemyScript.currentHealth += Mathf.Clamp(healPercent*enemyScript.enemy.Health,0,enemyScript.enemy.Health);
                     }
                     else if (spell == 3) //Speed
                     {

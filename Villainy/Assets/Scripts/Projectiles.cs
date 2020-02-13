@@ -11,12 +11,31 @@ public class Projectiles : MonoBehaviour
     public bool aoe, isPercentage;
     public Transform bloodPrefab;
 
+    private float extraHeight = 0.5f;
+
+    void Start() 
+    {
+        Vector3 direction = target.transform.position + Vector3.up * extraHeight - transform.position;
+        this.GetComponent<SpriteRenderer>().flipX = direction.x < 0;
+        Quaternion rotation = Quaternion.LookRotation(direction, transform.TransformDirection(Vector3.up));
+        transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+    }
+
     void Update()
     {
         if (target != null) { 
             float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
-            if (transform.position == target.position)
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position + Vector3.up * extraHeight, step);
+
+            //rotate towards the target
+            Vector3 direction = target.transform.position + Vector3.up * extraHeight - transform.position;
+            if(direction != Vector3.zero) 
+            {
+                Quaternion rotation = Quaternion.LookRotation(direction, transform.TransformDirection(Vector3.up));
+                transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+            }
+            
+            if (transform.position == target.position + Vector3.up * extraHeight)
             {
                 //print(disable);
                 if (aoe)

@@ -37,18 +37,29 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
+        //this was for if the gamelose was using the same dialogue menu, instead just copy pasted the existing one
+        //makes the logic a lot simpler
+        //if(!((GameyManager.gameState != GameyManager.GameState.Tutorial) ^ (GameyManager.gameState != GameyManager.GameState.End)))
+
         if(GameyManager.gameState != GameyManager.GameState.Tutorial)
         {
             if(parent == null) return;
             Transform child = parent.GetComponentsInChildren<Transform>(true)[1];
             child.gameObject.SetActive(false);
+
             foreach(GameObject hl in highlights) {
                 if(hl != null)
                 {
                     hl.SetActive(false);
                 }
             }
-            LevelManager.tutorialDone = true;
+
+            //LevelManager.tutorialDone = true;
+        } else {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                ExitTut();
+            }
         }
     }
 
@@ -59,8 +70,9 @@ public class Dialogue : MonoBehaviour
 
     public void BeginTut()
     {
-        LevelManager.tutorialDone = false;
+        //LevelManager.tutorialDone = false;
         //reload level
+        GameyManager.visitedLevels.Remove(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         GameyManager.gameState = GameyManager.GameState.Tutorial;
     }
@@ -76,7 +88,10 @@ public class Dialogue : MonoBehaviour
             text.text = text.text.Replace("\\n", "\n"); 
         }
         if(panelNo+1 == panels.Count) {
-            next.SetActive(false);
+            //end tutorial button
+            next.GetComponentInChildren<Text>().text = "Finish";
+            next.GetComponent<Button>().onClick.AddListener(() => ExitTut());
+            next.SetActive(true);
         }
         ShowHighlight();
         
@@ -119,7 +134,11 @@ public class Dialogue : MonoBehaviour
         //if called next force user to click this element
         if(highlights[panelNo] != null && highlights[panelNo].name == "next")
         {
-            next.SetActive(false);
+            if(GameyManager.levelResources >= 3)
+            {
+                next.SetActive(false);
+            }
+            
         }
     }
 }

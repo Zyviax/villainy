@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d872db2c81ae94a30ba1e34b0af4f883, type: 3}
   m_Name: Work Master
   m_EditorClassIdentifier: 
-  health: 20
+  health: 40
   speed: 2.5
   damage: 25
   healCooldown: 0

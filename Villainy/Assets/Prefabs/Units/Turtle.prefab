@@ -261,7 +261,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ecd93599d2e24478f9e3b805221059b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -291,6 +291,7 @@ MonoBehaviour:
   currentHealth: 0
   speed: 0
   distanceTravelled: 0
+  unitSpeedBuffTimer: 1
   disabled: 0
   isHealer: 0
   isSpeeder: 0
@@ -316,7 +317,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d07e05d74c769427c8d6bc3f0c72c7c2, type: 3}
   - {fileID: 21300000, guid: 289e62b7b179e4fbe8a1583a30ec042f, type: 3}
   - {fileID: 21300000, guid: d07e05d74c769427c8d6bc3f0c72c7c2, type: 3}
-  framesPerSec: 3
+  framesPerSec: 6
 --- !u!1 &8447956105891455016
 GameObject:
   m_ObjectHideFlags: 0

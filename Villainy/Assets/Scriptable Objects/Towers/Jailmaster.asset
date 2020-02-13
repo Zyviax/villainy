@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireCooldown: 500
   damage: 500
-  range: 2.5
+  range: 3
   aoeRadius: 0
   disable: 0
   targeting: 1
-  projectile: {fileID: 5172375375401269636, guid: 135801d5999e34d1ab9b4d0895cea70e,
+  projectile: {fileID: 5172375375401269636, guid: b8eb5c142ab70834b8b10ac9bf0a0e56,
     type: 3}
   percentageDamage: 0
   aoe: 0

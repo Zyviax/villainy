@@ -20,5 +20,5 @@ MonoBehaviour:
   healAmount: 0
   unitCost: 2
   isHealer: 0
-  isSpeeder: 1
+  isSpeeder: 0
   enemyName: Valkyrie

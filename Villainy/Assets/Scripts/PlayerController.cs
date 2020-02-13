@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     //todo: different costs for different spells?
 
     int currentSpell = 0;
-    public Transform aimPrefab;
+    private Transform aimPrefab;
+    public Transform speedCircle, healCircle, stunCircle;
     static SpellArea spellArea;
 
     public BarScript bar;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
         if(currentSpell!=0)
         {
             spellArea.endCircle();
+            GameyManager.levelMana += 100;
         }
 
         //hardcoded 100
@@ -49,6 +51,16 @@ public class PlayerController : MonoBehaviour
             currentSpell = spell;
             Vector3 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            if(spell==1)
+            {
+                aimPrefab = stunCircle;
+            } else if(spell==2)
+            {
+                aimPrefab = healCircle;
+            } else if(spell == 3)
+            {
+                aimPrefab = speedCircle;
+            }
             Transform spellCircle = Instantiate(aimPrefab, new Vector3(mousePosition.x, mousePosition.y, 0), Quaternion.identity);
             spellArea = spellCircle.GetComponent<SpellArea>();
             spellArea.spell = spell;
@@ -82,12 +94,17 @@ public class PlayerController : MonoBehaviour
                 currentSpell = 0;
                 GameyManager.levelMana += 100;
                 Destroy(spellArea.gameObject);
+                foreach (Button button in spellButtons)
+                {
+                    button.interactable = true;
+                }
+                spellsEnabled = true;
             }
 
             bar.UpdateImage();
         }
 
-        if (currentSpell==0 && GameyManager.gameState == GameyManager.GameState.Play)
+        if (GameyManager.gameState == GameyManager.GameState.Play)
         {
             if(Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -113,7 +130,8 @@ public class PlayerController : MonoBehaviour
     {
         foreach(Button button in spellButtons)
         {
-            button.interactable = true;
+
+            if(button.name != "disabled") button.interactable = true;
         }
         spellsEnabled = true;
     }

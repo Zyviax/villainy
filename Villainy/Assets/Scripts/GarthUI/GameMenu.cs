@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
-    private bool pauseActive;
+    public static bool pauseActive;
 
     public GameObject GameEnd;
     public GameObject mainUI;
@@ -14,6 +14,7 @@ public class GameMenu : MonoBehaviour
 
     void Start()
     {
+        //Time.timeScale = PlayPauseFastforward.normalMax;
         //this is just to make it so i could add this script to restart level for alpha version
         if(pauseMenu != null)
         {
@@ -27,7 +28,7 @@ public class GameMenu : MonoBehaviour
     void Update()
     {
         //todo make the button change on GUI for paused/play
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && GameyManager.gameState != GameyManager.GameState.Tutorial)
         {
             TogglePause();
         }
@@ -36,7 +37,7 @@ public class GameMenu : MonoBehaviour
     public void TogglePause()
     {
         pauseActive = !pauseActive;
-        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        Time.timeScale = Time.timeScale == 0 ? PlayPauseFastforward.currentMax : 0;
         pauseMenu.SetActive(pauseActive);
     }
 
@@ -55,7 +56,7 @@ public class GameMenu : MonoBehaviour
     {
         pauseActive = !pauseActive;
         pauseMenu.SetActive(pauseActive);
-        Time.timeScale = 1;
+        Time.timeScale = PlayPauseFastforward.currentMax;
     }
 
     public void Settings()

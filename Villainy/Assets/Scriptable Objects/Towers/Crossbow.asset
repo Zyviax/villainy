@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1da5b7868fe24694a664c230cdc3a8e, type: 3}
   m_Name: Crossbow
   m_EditorClassIdentifier: 
-  fireCooldown: 0.4
+  fireCooldown: 0.6
   damage: 4
-  range: 2.5
+  range: 3
   aoeRadius: 0
   disable: 0
   targeting: 2

@@ -31,17 +31,27 @@ public class TowerAI : MonoBehaviour
         //make this a thin targeting line or perhaps outline individual unit
         //and then make this just a line for wizard/ice tower...
         //Targeting line
-        if (target != null)
+
+        //todo: create a dotted line between every other tower and target (not essential)
+        if(tower.name == "Wizard" || tower.name == "Ice Mage")
         {
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, target.position); 
-        } else {
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, transform.position); 
+            if (target != null)
+            {
+                lineRenderer.material.color = tower.name == "Wizard" ? Color.magenta : Color.cyan;
+                lineRenderer.SetPosition(0, transform.position + Vector3.up * 1.25f);
+                lineRenderer.SetPosition(1, target.position);
+            }
+            else
+            {
+                lineRenderer.SetPosition(0, transform.position);
+                lineRenderer.SetPosition(1, transform.position);
+            }
         }
+        
 
         if(stun==true)
         {
+            target = null;
             stunTimer = stunCooldown;
             stun = false;
         }
@@ -75,6 +85,7 @@ public class TowerAI : MonoBehaviour
                 {
                     Utility.DamageAllEnemiesWithinRange(transform.position, tower.Range, tower.Damage, bloodPrefab);
                     fireCooldown = tower.FireCooldown;
+                    StartCoroutine("projectileAoE");
                 }
                 else
                 {
@@ -188,7 +199,14 @@ public class TowerAI : MonoBehaviour
 
     void ShootProjectile()
     {
-        Transform projectile = Instantiate(tower.Projectile, transform.position, Quaternion.identity).transform;
+        //rotate the projectile
+        //Vector3 direction = target.transform.position + Vector3.up * 1.5f - transform.position;
+        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        Quaternion rotation = Quaternion.LookRotation(target.transform.position - transform.position, transform.TransformDirection(Vector3.up));
+        rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+
+        Transform projectile = Instantiate(tower.Projectile, transform.position+Vector3.up * 1.25f, rotation).transform;
         Projectiles proj = projectile.GetComponent<Projectiles>();
         //print(tower.Disable);
         //print(tower.Damage);
@@ -212,5 +230,13 @@ public class TowerAI : MonoBehaviour
         //Top down sphere range representation
         //Gizmos.color = Color.cyan;
         //Gizmos.DrawWireSphere(transform.position, tower.Range);
+    }
+
+    IEnumerator projectileAoE()
+    {
+
+        GameObject proj = Instantiate(tower.Projectile, transform);
+        yield return new WaitForSeconds(0.25f);
+        Destroy(proj);
     }
 }

@@ -6,19 +6,16 @@ public class Utility : MonoBehaviour {
 
     public static float Distance(Vector3 a, Vector3 b)
     {
-        //a.y -= 1.5f;
+        //x = 1 then y = x * 8.64/4.98
+        //return (Mathf.Pow(b.x - a.x, 2) + Mathf.Pow(b.y - a.y, 2) / (4.98f / 8.64f));
+        //https://www.desmos.com/calculator/vfdvczqjwt
+
+
         a.z = 0;
         b.z = 0;
 
-        //todo: make this work, possibly change the logic to portions of squares away instead... this would make it better i think
-
-        //x = 1 then y = x * 4.98/8.64
-
-        //Debug.Log(Mathf.Pow((b.x-a.x),2)/Mathf.Sqrt(8.64f) + Mathf.Pow((b.x-a.x),2)/Mathf.Sqrt(4.98f));
-        
-        //return (Mathf.Pow((b.x-a.x),2)/Mathf.Sqrt(8.64f) + Mathf.Pow((b.y-a.y),2)/Mathf.Sqrt(4.98f));
-        //return Mathf.Pow(b.x-a.x,2) + Mathf.Pow(b.y-a.y,2)/(4.98f/8.64f);
-
+        a.y *= 1.735f;
+        b.y *= 1.735f;
         return Vector3.Distance(a, b);
     }
 

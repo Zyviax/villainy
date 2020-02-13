@@ -262,7 +262,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 22bca59d003b34617a911fc53a1eba12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -292,6 +292,7 @@ MonoBehaviour:
   currentHealth: 0
   speed: 0
   distanceTravelled: 0
+  unitSpeedBuffTimer: 1
   disabled: 0
   isHealer: 0
   isSpeeder: 0
@@ -316,7 +317,7 @@ MonoBehaviour:
   animSprites:
   - {fileID: 21300000, guid: 22bca59d003b34617a911fc53a1eba12, type: 3}
   - {fileID: 21300000, guid: 5d00ebbb7807441afa30aaca38ee90c7, type: 3}
-  framesPerSec: 3
+  framesPerSec: 6
 --- !u!114 &-4727895650267740875
 MonoBehaviour:
   m_ObjectHideFlags: 0

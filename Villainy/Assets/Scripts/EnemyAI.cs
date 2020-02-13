@@ -19,8 +19,9 @@ public class EnemyAI : MonoBehaviour
     private Vector3 lastPos;
     private Vector3 oldVelocity;
     private Vector3 velocity;
+    public float unitSpeedBuffTimer = 1f;
 
-    public bool disabled, isHealer, isSpeeder, unitSpeedBuff = false;
+    public bool disabled, isHealer, isSpeeder, unitSpeedBuff;
 
     public Image HP;
     public Text nameField;
@@ -85,7 +86,13 @@ public class EnemyAI : MonoBehaviour
             }
         }*/
 
-
+        if(unitSpeedBuffTimer>0)
+        {
+            unitSpeedBuffTimer -= Time.deltaTime;
+        } else
+        {
+            unitSpeedBuff = false;
+        }
         if (speedBuff)
         {
             speedBuffTimer = speedBuffCooldown;
@@ -93,7 +100,7 @@ public class EnemyAI : MonoBehaviour
             
             if (unitSpeedBuff)
             {
-                speed = enemy.Speed * 2.4f;
+                speed = enemy.Speed * 3f;
             }
             else
             {
@@ -106,7 +113,7 @@ public class EnemyAI : MonoBehaviour
         }
         else if (unitSpeedBuff)
         {
-            speed = enemy.Speed * 1.5f;
+            speed = enemy.Speed * 2f;
         }
         else
         {
@@ -195,9 +202,14 @@ public class EnemyAI : MonoBehaviour
 
         if (disabled)
         {
+            Transform canvas = transform.GetChild(0);
+            Outline parentOutline = canvas.GetComponentInChildren<Outline>();
+            Outline outline = parentOutline.GetComponentsInChildren<Outline>()[1];
+            outline.effectColor = new Color32(100, 240, 240, 255);
             if (disabledTimer <= 0)
             {
                 disabled = false;
+                outline.effectColor = new Color32(0, 0, 0, 255);
             }
             else
             {
@@ -228,15 +240,16 @@ public class EnemyAI : MonoBehaviour
                 foreach (GameObject e in enemies.Take(Mathf.Min(enemies.Count, 4)))
                 {
                     //Debug.Log("Test");
-                    e.GetComponent<EnemyAI>().unitSpeedBuff = true;
+                    e.GetComponent<EnemyAI>().unitSpeedBuff =true;
+                    e.GetComponent<EnemyAI>().unitSpeedBuffTimer = 1;
                 }
 
-                foreach (GameObject e in enemies.Skip(4))
+                /*foreach (GameObject e in enemies.Skip(4))
                 {
                     e.GetComponent<EnemyAI>().unitSpeedBuff = false;
-                }
+                }*/
 
-                checkCooldown = 1;
+                checkCooldown = .5f;
             }
             else
             {
@@ -248,9 +261,10 @@ public class EnemyAI : MonoBehaviour
         //oldVelocity
         //velocity
         velocity = transform.position - lastPos;
+        if (transform.position == lastPos) return;
         lastPos = transform.position;
-
         //checks if velocity and oldVelocity has had a changed sign bit
+        
         if((velocity.x *oldVelocity.x) >= 0.0f)
         {
             this.GetComponent<SpriteRenderer>().flipX = !(velocity.x > 0);
