@@ -450,8 +450,7 @@ PrefabInstance:
         -Valkyries
 
 
-        <i>Using explosive magic stones, this tower was nicknamed the Knight due to
-        its ability to stop hordes of imps.</i>'
+        <i>The Knight stops hordes of imps by using explosive magic stones.</i>'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55e784163810b4a85967a5344c0fd57e, type: 3}
