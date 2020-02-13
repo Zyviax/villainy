@@ -5,11 +5,20 @@ using UnityEngine;
 public class MusicPicker : MonoBehaviour
 {
     public AudioClip NewMusic;
+    public float volume;
 
     void Awake()
-        {
+    {
         AudioSource go = GameObject.FindGameObjectWithTag("MusicManager").GetComponent<AudioSource>();
-        go.clip = NewMusic; //Replaces the old audio with the new one set in the inspector.
-        go.Play(); //Plays the audio.
+        if(go != null)
+        {
+            go.volume = this.volume;
+            if(go.clip != NewMusic)
+            {
+                go.clip = NewMusic; //Replaces the old audio with the new one set in the inspector.
+                go.Play(); //Plays the audio.
+            }
+        }
+        
     }
 }

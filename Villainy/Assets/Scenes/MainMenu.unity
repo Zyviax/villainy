@@ -1498,6 +1498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewMusic: {fileID: 8300000, guid: 91c3bed73eabee54f8f2542d320203de, type: 3}
+  volume: 0.3
 --- !u!4 &1031523907
 Transform:
   m_ObjectHideFlags: 0
