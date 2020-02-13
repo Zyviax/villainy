@@ -26,7 +26,6 @@ public class SpawnManager : MonoBehaviour
     public Transform wholeQueue;
     private Vector3 coords;
 
-    private GameObject GameEnd;
     public GameObject gameLose;
     private Objective objective;
 
@@ -41,18 +40,23 @@ public class SpawnManager : MonoBehaviour
 
         coords = new Vector3(0, 290,0);
 
-        GameEnd = GameObject.FindWithTag("EndUI");
-        Transform child = GameEnd.GetComponentsInChildren<Transform>(true)[1];
-        child.gameObject.SetActive(false);
-
-        //dialogue = GameObject.FindWithTag("Dialogue");
-
         GameObject objectiveGO = GameObject.FindGameObjectWithTag("Objective");
         objective = objectiveGO.GetComponent<Objective>();
+        
+
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            for (int i = 0; i < 50; i++)
+            {
+                enemiesToSpawn.Add(enemies[Random.Range(0, 5)]);
+            }
+
+            StartCoroutine("SpawnMenu");
+        }
     }
 
     void Update()
-    {
+    {         
         //Checks if all enemies are dead.
         if(GameyManager.gameState == GameyManager.GameState.Play)
         {
@@ -198,6 +202,22 @@ public class SpawnManager : MonoBehaviour
             enemyScript.nodePath = this.nodePath;
 
             yield return new WaitForSeconds(delay);
+        }
+    }
+
+    IEnumerator SpawnMenu()
+    {
+        while (enemiesToSpawn.Count > 0)
+        {
+            enemy = Instantiate(enemiesToSpawn[0], nodePath.startNode.transform.position, Quaternion.identity).transform;
+            Destroy(enemy.GetComponentInChildren<Canvas>());
+            enemiesToSpawn.RemoveAt(0);
+            EnemyAI enemyScript = enemy.GetComponent<EnemyAI>();
+            enemyScript.Target = nodePath.startNode.GetComponent<Node>().nextNode;
+            enemyScript.nodePath = this.nodePath;
+
+            yield return new WaitForSeconds(delay);
+
         }
     }
 

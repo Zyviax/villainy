@@ -28,7 +28,7 @@ public class GameMenu : MonoBehaviour
     void Update()
     {
         //todo make the button change on GUI for paused/play
-        if(Input.GetKeyDown(KeyCode.Escape) && GameyManager.gameState != GameyManager.GameState.Tutorial)
+        if(Input.GetKeyDown(KeyCode.P) && GameyManager.gameState != GameyManager.GameState.Tutorial)
         {
             TogglePause();
         }
