@@ -17,6 +17,8 @@ TagManager:
   - GameManager
   - Resources
   - Spells
+  - Sound
+  - MusicManager
   layers:
   - Default
   - TransparentFX
