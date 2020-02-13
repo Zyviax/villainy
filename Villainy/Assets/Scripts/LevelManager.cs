@@ -18,6 +18,8 @@ public class LevelManager : MonoBehaviour
 
     public GameObject undo;
 
+    public int lvl;
+
     void Start()
     {
         

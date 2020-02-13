@@ -60,6 +60,7 @@ public class SpawnManager : MonoBehaviour
             {
                 GameyManager.gameState = GameyManager.GameState.End;
                 gameLose.gameObject.SetActive(true);
+
                 Text text = gameLose.GetComponentInChildren<Text>();
                 if(GameyManager.levelResources > 1)
                 {

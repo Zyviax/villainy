@@ -10,6 +10,8 @@ public class GameyManager : MonoBehaviour
     public static int resourcesMax;
     public static int manaMax;
 
+    public static bool showStats = false;
+
     public enum GameState
     {
         Menu,
