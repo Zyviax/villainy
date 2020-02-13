@@ -8,7 +8,6 @@ public class TowerAI : MonoBehaviour
     public List<Transform> enemies;
     private float stunCooldown = 3;
     private float stunTimer = 0;
-
     public Transform target;
 
     public bool stun = false;

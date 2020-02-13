@@ -287,6 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tower: {fileID: 11400000, guid: 75a65d5eb51c94f529b58b34d7683c52, type: 2}
   enemies: []
+  selector: {fileID: 0}
   target: {fileID: 0}
   stun: 0
   bloodPrefab: {fileID: 1789584988055018484, guid: ef6099d9ce3754ecc930522f7dfb0aca,

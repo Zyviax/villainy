@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: 0
+  selectorPrefab: {fileID: 1197281014918358792, guid: 3572fca0e0f59428cb1d514a53b8b4ce,
+    type: 3}
 --- !u!58 &-4541589189167782408
 CircleCollider2D:
   m_ObjectHideFlags: 0
