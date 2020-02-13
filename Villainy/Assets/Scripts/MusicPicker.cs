@@ -7,18 +7,24 @@ public class MusicPicker : MonoBehaviour
     public AudioClip NewMusic;
     public float volume;
 
+    private AudioSource go;
+
     void Awake()
     {
-        AudioSource go = GameObject.FindGameObjectWithTag("MusicManager").GetComponent<AudioSource>();
-        if(go != null)
+        GameObject obj = GameObject.FindGameObjectWithTag("MusicManager");
+        if (obj != null)
         {
-            go.volume = this.volume;
-            if(go.clip != NewMusic)
+            go = obj.GetComponent<AudioSource>();
+            if (go != null)
             {
-                go.clip = NewMusic; //Replaces the old audio with the new one set in the inspector.
-                go.Play(); //Plays the audio.
+                go.volume = this.volume;
+                if (go.clip != NewMusic)
+                {
+                    go.clip = NewMusic; //Replaces the old audio with the new one set in the inspector.
+                    go.Play(); //Plays the audio.
+                }
+
             }
         }
-        
     }
 }

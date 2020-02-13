@@ -1914,14 +1914,14 @@ PrefabInstance:
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[3]
-      value: But, I am limited im my evil doings.\n\nThe highlighted area is the resources
+      value: But, I am limited in my evil doings.\n\nThe highlighted area is the resources
         available to me.
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: panels.Array.data[4]
       value: Now I should summon another imp and send my army onward!\n\n(add an imp
-        and then click the play button)
+        and then click the play button)\n(You can fastfoward with the >> button)
       objectReference: {fileID: 0}
     - target: {fileID: 5015364838030591008, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
@@ -1958,7 +1958,7 @@ PrefabInstance:
     - target: {fileID: 5053697908410001253, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5177085739493282222, guid: 9df68b15fbd964d168b8c0952189757c,
         type: 3}

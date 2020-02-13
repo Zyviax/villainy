@@ -89,6 +89,10 @@ public class TowerAI : MonoBehaviour
                 else
                 {
                     ShootProjectile();
+                    if(this.tower.name == "Jailmaster")
+                    {
+                        this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(97, 97, 97, 255);
+                    }
                     fireCooldown = tower.FireCooldown;
                 }
             }
