@@ -27,3 +27,5 @@ main_menu_v2.ogg Alexandr Zhelanov https://soundcloud.com/alexandr-zhelanov
 map.mp3 Bobjt http://bobjt.com
 level.ogg Miguel Herrero
 end_screen.mp3 cynicmusic http://pixelsphere.org [not req]
+
+map_v2.wav snapdragons opengameart.org
