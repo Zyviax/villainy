@@ -5,6 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    public GameObject statsButton;
+
+    public void Start()
+    {
+        if (GameyManager.showStats)
+        {
+            statsButton.SetActive(true);
+        }
+        else
+        {
+            statsButton.SetActive(false);
+        }
+    }
+
     public void MapMenu()
     {
         SceneManager.LoadScene("MapMenu");
@@ -21,7 +36,6 @@ public class MainMenu : MonoBehaviour
     // {
     //     SceneManager.LoadScene("Controls");
     // }
-
 
     public void Quit()
     {

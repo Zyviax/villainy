@@ -73,6 +73,7 @@ public class Objective : MonoBehaviour
                 //stop repeated completions
                 string levelname = SceneManager.GetActiveScene().name;
                 int add = levelname.Contains("Tutorial") ? 0 : 4;
+
                 if (GameyManager.levelsCompleted < int.Parse(levelname.Substring(levelname.Length - 1)) + add)
                 {
                     GameyManager.levelsCompleted += 1;

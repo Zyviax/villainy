@@ -46,6 +46,12 @@ public class GameMenu : MonoBehaviour
         SceneManager.LoadScene("MapMenu");
     }
 
+    public void Stats()
+    {
+        GameyManager.showStats = true;
+        SceneManager.LoadScene("Stats");
+    }
+
     public void Retry()
     {
         GameyManager.retries += 1;
