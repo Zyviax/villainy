@@ -8362,7 +8362,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8ca00ce86a643a6a0b899c9252fdac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimPrefab: {fileID: 3584880934487578299, guid: 58cc45716dc8c416c9af144daa031b56,
+  speedCircle: {fileID: 3584880934487578299, guid: c8e15f009069c46eb9c37a5d551635d0,
+    type: 3}
+  healCircle: {fileID: 3584880934487578299, guid: d7d395ccf699d4cef81de1b008e0bf4a,
+    type: 3}
+  stunCircle: {fileID: 3584880934487578299, guid: 43306577fd10e49ea858067783e36506,
     type: 3}
   bar: {fileID: 1641818791559286600}
   spellButtons:
@@ -9489,11 +9493,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 519.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 6760231709937915666, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068718448839310616, guid: 826bfc5fd49ff914a83ad9f8e22e1ec6,
         type: 3}
