@@ -28,14 +28,11 @@ public class PlayerController : MonoBehaviour
 
     void Start() 
     {
-        if(GameyManager.gameState != GameyManager.GameState.Play)
-        {
             foreach(Button button in spellButtons)
             {
                 button.interactable = false;
             }
             spellsEnabled = false;
-        }
     }
 
     public void useSpell(int spell)
@@ -96,7 +93,10 @@ public class PlayerController : MonoBehaviour
                 Destroy(spellArea.gameObject);
                 foreach (Button button in spellButtons)
                 {
-                    button.interactable = true;
+                    if (button.name != "disabled")
+                    {
+                        button.interactable = true;
+                    }
                 }
                 spellsEnabled = true;
             }
@@ -106,17 +106,17 @@ public class PlayerController : MonoBehaviour
 
         if (GameyManager.gameState == GameyManager.GameState.Play)
         {
-            if(Input.GetKeyDown(KeyCode.Alpha1))
+            if(Input.GetKeyDown(KeyCode.Alpha1) && spellButtons[0].interactable==true)
             {
                 useSpell(1);
                 GameyManager.spellsCast += 1;
             }
-            else if(Input.GetKeyDown(KeyCode.Alpha2))
+            else if(Input.GetKeyDown(KeyCode.Alpha2) && spellButtons[1].interactable == true)
             {
                 useSpell(2);
                 GameyManager.spellsCast += 1;
             }
-            else if(Input.GetKeyDown(KeyCode.Alpha3))
+            else if(Input.GetKeyDown(KeyCode.Alpha3) && spellButtons[2].interactable == true)
             {
                 useSpell(3);
                 GameyManager.spellsCast += 1;
