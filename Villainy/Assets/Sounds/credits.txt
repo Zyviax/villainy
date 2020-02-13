@@ -29,3 +29,34 @@ level.ogg Miguel Herrero
 end_screen.mp3 cynicmusic http://pixelsphere.org [not req]
 
 map_v2.wav snapdragons opengameart.org
+
+---
+music in the final game:
+
+music -
+main menu: main_menu
+map: map_v2
+levels: level
+win: victory2
+lose: level_lose_loud
+end: end_screen
+
+sfx -
+units: button_coin
+crossbow_repeater_atk
+jail_atk_v2
+knight_atk_3
+wizard_ice_atk_2_loud
+---
+
+Credits
+
+All music is royalty free and courtesy of:
+- Of Far Different Nature, https://fardifferent.carrd.co
+- Bobjt, http://bobjt.com
+- Miguel Herrero
+- Matthew Pablo, matthewpablo.com
+- cynicmusic, http://pixelsphere.org
+- kenney, kenney.nl
+- PhilSavlem of freesounds.org
+- Oiboo, qubodup & spookymodem of opengameart.org
