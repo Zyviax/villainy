@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
 {
     public BasicNodePath nodePath;
     public Enemy enemy;
+    public Transform disablePrefab;
 
     public bool speedBuff = false;
     private float speedBuffTimer = 0;
@@ -32,6 +33,8 @@ public class EnemyAI : MonoBehaviour
     private List<GameObject> enemies;
     public Transform healPrefab;
     private List<GameObject> firstFourEnemies;
+    private bool disabledEffect;
+    private Transform disableEffect;
 
     public Transform Target { get { return target; } set { target = value; } }
 
@@ -56,6 +59,7 @@ public class EnemyAI : MonoBehaviour
         healCooldown = enemy.HealCooldown;
         healRadii = enemy.HealRadii;
         healAmount = enemy.HealAmount;
+        disabledEffect = false;
 
         lastPos = transform.position;
     }
@@ -202,14 +206,23 @@ public class EnemyAI : MonoBehaviour
 
         if (disabled)
         {
-            Transform canvas = transform.GetChild(0);
+            /*Transform canvas = transform.GetChild(0);
             Outline parentOutline = canvas.GetComponentInChildren<Outline>();
             Outline outline = parentOutline.GetComponentsInChildren<Outline>()[1];
-            outline.effectColor = new Color32(100, 240, 240, 255);
+            outline.effectColor = new Color32(100, 240, 240, 255);*/
+            if(!disabledEffect)
+            {
+                disableEffect = Instantiate(disablePrefab, transform);
+                disabledEffect = true;
+            }
+            
+
             if (disabledTimer <= 0)
             {
                 disabled = false;
-                outline.effectColor = new Color32(0, 0, 0, 255);
+                disabledEffect = false;
+                Destroy(disableEffect.gameObject);
+                //outline.effectColor = new Color32(0, 0, 0, 255);
             }
             else
             {

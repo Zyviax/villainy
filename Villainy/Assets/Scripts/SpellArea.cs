@@ -6,6 +6,7 @@ public class SpellArea : MonoBehaviour
 {
     public int spell;
     private float healPercent = 0.5f;
+    public Transform selectorPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,39 @@ public class SpellArea : MonoBehaviour
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         transform.position = new Vector3(mousePosition.x, mousePosition.y, 0);
+
+        /*CircleCollider2D spellCollider = GetComponentInParent<CircleCollider2D>();
+        float spellRange = spellCollider.radius;
+        if (spell == 1)
+        {
+            GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
+            foreach (GameObject tower in towers)
+            {
+                Vector3 towerPos = tower.transform.position;
+                towerPos.z = 0;
+                float distanceToTower = Vector3.Distance(transform.position, towerPos);
+                TowerAI towerScript = tower.GetComponent<TowerAI>();
+                if (distanceToTower <= spellRange)
+                {
+
+                }
+            }
+        }
+        else if (spell == 2 || spell == 3)
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in enemies)
+            {
+                Vector3 enemyPos = enemy.transform.position;
+                enemyPos.z = 0;
+                float distanceToEnemy = Vector3.Distance(transform.position, enemyPos);
+                EnemyAI enemyScript = enemy.GetComponent<EnemyAI>();
+                if (distanceToEnemy <= spellRange)
+                {
+
+                }
+            }
+        }*/
     }
 
     public void activateCircle()
@@ -45,8 +79,9 @@ public class SpellArea : MonoBehaviour
                     EnemyAI enemyScript = enemy.GetComponent<EnemyAI>();
                     if (spell == 2) //Heal
                     {
-                        enemyScript.currentHealth += Mathf.Clamp(healPercent*enemyScript.enemy.Health,0,enemyScript.enemy.Health);
+                        enemyScript.currentHealth = Mathf.Clamp(enemyScript.currentHealth+ healPercent*enemyScript.enemy.Health,0,enemyScript.enemy.Health);
                     }
+
                     else if (spell == 3) //Speed
                     {
                         enemyScript.speedBuff = true;

@@ -197,6 +197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodePath: {fileID: 0}
   enemy: {fileID: 11400000, guid: 9cd03170e659c4d5994c54e29629b489, type: 2}
+  disablePrefab: {fileID: 4931536856392135555, guid: c329a3e7505ec4713bf0ec4a3c9d7da3,
+    type: 3}
   speedBuff: 0
   currentHealth: 0
   speed: 0

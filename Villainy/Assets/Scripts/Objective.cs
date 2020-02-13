@@ -62,7 +62,7 @@ public class Objective : MonoBehaviour
                         winText.text = "Cower before my might!";
                         break;
                     case 4:
-                        winText.text = "First we take over Jeffs' house...\nthen we take over the world!!";
+                        winText.text = "First we take over Jeffs' house...\n\nthen we take over the world!!";
                         break;
 
                     default:
