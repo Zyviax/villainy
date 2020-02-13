@@ -8,9 +8,15 @@ public class MapMenu : MonoBehaviour
 {
     public List<GameObject> levels = new List<GameObject>();
 
+    private string[] unlockString;
+    private int index;
+
 
     void Start()
     {
+        unlockString = new string[] { "g", "o", "r", "t"};
+        index = 0;
+
         Time.timeScale = PlayPauseFastforward.normalMax;
         GameyManager.gameState = GameyManager.GameState.Menu;
         if(GameyManager.levelsCompleted != levels.Count)
@@ -21,6 +27,24 @@ public class MapMenu : MonoBehaviour
         for(int i=GameyManager.levelsCompleted+1; i<levels.Count; i++)
         {
             levels[i].SetActive(false);
+        }
+    }
+
+    void Update()
+    {
+        if(Input.anyKeyDown)
+        {
+            if(Input.GetKeyDown(unlockString[index]))
+            {
+                index++;
+                if (index == unlockString.Length)
+                {
+                    UnlockAll();
+                }
+            } else
+            {
+                index = 0;
+            }
         }
     }
 
@@ -41,7 +65,14 @@ public class MapMenu : MonoBehaviour
 
     public void UnlockAll()
     {
-        GameyManager.levelsCompleted = levels.Count;
+        if(GameyManager.levelsCompleted != levels.Count)
+        {
+            GameyManager.levelsCompleted = levels.Count;
+        } else
+        {
+            GameyManager.levelsCompleted = 0;
+        }
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
