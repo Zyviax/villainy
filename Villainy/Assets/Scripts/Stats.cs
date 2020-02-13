@@ -9,27 +9,28 @@ public class Stats : MonoBehaviour
 
     void Start()
     {
-        resource.text = "Resources Spent: " + GameyManager.resourcesSpent;
-        retires.text = "Retries: " + GameyManager.retries;
+        Time.timeScale = 1;
+        resource.text = "<b>Resources: </b>" + GameyManager.resourcesSpent;
+        retires.text = "<b>Attempts: </b>" + GameyManager.retries;
         
-        damage.text = "Damage Taken: " + GameyManager.damageTaken;
-        spells.text = "Spells Cast: " + GameyManager.spellsCast;
+        damage.text = "<b>Damage: </b>" + GameyManager.damageTaken;
+        spells.text = "<b>Spells: </b>" + GameyManager.spellsCast;
 
-        dead.text = "Units Dead - " +
+        dead.text = "<b>Units Dead</b>\n" +
             "\n Imp: " + GameyManager.enemiesDead[0] +
             "\n Priest: " + GameyManager.enemiesDead[1] +
             "\n Turtle: " + GameyManager.enemiesDead[2] +
             "\n Valkyrie: " + GameyManager.enemiesDead[3] +
             "\n Work Master: " + GameyManager.enemiesDead[4];
 
-        spawned.text = "Units Spawned - " +
+        spawned.text = "<b>Units Spawned</b>\n" +
             "\n Imp: " + GameyManager.enemiesSpawned[0] +
             "\n Priest: " + GameyManager.enemiesSpawned[1] +
             "\n Turtle: " + GameyManager.enemiesSpawned[2] +
             "\n Valkyrie: " + GameyManager.enemiesSpawned[3] +
             "\n Work Master: " + GameyManager.enemiesSpawned[4];
 
-        end.text = "Units Reached End - " +
+        end.text = "<b>Units Reached End</b>\n" +
             "\n Imp: " + GameyManager.enemiesReachedEnd[0] +
             "\n Priest: " + GameyManager.enemiesReachedEnd[1] +
             "\n Turtle: " + GameyManager.enemiesReachedEnd[2] +
@@ -37,11 +38,8 @@ public class Stats : MonoBehaviour
             "\n Work Master: " + GameyManager.enemiesReachedEnd[4];
     }
 
-    public void Update()
+    public void MainMenu()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
+        SceneManager.LoadScene("MainMenu");
     }
 }
