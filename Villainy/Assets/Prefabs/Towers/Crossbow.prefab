@@ -127,7 +127,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tower: {fileID: 11400000, guid: 75a65d5eb51c94f529b58b34d7683c52, type: 2}
   enemies: []
-  selector: {fileID: 0}
   target: {fileID: 0}
   stun: 0
   bloodPrefab: {fileID: 1789584988055018484, guid: ef6099d9ce3754ecc930522f7dfb0aca,
@@ -280,7 +279,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!114 &8220599514118666106
 MonoBehaviour:
