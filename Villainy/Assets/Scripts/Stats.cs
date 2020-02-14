@@ -11,7 +11,7 @@ public class Stats : MonoBehaviour
     {
         Time.timeScale = 1;
         resource.text = "<b>Resources: </b>" + GameyManager.resourcesSpent;
-        retires.text = "<b>Attempts: </b>" + GameyManager.retries;
+        retires.text = "<b>Retries: </b>" + GameyManager.retries;
         
         damage.text = "<b>Damage: </b>" + GameyManager.damageTaken;
         spells.text = "<b>Spells: </b>" + GameyManager.spellsCast;
