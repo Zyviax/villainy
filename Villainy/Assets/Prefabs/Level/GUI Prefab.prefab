@@ -10003,7 +10003,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Pause Menu
 
-    (P)'
+    (Tab)'
 --- !u!1001 &2242098421353139787
 PrefabInstance:
   m_ObjectHideFlags: 0

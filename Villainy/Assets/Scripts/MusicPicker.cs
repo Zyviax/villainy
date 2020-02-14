@@ -17,11 +17,11 @@ public class MusicPicker : MonoBehaviour
             go = obj.GetComponent<AudioSource>();
             if (go != null)
             {
-                go.volume = this.volume;
+                AudioListener.volume = this.volume * GameyManager.mainVolume; 
                 if (go.clip != NewMusic)
                 {
-                    go.clip = NewMusic; //Replaces the old audio with the new one set in the inspector.
-                    go.Play(); //Plays the audio.
+                    go.clip = NewMusic;
+                    go.Play();
                 }
 
             }

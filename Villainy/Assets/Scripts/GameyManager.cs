@@ -40,4 +40,6 @@ public class GameyManager : MonoBehaviour
     public static int[] enemiesDead = { 0, 0, 0, 0, 0 };
     public static int[] enemiesSpawned = { 0, 0, 0, 0, 0 };
     public static int[] enemiesReachedEnd = { 0, 0, 0, 0, 0 };
+
+    public static float mainVolume = 0.4f;
 }
