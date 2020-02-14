@@ -151,6 +151,8 @@ MonoBehaviour:
   tower: {fileID: 11400000, guid: c15c8fff0207e4097bd14785565cf666, type: 2}
   enemies: []
   target: {fileID: 0}
+  stunPrefab: {fileID: 4931536856392135555, guid: e750ab1631f0347df8546c22fc82be56,
+    type: 3}
   stun: 0
   bloodPrefab: {fileID: 1789584988055018484, guid: ef6099d9ce3754ecc930522f7dfb0aca,
     type: 3}
