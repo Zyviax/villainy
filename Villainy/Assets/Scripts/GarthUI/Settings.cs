@@ -19,7 +19,7 @@ public class Settings : MonoBehaviour
 
     public void ToggleSettings()
     {
-            settings.GetComponentInChildren<Text>().text  = settings.GetComponentInChildren<Text>().text == "Play" ? "Settings" : "Back";
+            settings.GetComponentInChildren<Text>().text  = settings.GetComponentInChildren<Text>().text == "Back" ? "Settings" : "Back";
             panel.SetActive(!panel.activeSelf);
             play.SetActive(!panel.activeSelf);
     }
