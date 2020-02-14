@@ -57,6 +57,9 @@ public class SpellArea : MonoBehaviour
 
     public void activateCircle()
     {
+        GameObject spellCastSound = GameObject.FindGameObjectWithTag("Sound");
+        spellCastSound.GetComponent<AudioSource>().Play();
+
         CircleCollider2D spellCollider = GetComponentInParent<CircleCollider2D>();
         float spellRange = spellCollider.radius;
         spellRange = spellRange * GetComponentInParent<Transform>().localScale.x;
