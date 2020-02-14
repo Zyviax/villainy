@@ -35,7 +35,6 @@ music in the final game:
 
 music -
 main menu: main_menu
-map: map_v2
 levels: level
 win: victory2
 lose: level_lose_loud
