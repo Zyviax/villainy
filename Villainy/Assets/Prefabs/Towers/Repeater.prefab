@@ -128,6 +128,8 @@ MonoBehaviour:
   tower: {fileID: 11400000, guid: 2ffb36c2a379d4ac4bfee20b6f526794, type: 2}
   enemies: []
   target: {fileID: 0}
+  stunPrefab: {fileID: 4931536856392135555, guid: e750ab1631f0347df8546c22fc82be56,
+    type: 3}
   stun: 0
   bloodPrefab: {fileID: 1789584988055018484, guid: ef6099d9ce3754ecc930522f7dfb0aca,
     type: 3}
@@ -247,7 +249,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6465569207097188915}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.0009999999, y: 0.0009999999, z: 1}
   m_Children:
   - {fileID: 3602041455480269082}
@@ -279,7 +281,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!114 &6902402204488972045
 MonoBehaviour:

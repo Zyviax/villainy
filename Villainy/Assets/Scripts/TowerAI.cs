@@ -9,6 +9,9 @@ public class TowerAI : MonoBehaviour
     private float stunCooldown = 3;
     private float stunTimer = 0;
     public Transform target;
+    private Transform stunEffect;
+    public Transform stunPrefab;
+    private bool stunned = false;
 
     public bool stun = false;
 
@@ -53,11 +56,22 @@ public class TowerAI : MonoBehaviour
             target = null;
             stunTimer = stunCooldown;
             stun = false;
+            if(!stunned)
+            {
+                stunned = true;
+                stunEffect = Instantiate(stunPrefab, transform.position+new Vector3(0,1.75f,0), Quaternion.identity);
+            }
+            
         }
         if(stunTimer>0)
         {
             stunTimer -= Time.deltaTime;
             return;
+        }
+        if(stunned && stunTimer<=0)
+        {
+            stunned = false;
+            Destroy(stunEffect.gameObject);
         }
         if (target != null && Utility.Distance(transform.position, target.position) < tower.Range)
         {
