@@ -1,5 +1,6 @@
 # Villainy
-a reverse tower-defence game, a spin on the ever popular tower-defence genre.
+A reverse tower-defence game, a spin on the ever popular tower-defence genre.
+Try it out [here](https://zyviax.github.io/villainy/FinalBuild/index.html)
 
 ## Made by:
 
